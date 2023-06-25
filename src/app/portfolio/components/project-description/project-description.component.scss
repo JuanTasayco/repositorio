@@ -1,0 +1,10 @@
+.CompProject {
+  &-visual {
+    display: flex;
+    justify-content: center;
+  }
+
+  &-img {
+    max-height: 20rem;
+  }
+}

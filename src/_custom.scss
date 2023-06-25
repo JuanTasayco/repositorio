@@ -1,5 +1,8 @@
-
-$family : 'Inter', sans-serif;
+$family : 'Inter',
+sans-serif;
 $font-family-sans-serif: $family;
 $headings-font-weight: 800;
+$form-check-input-width: 2em;
+$form-check-input-checked-bg-color: #FFD700;
+$form-check-input-checked-border-color: #FFD700;
 @import "../node_modules/bootstrap/scss/bootstrap.scss"

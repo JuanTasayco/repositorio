@@ -1,2 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
-@use "app/app.component"
+@use "app/shared/nav/nav.component";
+@use "app/portfolio/pages/home/home.component";
+@use "app/portfolio/pages/my-description/my-description.component";
+@use "app/portfolio/pages/my-projects/my-projects.component";
+@use "app/portfolio/components/project-description/project-description.component";
+@use "app/portfolio/pages/contact-me/contact-me.component";

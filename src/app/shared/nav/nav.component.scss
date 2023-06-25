@@ -1,0 +1,40 @@
+@use "src/_custom" as *;
+
+.Header {
+    &-nav {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        height: 4rem;
+        z-index: 999;
+
+        @include media-breakpoint-up(lg) {
+            padding-top: 85px;
+            width: 80%;
+            right: 0;
+            border-bottom: 1px solid;
+            justify-content: end;
+            align-items: center;
+            position: fixed;
+        }
+    }
+
+    &-ul {
+        display: flex;
+        flex-direction: column;
+
+        @include media-breakpoint-up(lg) {
+            margin-right: 15rem;
+            margin-bottom: 5rem;
+            flex-direction: row;
+        }
+
+        font-size: 1.2rem;
+        font-weight: bold;
+
+    }
+
+    & li:hover {
+        cursor: pointer;
+    }
+}

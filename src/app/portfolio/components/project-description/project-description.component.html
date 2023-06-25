@@ -1,0 +1,14 @@
+<section class="CompProject row" *ngFor="let content of contentProjects">
+  <div class="CompProject-text col-md-6 text-center">
+    <h2 class="CompoProject-h2 my-4">{{ content.title }}</h2>
+    <p class="CompProject-p">{{ content.description }}</p>
+  </div>
+
+  <div class="CompProject-visual col-md-6">
+    <img
+      [src]="content.imagen"
+      class="CompProject-img img-fluid"
+      alt="img-project"
+    />
+  </div>
+</section>

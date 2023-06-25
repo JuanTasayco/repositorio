@@ -1,0 +1,9 @@
+<header class="Header">
+    <nav class="Header-nav lightMode" #nav>
+      <ul class="Header-ul gap-md-5">
+        <li class="Header-li list-group-item" [routerLink]="route.path" 
+        *ngFor="let route of myRoutes">
+          {{route.name}}</li>
+      </ul>
+    </nav>
+  </header>
