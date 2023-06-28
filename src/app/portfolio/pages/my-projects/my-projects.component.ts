@@ -14,6 +14,9 @@ export class MyProjectsComponent implements OnInit {
       description:
         'Aplicación responsive que consume la API de Spotify para mostrar los artistas top y escuchar algunas canciones. RTambién utiliza un pequeño back en node js para actualizar el token de spofity automaticamente(ya que tiene caducidad de una hora)',
       imagen: 'hola',
+      tecnologias: 'Angular, Nest Js, SASS',
+      repositorio: 'link:httpsdasdsagithub.com',
+      link: 'www.paginaSpotify.com',
     },
     {
       title: 'Point Maps',
@@ -36,7 +39,7 @@ export class MyProjectsComponent implements OnInit {
     {
       title: 'Lpm App V2',
       description:
-        'Aplicación responsive full stack, esta es la segunda versión de la app de LPM, esta añade una panel de administradores al cual solo se accederá mediante la autenticación y autorización debida, puede modificar, agregar y eliminar guías, también puede eliminar,editar y eliminar usuarios, todo esto mencionado como caracteristica adicional a la visualización que solo tenía la versión 1.',
+        'Aplicación responsive full stack, esta es la segunda versión de la app de LPM, añade un panel de administradores al cual solo se accederá mediante la autenticación y autorización debida, puede modificar, agregar y eliminar guías, también puede eliminar,editar y eliminar usuarios, todo esto mencionado como caracteristica adicional a la visualización que solo tenía la versión 1.',
       imagen: 'hola',
     },
     {

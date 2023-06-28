@@ -5,6 +5,9 @@ export interface ProjectDescriptions {
   title: string;
   description: string;
   imagen: string;
+  tecnologias?: string;
+  repositorio?: string;
+  link?: string;
 }
 
 @Component({

@@ -1,65 +1,68 @@
 @use "src/_custom" as *;
 
-.Principal{
-    &-text {
-        @include media-breakpoint-up(xl) {
-            width: 50%;
-        }
+.Principal {
+  &-text {
+    @include media-breakpoint-up(xl) {
+      width: 50%;
+    }
+  }
+
+  &-content {
+    margin: 13px 1rem;
+  }
+
+  &-section1 {
+    @include media-breakpoint-up(lg) {
+      border-top: 1px solid;
+      height: 100%;
+      width: 46%;
+      padding: 9rem 6rem;
+      text-align: start;
+      position: fixed;
+      border-left: 1px solid;
     }
 
-    &-content {
-        margin: 13px 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-section2 {
+    position: relative;
+
+    @include media-breakpoint-up(lg) {
+      padding: 3rem 4rem;
+      width: 50%;
+      position: absolute;
+      left: 50%;
     }
+  }
 
-    &-section1 {
+  &-content2 {
+    padding-top: 2rem;
+    z-index: -99;
+  }
 
-        @include media-breakpoint-up(lg) {
-            border-top: 1px solid;
-            height: 100%;
-            width: 46%;
-            padding: 9rem 6rem;
-            text-align: start;
-            position: fixed;
-            border-left: 1px solid;
+  &-h1 {
+    text-transform: uppercase;
+    font-weight: bold;
+    background: linear-gradient(
+      90deg,
+      rgba(77, 72, 74, 1) 0%,
+      rgba(93, 85, 88, 1) 46%,
+      rgba(77, 72, 74, 1) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 
-        }
+  &-h2 {
+    color: rgb(77, 72, 74);
+  }
 
-        text-align: center;
-        display:flex;
-        flex-direction: column;
-
+  &-svg {
+    &:hover {
+      cursor: pointer;
     }
-
-    &-section2 {
-        position: relative;
-
-        @include media-breakpoint-up(lg) {
-            padding: 3rem 4rem;
-            width: 50%;
-            position: absolute;
-            left: 50%;
-        }
-
-    }
-
-    &-content2 {
-        padding-top: 2rem;
-        z-index: -99;
-
-    }
-
-    &-h1 {
-        text-transform: uppercase;
-        font-weight: bold;
-        background: linear-gradient(90deg, rgba(77, 72, 74, 1) 0%, rgba(93, 85, 88, 1) 46%, rgba(77, 72, 74, 1) 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-
-    }
-
-
-    &-h2 {
-        color: rgb(77, 72, 74);
-    }
-
+  }
 }
