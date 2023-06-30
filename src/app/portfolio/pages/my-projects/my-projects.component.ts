@@ -20,15 +20,15 @@ export class MyProjectsComponent implements OnInit {
         },
         {
           itemImageSrc: 'assets/imagenes/spotifyapp2.png',
-          alt: 'spotImage',
+          alt: 'spotImage2',
         },
         {
           itemImageSrc: 'assets/imagenes/spotifyapp3.png',
-          alt: 'spotImage',
+          alt: 'spotImage3',
         },
         {
           itemImageSrc: 'assets/imagenes/spotifyapp4.png',
-          alt: 'spotImage',
+          alt: 'spotImage4',
         },
       ],
       tecnologias: 'Angular, Nest Js, SASS, Typescript, Bootstrap',
@@ -64,7 +64,24 @@ export class MyProjectsComponent implements OnInit {
       title: 'Lpm App V1',
       description:
         'Aplicación responsive con data propia que permite visualizar información de una guía de contabilidad para LPM, cuenta con características muy simples y fáciles de usar para el usuario, esta es la primera versión (solo front).',
-      imagenes: [],
+      imagenes: [
+        {
+          itemImageSrc: 'assets/imagenes/lpmOne1.png',
+          alt: 'lpmv1Img1',
+        },
+        {
+          itemImageSrc: 'assets/imagenes/lpmOne2.png',
+          alt: 'lpmv1Img2',
+        },
+        {
+          itemImageSrc: 'assets/imagenes/lpmOne3.png',
+          alt: 'lpmv1Img3',
+        },
+        {
+          itemImageSrc: 'assets/imagenes/lpmOne4.png',
+          alt: 'lpmv1Img4',
+        },
+      ],
       repositorio:
         'https://github.com/JuanTasayco/06-WebConta-Angular/tree/main/src',
       link: 'www.paginaSpotify.com',
