@@ -30,7 +30,7 @@
     </div>
   </div>
 
-  <div class="CompProject-visual col-lg-6 p-5">
+  <div class="CompProject-visual col-lg-6 p-5 ">
     <p-galleria
       [value]="content.imagenes"
       [numVisible]="5"
@@ -45,6 +45,7 @@
           [src]="item.itemImageSrc"
           [alt]="item.alt"
           style="width: 100%; display: block"
+          class="rounded-3"
         />
       </ng-template>
     </p-galleria>
