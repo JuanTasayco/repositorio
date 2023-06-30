@@ -14,14 +14,14 @@ import {
 export class ContactMeComponent implements OnInit {
   constructor(private formBuilder: FormBuilder) {}
   formContact: FormGroup = new FormBuilder().group({
-    name: [[Validators.required], []],
-    email: [],
-    pais: [],
-    area: [],
+    name: ['', [Validators.required]],
+    email: ['', [Validators.required]],
+    pais: ['', [Validators.required]],
+    area: ['', [Validators.required]],
   });
   ngOnInit(): void {}
 
   enviarFormulario() {
-    console.log("hola")
+    console.log('hola');
   }
 }
