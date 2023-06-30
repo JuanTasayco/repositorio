@@ -8,7 +8,7 @@ import { MyProjectsComponent } from './pages/my-projects/my-projects.component';
 import { SharedModule } from '../shared/shared.module';
 import { ProjectDescriptionComponent } from './components/project-description/project-description.component';
 import { ContactMeComponent } from './pages/contact-me/contact-me.component';
-
+import { NgPrimeModule } from '../ng-prime/ng-prime.module';
 
 @NgModule({
   declarations: [
@@ -16,12 +16,8 @@ import { ContactMeComponent } from './pages/contact-me/contact-me.component';
     MyDescriptionComponent,
     MyProjectsComponent,
     ProjectDescriptionComponent,
-    ContactMeComponent
+    ContactMeComponent,
   ],
-  imports: [
-    CommonModule,
-    PortfolioRoutingModule
-    ,SharedModule
-  ]
+  imports: [CommonModule, PortfolioRoutingModule, SharedModule, NgPrimeModule],
 })
-export class PortfolioModule { }
+export class PortfolioModule {}
