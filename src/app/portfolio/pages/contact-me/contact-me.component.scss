@@ -20,11 +20,20 @@
     margin-bottom: 1rem;
   }
 
+  &-button {
+    &--send {
+      background-color: #332d2d;
+      color:white;
+      border-color:white;
+    }
+  }
+
   &-svg {
     height: 5rem;
-    padding: 0rem 1rem;
-    @include media-breakpoint-down(md){
+    padding: 0rem 3rem;
+    @include media-breakpoint-down(xl) {
       height: 2rem;
+      padding: 0rem 1rem;
     }
   }
 }

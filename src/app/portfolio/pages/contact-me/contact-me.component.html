@@ -1,15 +1,22 @@
 <div class="Contact-content">
-  <h2 class="Contact-h2 display-2 mb-5">Contactame!</h2>
-  <form action="" class="Contact-form row mb-5">
+  <h2 class="Contact-h2 display-2 mb-5">Contáctame!</h2>
+
+  <form
+    [formGroup]="formContact"
+    action=""
+    class="Contact-form row mb-5 needs-validation"
+    novalidate
+  >
     <div class="Contact-col col-md-6">
       <div class="Contact-group form-group">
-        <label for="formulario"> Nombres : </label>
+        <label for="name"> Nombres : </label>
         <input
           type="text"
-          name="formulario"
+          name="name"
           class="Contact-input form-control"
           placeholder=""
         />
+        <div class="valid-feedback">Looks good!</div>
       </div>
 
       <div class="Contact-group form-group">
@@ -38,7 +45,7 @@
         <label
           for="exampleFormControlTextarea1"
           class="Contact-label form-label"
-          >Cual es el motivo ?</label
+          >Escríbe el motivo</label
         >
         <textarea
           class="Contact-area form-control form-control-lg"
@@ -49,7 +56,11 @@
     </div>
 
     <div class="Contact-buttonGroup">
-      <button class="Contact-button btn btn-primary" type="submit">
+      <button
+        (click)="enviarFormulario()"
+        class="Contact-button Contact-button--send btn"
+        type="submit"
+      >
         Enviar
       </button>
     </div>

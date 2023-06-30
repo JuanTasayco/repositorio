@@ -9,6 +9,7 @@ import { SharedModule } from '../shared/shared.module';
 import { ProjectDescriptionComponent } from './components/project-description/project-description.component';
 import { ContactMeComponent } from './pages/contact-me/contact-me.component';
 import { NgPrimeModule } from '../ng-prime/ng-prime.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,12 @@ import { NgPrimeModule } from '../ng-prime/ng-prime.module';
     ProjectDescriptionComponent,
     ContactMeComponent,
   ],
-  imports: [CommonModule, PortfolioRoutingModule, SharedModule, NgPrimeModule],
+  imports: [
+    CommonModule,
+    PortfolioRoutingModule,
+    SharedModule,
+    NgPrimeModule,
+    ReactiveFormsModule,
+  ],
 })
 export class PortfolioModule {}
