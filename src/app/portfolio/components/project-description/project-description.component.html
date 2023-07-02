@@ -1,8 +1,9 @@
-<section
-  class="CompProject row mb-5 justify-content-center align-items-center"
+<section class="CompProject">
+<div
+  class="CompProject-row row mb-5 justify-content-center align-items-center"
   *ngFor="let content of contentProjects"
 >
-  <div class="CompProject-text col-lg-6 text-center">
+  <div class="CompProject-text col-xxl-6 text-center">
     <h2 class="CompoProject-h2 my-4">{{ content.title }}</h2>
     <p class="CompProject-p">{{ content.description }}</p>
 
@@ -30,7 +31,7 @@
     </div>
   </div>
 
-  <div class="CompProject-visual col-lg-6 p-5 ">
+  <div class="CompProject-visual col-xxl-6 p-5 ">
     <p-galleria
       [value]="content.imagenes"
       [numVisible]="5"
@@ -50,4 +51,5 @@
       </ng-template>
     </p-galleria>
   </div>
+</div>
 </section>

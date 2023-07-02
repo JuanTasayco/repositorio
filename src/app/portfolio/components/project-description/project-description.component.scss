@@ -1,10 +1,19 @@
 @use "src/_custom" as *;
 
 .CompProject {
+  @include media-breakpoint-up(xxl) {
+    margin: auto;
+    padding: 0rem 5rem;
+  }
   &-visual {
     display: flex;
     justify-content: center;
     max-height: 40rem;
+  }
+  &-text {
+    @include media-breakpoint-up(xxl) {
+      padding: 0 5rem;
+    }
   }
 
   &-img {
@@ -14,6 +23,4 @@
   &-pimage {
     display: block;
   }
-
-
 }
