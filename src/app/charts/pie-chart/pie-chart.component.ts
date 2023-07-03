@@ -1,5 +1,18 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
-import { ChartConfiguration, ChartData, ChartType } from 'chart.js';
+import {
+  AfterViewInit,
+  ChangeDetectorRef,
+  Component,
+  ElementRef,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
+import {
+  Chart,
+  ChartConfiguration,
+  ChartData,
+  ChartEvent,
+  ChartType,
+} from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
 import DatalabelsPlugin from 'chartjs-plugin-datalabels';
 @Component({
@@ -9,9 +22,6 @@ import DatalabelsPlugin from 'chartjs-plugin-datalabels';
 })
 export class PieChartComponent implements AfterViewInit {
   @ViewChild(BaseChartDirective) chart: BaseChartDirective | undefined;
-  ngAfterViewInit(): void {
-    console.log(this.chart);
-  }
 
   public pieChartOptions: ChartConfiguration['options'] = {
     responsive: true,
@@ -23,9 +33,7 @@ export class PieChartComponent implements AfterViewInit {
       datalabels: {
         formatter: (val, ctx) => {
           if (ctx.chart.data.labels) {
-            return ctx.chart.data.labels[ctx.dataIndex];
-          }else {
-            return val;
+            return ctx.chart.data.labels[ctx.dataIndex] || val;
           }
         },
       },
@@ -44,11 +52,15 @@ export class PieChartComponent implements AfterViewInit {
     ],
     datasets: [
       {
-        data: [200, 300, 100,100,100,100,100],
+        data: [200, 300, 100, 100, 100, 100, 100],
       },
     ],
   };
 
   public pieChartType: ChartType = 'pie';
   public pieChartPlugins = [DatalabelsPlugin];
+
+  ngAfterViewInit(): void {}
+
+  constructor(private cdr: ChangeDetectorRef) {}
 }

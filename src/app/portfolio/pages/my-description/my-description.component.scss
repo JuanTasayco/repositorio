@@ -43,6 +43,12 @@
     z-index: -99;
   }
 
+  &-chart {
+    position: relative;
+    border: 2px solid red;
+    max-width: 50rem;
+  }
+
   &-h1 {
     text-transform: uppercase;
     font-weight: bold;
@@ -52,7 +58,7 @@
       rgba(93, 85, 88, 1) 46%,
       rgba(77, 72, 74, 1) 100%
     );
-    -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 

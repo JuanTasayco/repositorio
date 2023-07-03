@@ -8,7 +8,7 @@ import { NgChartsConfiguration, NgChartsModule } from 'ng2-charts';
   imports: [CommonModule, NgChartsModule],
   exports: [PieChartComponent],
   providers: [
-    { provide: NgChartsConfiguration, useValue: { generateColors: false } },
+
   ],
 })
 export class ChartsModule {}
