@@ -1,11 +1,26 @@
 <div class="Principal-content h-100 d-lg-flex">
   <!-- contendor del recuadro -->
-  <div class="Principal-section1 gap-5">
+  <section
+    class="Principal-section1 gap-5 m-auto"
+    style="border: 2px solid red"
+  >
     <div class="Principal-description">
       <h1 class="Principal-h1 display-1" #h1>Juan Tasayco</h1>
       <h2 class="Principal-h2 mx-2" #h2>Frontend Developer</h2>
     </div>
-    <p class="Principal-text">Hola! soy un desarrollador web</p>
+    <div class="Principal-aboutme">
+      <h5>Acerca de mi :</h5>
+      <p class="Principal-text">
+        Hola!.Soy un bachiller en ingeniería de sistemas dedicado al desarrollo
+        web, mis frameworks favoritos de utilizar son Angular y Nest JS; para
+        Front-end y Back-end respectivamente, estas involucran una serie de
+        conocimientos en distintos lenguajes y tecnologías, tales como HTML,
+        CSS, SASS, Javascript, Typescript, Docker, Mongo, PostgresSQL, GitHub,
+        entre otros. En la siguiente gráfica te presento mi skill en base a mi
+        experiencia utilizando las tecnologías.
+      </p>
+    </div>
+
     <div class="Principal-socials">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -33,23 +48,21 @@
         />
       </svg>
     </div>
-  </div>
+  </section>
 
-  <div class="Principal-section2">
+  <section class="Principal-section2">
     <!--  -->
     <div class="Principal-content2">
-      <h2 class="mt-5 mb-3">Acerca de mí :</h2>
+      <div class="Projects-content">
+        <app-pie-chart></app-pie-chart>
 
-      <p class="m-auto">
-        Soy un bachiller en ingeniería de sistemas dedicado al desarrollo web,
-        mis frameworks favoritos de utilizar son Angular y Nest JS; para
-        Front-end y Back-end respectivamente, estas involucran una serie de
-        conocimientos en distintos lenguajes y tecnologías, tales como HTML,
-        CSS, SASS, Javascript, Typescript, Docker, Mongo, PostgresSQL, GitHub,
-        entre otros. En la siguiente gráfica te presento mi skill en base a mi
-        experiencia utilizando las tecnologías.
-      </p>
+        <app-project-description
+          [contenido]="infoProject"
+        ></app-project-description>
+      </div>
     </div>
     <!--  -->
-  </div>
+  </section>
+
+  <div class=""></div>
 </div>

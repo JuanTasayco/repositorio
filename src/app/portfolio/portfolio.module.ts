@@ -10,6 +10,7 @@ import { ProjectDescriptionComponent } from './components/project-description/pr
 import { ContactMeComponent } from './pages/contact-me/contact-me.component';
 import { NgPrimeModule } from '../ng-prime/ng-prime.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ChartsModule } from '../charts/charts.module';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     SharedModule,
     NgPrimeModule,
     ReactiveFormsModule,
+    ChartsModule,
   ],
 })
 export class PortfolioModule {}
