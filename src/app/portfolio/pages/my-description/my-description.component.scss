@@ -2,8 +2,8 @@
 
 .Principal {
   &-text {
-    @include media-breakpoint-up(xl) {
-      width: 50%;
+    @include media-breakpoint-up(xxl) {
+      width: 75%;
     }
   }
 
@@ -43,12 +43,6 @@
     z-index: -99;
   }
 
-  &-chart {
-    position: relative;
-    border: 2px solid red;
-    max-width: 50rem;
-  }
-
   &-h1 {
     text-transform: uppercase;
     font-weight: bold;
@@ -70,5 +64,10 @@
     &:hover {
       cursor: pointer;
     }
+  }
+
+  &-chart {
+    max-width: 50rem;
+    margin: auto;
   }
 }

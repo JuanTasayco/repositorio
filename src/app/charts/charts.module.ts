@@ -6,7 +6,7 @@ import { NgChartsConfiguration, NgChartsModule } from 'ng2-charts';
 @NgModule({
   declarations: [PieChartComponent],
   imports: [CommonModule, NgChartsModule],
-  exports: [PieChartComponent],
+  exports: [PieChartComponent, NgChartsModule],
   providers: [
 
   ],

@@ -1,9 +1,6 @@
 <div class="Principal-content h-100 d-lg-flex">
   <!-- contendor del recuadro -->
-  <section
-    class="Principal-section1 gap-5 m-auto"
-    style="border: 2px solid red"
-  >
+  <section class="Principal-section1 gap-5 m-auto">
     <div class="Principal-description">
       <h1 class="Principal-h1 display-1" #h1>Juan Tasayco</h1>
       <h2 class="Principal-h2 mx-2" #h2>Frontend Developer</h2>
@@ -54,10 +51,10 @@
     <!--  -->
     <div class="Principal-content2">
       <div class="Projects-content">
-        <div class="Principal-chart" >
+        <h3>Habilidades técnicas</h3>
+        <div class="Principal-chart">
           <app-pie-chart></app-pie-chart>
         </div>
-
         <app-project-description
           [contenido]="infoProject"
         ></app-project-description>
