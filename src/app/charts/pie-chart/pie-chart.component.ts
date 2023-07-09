@@ -24,7 +24,7 @@ export class PieChartComponent implements AfterViewInit {
   @ViewChild(BaseChartDirective) chart: BaseChartDirective | undefined;
 
   public pieChartOptions: ChartConfiguration['options'] = {
-    responsive: true,
+    responsive: false,
     plugins: {
       legend: {
         display: true,
@@ -42,7 +42,7 @@ export class PieChartComponent implements AfterViewInit {
 
   public pieChartData: ChartData<'pie', number[], string | string[]> = {
     labels: [
-      ['Javascript ', 'TypeScript'],
+      'Js y Typescript',
       'Angular',
       'Nest Js',
       'Html',

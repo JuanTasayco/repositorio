@@ -67,7 +67,10 @@
   }
 
   &-chart {
-    max-width: 50rem;
+    border: 2px solid red;
+    height: 30rem;
     margin: auto;
+    display: flex;
+    justify-content: center;
   }
 }
