@@ -1,13 +1,16 @@
 @use "src/_custom" as *;
 
 .CompProject {
-
   &-visual {
     display: flex;
     justify-content: center;
     max-height: 40rem;
   }
 
+  &-row {
+    justify-content: center;
+    align-items: center;
+  }
   &-img {
     max-height: 20rem;
   }
@@ -16,5 +19,3 @@
     display: block;
   }
 }
-
-

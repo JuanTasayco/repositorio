@@ -1,8 +1,8 @@
 <app-nav (emitElementNav)="getNavElement($event)"></app-nav>
 
-<section class="Principal container-fluid h-100">
+<section class="Home container-fluid h-100 ">
   <!-- button change color -->
-  <div class="Principal-check form-check form-switch ">
+  <div class="Home-check form-check form-switch ">
     <input
       class="form-check-input"
       type="checkbox"
@@ -12,9 +12,9 @@
     />
   </div>
   <!-- sign for me -->
-  <div class="Principal-name d-none d-md-block">
-    <h5 class="Principal-h5">Design by.Juan Tasayco</h5>
+  <div class="Home-name d-none d-xl-block">
+    <h5 class="Home-h5">Design by.Juan Tasayco</h5>
   </div>
-  <!-- principal content (components) -->
+  <!-- Home content (components) -->
   <router-outlet></router-outlet>
 </section>

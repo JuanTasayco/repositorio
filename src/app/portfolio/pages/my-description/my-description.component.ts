@@ -1,14 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ProjectDescriptions } from '../../components/project-description/project-description.component';
-import {
-  Chart,
-  ChartConfiguration,
-  ChartData,
-  ChartEvent,
-  ChartType,
-} from 'chart.js';
-import { BaseChartDirective } from 'ng2-charts';
-import DatalabelsPlugin from 'chartjs-plugin-datalabels';
+
 @Component({
   selector: 'app-my-description',
   templateUrl: './my-description.component.html',

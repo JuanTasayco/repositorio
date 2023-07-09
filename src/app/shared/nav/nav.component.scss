@@ -1,40 +1,51 @@
 @use "src/_custom" as *;
 
 .Header {
-    &-nav {
-        display: flex;
-        justify-content: center;
-        position: relative;
-        height: 4rem;
-        z-index: 999;
+  &-nav {
+    display: flex;
+    justify-content: center;
+    position: relative;
 
-        @include media-breakpoint-up(lg) {
-            padding-top: 85px;
-            width: 80%;
-            right: 0;
-            border-bottom: 1px solid;
-            justify-content: end;
-            align-items: center;
-            position: fixed;
-        }
+    z-index: 999;
+    @include media-breakpoint-up(lg) {
+      padding-top: 27px;
+      width: 90%;
+      right: 0;
+      border-bottom: 1px solid;
+      position: fixed;
+      display: flex;
     }
+  }
 
-    &-ul {
-        display: flex;
-        flex-direction: column;
-
-        @include media-breakpoint-up(lg) {
-            margin-right: 15rem;
-            margin-bottom: 5rem;
-            flex-direction: row;
-        }
-
-        font-size: 1.2rem;
-        font-weight: bold;
-
+  &-navbar {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    float: end;
+    @include media-breakpoint-up(lg) {
+      gap: 5rem;
     }
-
-    & li:hover {
-        cursor: pointer;
+  }
+  &-a {
+    @include media-breakpoint-up(lg) {
+      font-size: 1.4rem;
     }
+  }
+
+  &-ul {
+    display: flex;
+    flex-direction: column;
+
+    @include media-breakpoint-up(lg) {
+      margin-right: 15rem;
+      margin-bottom: 5rem;
+      flex-direction: row;
+    }
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  & li:hover {
+    cursor: pointer;
+  }
 }

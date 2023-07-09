@@ -1,9 +1,33 @@
 <header class="Header">
-    <nav class="Header-nav lightMode" #nav>
-      <ul class="Header-ul gap-md-5">
-        <li class="Header-li list-group-item" [routerLink]="route.path" 
-        *ngFor="let route of myRoutes">
-          {{route.name}}</li>
-      </ul>
-    </nav>
-  </header>
+  <nav class="Header-nav navbar navbar-expand-lg lightMode" #nav>
+    <div class="Header-container container-fluid">
+      <button
+        class="Header-button navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="Header-span navbar-toggler-icon"></span>
+      </button>
+      <div
+        class="Header-collapse collapse navbar-collapse"
+        id="navbarNavAltMarkup"
+      >
+        <div class="Header-navbar navbar-nav">
+          <a
+            class="Header-a nav-link"
+            *ngFor="let routes of myRoutes"
+            routerLink="routes.path"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            [attr.aria-current]="isActive(routes.path) ? 'page' : null"
+            >{{ routes.name }}</a
+          >
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>

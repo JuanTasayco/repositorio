@@ -27,6 +27,10 @@
     flex-direction: column;
   }
 
+  &-p {
+    padding: 1rem 0rem;
+  }
+
   &-section2 {
     position: relative;
 
@@ -66,11 +70,25 @@
     }
   }
 
+  &-h3 {
+    &--uppercase {
+      text-transform: uppercase;
+    }
+  }
+
   &-chart {
-    border: 2px solid red;
-    height: 30rem;
+    position: relative;
+    max-height: 100rem;
     margin: auto;
     display: flex;
     justify-content: center;
+    border: 2px solid green;
+    /*    @include media-breakpoint-down(sm){
+      height: 25rem;
+    } */
+  }
+
+  &-hr {
+    padding: 1.5rem 0rem;
   }
 }

@@ -8,6 +8,7 @@ import {
   Output,
   ViewChild,
 } from '@angular/core';
+import { IsActiveMatchOptions, Router } from '@angular/router';
 
 interface Routes {
   name: string;
@@ -33,5 +34,15 @@ export class NavComponent implements AfterViewInit {
     { name: 'Contactame', path: '/portfolio/contactMe' },
   ];
 
-  constructor() {}
+  isActive(path: string): boolean {
+    const isActiveOptions: IsActiveMatchOptions = {
+      paths: 'exact',
+      matrixParams: 'exact',
+      queryParams: 'exact',
+      fragment: 'exact',
+    };
+
+    return this.router.isActive(path, isActiveOptions);
+  }
+  constructor(private router: Router) {}
 }

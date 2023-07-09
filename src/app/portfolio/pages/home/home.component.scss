@@ -1,10 +1,9 @@
 @use "src/_custom" as *;
 
-.Principal {
-  @include media-breakpoint-up(lg){
+.Home {
+  @include media-breakpoint-up(lg) {
     padding: 4.5rem 5.5rem;
   }
-
 
   &-name {
     position: fixed;

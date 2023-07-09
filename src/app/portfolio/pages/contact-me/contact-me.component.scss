@@ -6,13 +6,15 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    @include media-breakpoint-up(lg) {
+    padding: 5rem 3rem;
+    @include media-breakpoint-up(xl) {
       margin: 13px 1rem;
-      border-top: 1px solid;
-      border-left: 1px solid;
+/*       border-bottom: 1px solid;
+      border-left: 1px solid; */
       height: 100%;
       padding: 9rem 6rem;
       text-align: start;
+      
     }
   }
 
@@ -23,14 +25,14 @@
   &-button {
     &--send {
       background-color: #332d2d;
-      color:white;
-      border-color:white;
+      color: white;
+      border-color: white;
     }
   }
 
   &-svg {
     height: 5rem;
-    padding: 0rem 3rem;
+    padding: 0rem 2rem;
     @include media-breakpoint-down(xl) {
       height: 2rem;
       padding: 0rem 1rem;
