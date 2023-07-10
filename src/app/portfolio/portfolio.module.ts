@@ -16,7 +16,6 @@ import { ToScrollDirective } from './directives/to-scroll.directive';
   declarations: [
     HomeComponent,
     MyDescriptionComponent,
-
     ProjectDescriptionComponent,
     ContactMeComponent,
     ToScrollDirective,

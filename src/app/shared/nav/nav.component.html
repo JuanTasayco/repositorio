@@ -24,7 +24,7 @@
             routerLinkActive="active"
             [routerLinkActiveOptions]="{ exact: true }"
             [attr.aria-current]="isActive(routes.path) ? 'page' : null"
-            (click)="moveToSection()"
+            (click)="moveToSection(routes.nameSection)"
             >{{ routes.name }}</a
           >
         </div>
