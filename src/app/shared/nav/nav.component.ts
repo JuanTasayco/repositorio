@@ -44,5 +44,10 @@ export class NavComponent implements AfterViewInit {
 
     return this.router.isActive(path, isActiveOptions);
   }
+
+  moveToSection() {
+    
+  }
+
   constructor(private router: Router) {}
 }
