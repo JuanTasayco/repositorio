@@ -6,10 +6,14 @@ import {
   Input,
   OnInit,
   Output,
+  QueryList,
+  Renderer2,
   ViewChild,
+  ViewChildren,
 } from '@angular/core';
 import { IsActiveMatchOptions, Router } from '@angular/router';
 import { CommunicateLinksService } from '../services/communicate-links.service';
+import { TriggersService } from '../../portfolio/services/triggers.service';
 
 interface Routes {
   name: string;
@@ -22,12 +26,29 @@ interface Routes {
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.scss'],
 })
-export class NavComponent implements AfterViewInit {
+export class NavComponent implements AfterViewInit, OnInit {
   @Output() emitElementNav: EventEmitter<any> = new EventEmitter();
   @ViewChild('nav') navElement!: ElementRef;
+  @ViewChildren('aLink') aLinksNav!: QueryList<any>;
+  activeModeDarkNav: boolean = true;
 
   ngAfterViewInit(): void {
     this.emitElementNav.emit(this.navElement.nativeElement);
+
+    this.triggerService.getClickEventButton.subscribe(() => {
+      this.activeModeDarkNav = !this.activeModeDarkNav;
+
+      const className = 'gold';
+
+      /* en base al boolean activeMode.. se aplica addClass or remove */
+      /* recorriendo  */
+      this.aLinksNav.forEach((result: ElementRef) => {
+        this.renderer[this.activeModeDarkNav ? 'addClass' : 'removeClass'](
+          result.nativeElement,
+          className
+        );
+      });
+    });
   }
 
   myRoutes: Routes[] = [
@@ -59,8 +80,14 @@ export class NavComponent implements AfterViewInit {
     this.sharedService.setLinkName = routeName;
   }
 
+  /* @ViewChild('aLink') aLinkNav!: ElementRef; */
+
+  ngOnInit(): void {}
+
   constructor(
     private router: Router,
-    private sharedService: CommunicateLinksService
+    private sharedService: CommunicateLinksService,
+    private triggerService: TriggersService,
+    private renderer: Renderer2
   ) {}
 }

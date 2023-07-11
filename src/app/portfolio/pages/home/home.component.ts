@@ -7,6 +7,7 @@ import {
   Renderer2,
   ViewChild,
 } from '@angular/core';
+import { TriggersService } from '../../services/triggers.service';
 
 @Component({
   selector: 'app-home',
@@ -14,11 +15,6 @@ import {
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
-  constructor(
-    private render: Renderer2,
-    @Inject(DOCUMENT) private document: Document
-  ) {}
-
   nav!: ElementRef;
   darkModeActive: boolean = false;
 
@@ -26,7 +22,7 @@ export class HomeComponent {
     this.nav = element;
   }
 
-  changeColor() {
+  changeColor(clickEvent: Event) {
     this.darkModeActive = !this.darkModeActive;
     if (this.darkModeActive) {
       this.render.removeClass(this.nav, 'lightMode');
@@ -39,5 +35,14 @@ export class HomeComponent {
       this.render.addClass(this.document.body, 'lightMode');
       this.render.addClass(this.nav, 'lightMode');
     }
+
+    /* asignando evento disparador para componente */
+    this.triggerService.setClickEventButton = clickEvent;
   }
+
+  constructor(
+    private render: Renderer2,
+    @Inject(DOCUMENT) private document: Document,
+    private triggerService: TriggersService
+  ) {}
 }

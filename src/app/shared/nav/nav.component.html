@@ -18,11 +18,10 @@
       >
         <div class="Header-navbar navbar-nav">
           <a
+            #aLink
             class="Header-a nav-link"
             *ngFor="let routes of myRoutes"
             routerLink="routes.path"
-            routerLinkActive="active"
-            [routerLinkActiveOptions]="{ exact: true }"
             [attr.aria-current]="isActive(routes.path) ? 'page' : null"
             (click)="moveToSection(routes.nameSection)"
             >{{ routes.name }}</a
