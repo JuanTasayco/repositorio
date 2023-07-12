@@ -50,7 +50,7 @@
   &-h1 {
     text-transform: uppercase;
     font-weight: bold;
-/*     background: linear-gradient(
+    /*     background: linear-gradient(
       90deg,
       rgba(77, 72, 74, 1) 0%,
       rgba(93, 85, 88, 1) 46%,
@@ -89,5 +89,18 @@
 
   &-hr {
     padding: 1.5rem 0rem;
+  }
+
+  /* utilizo > para seleccionar directamente img que es descendido directo de .Icons y agrego Icons-img para llegar al elemento específico   */
+  &-devIcon {
+    display: flex;
+    justify-content: start;
+    gap: 1rem;
+    flex-wrap: wrap;
+    &.Icons {
+      & > img.Icons-img {
+        max-width: 3rem;
+      }
+    }
   }
 }
