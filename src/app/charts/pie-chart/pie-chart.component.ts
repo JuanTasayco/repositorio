@@ -21,8 +21,8 @@ import DatalabelsPlugin from 'chartjs-plugin-datalabels';
   templateUrl: './pie-chart.component.html',
 })
 export class PieChartComponent implements AfterViewInit, OnInit {
-  @ViewChild(BaseChartDirective) chart: BaseChartDirective | undefined;
-  @ViewChild('refChart') refChart!: ElementRef;
+ /*  @ViewChild(BaseChartDirective) chart: BaseChartDirective | undefined;
+  @ViewChild('refChart') refChart!: ElementRef; */
 
   public pieChartOptions: ChartConfiguration['options'] = {
     responsive: true,
@@ -62,7 +62,7 @@ export class PieChartComponent implements AfterViewInit, OnInit {
   public pieChartPlugins = [DatalabelsPlugin];
 
   ngAfterViewInit(): void {
-    console.log(this.refChart.nativeElement);
+
   }
 
   constructor(private cdr: ChangeDetectorRef) {}
