@@ -94,7 +94,7 @@
   /* utilizo > para seleccionar directamente img que es descendido directo de .Icons y agrego Icons-img para llegar al elemento específico   */
   &-devIcon {
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     gap: 1rem;
     flex-wrap: wrap;
     &.Icons {
