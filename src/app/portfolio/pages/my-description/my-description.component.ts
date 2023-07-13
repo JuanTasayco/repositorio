@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { ProjectDescriptions } from '../../components/project-description/project-description.component';
 
 @Component({
@@ -142,24 +142,20 @@ export class MyDescriptionComponent implements OnInit {
         'Aplicación responsive full stack de películas, permite obtener un catálogo de películas, añadir tus películas a favoritas y explorar más opciones.',
       imagenes: [
         {
-          itemImageSrc: 'assets/imagenes/lpmTwo2.png',
+          itemImageSrc: 'assets/imagenes/webapp1.png',
           alt: 'lpmv1Img2',
         },
         {
-          itemImageSrc: 'assets/imagenes/lpmTwo3.png',
+          itemImageSrc: 'assets/imagenes/webapp2.png',
           alt: 'lpmv1Img3',
         },
         {
-          itemImageSrc: 'assets/imagenes/lpmTwo4.png',
+          itemImageSrc: 'assets/imagenes/webapp3.png',
           alt: 'lpmv1Img4',
         },
         {
-          itemImageSrc: 'assets/imagenes/lpmTwo5.png',
+          itemImageSrc: 'assets/imagenes/webapp4.png',
           alt: 'lpmv1Img4',
-        },
-        {
-          itemImageSrc: 'assets/imagenes/lpmTwo6.png',
-          alt: 'lpmv1Img1',
         },
       ],
       repositorio:

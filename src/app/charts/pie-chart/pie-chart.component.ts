@@ -5,6 +5,7 @@ import {
   ElementRef,
   OnInit,
   ViewChild,
+  ViewEncapsulation,
 } from '@angular/core';
 import {
   Chart,
@@ -18,13 +19,13 @@ import DatalabelsPlugin from 'chartjs-plugin-datalabels';
 @Component({
   selector: 'app-pie-chart',
   templateUrl: './pie-chart.component.html',
-  styleUrls: [],
 })
-export class PieChartComponent implements AfterViewInit {
+export class PieChartComponent implements AfterViewInit, OnInit {
   @ViewChild(BaseChartDirective) chart: BaseChartDirective | undefined;
+  @ViewChild('refChart') refChart!: ElementRef;
 
   public pieChartOptions: ChartConfiguration['options'] = {
-    responsive: false,
+    responsive: true,
     plugins: {
       legend: {
         display: true,
@@ -60,7 +61,10 @@ export class PieChartComponent implements AfterViewInit {
   public pieChartType: ChartType = 'pie';
   public pieChartPlugins = [DatalabelsPlugin];
 
-  ngAfterViewInit(): void {}
+  ngAfterViewInit(): void {
+    console.log(this.refChart.nativeElement);
+  }
 
   constructor(private cdr: ChangeDetectorRef) {}
+  ngOnInit(): void {}
 }
