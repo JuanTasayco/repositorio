@@ -27,6 +27,7 @@
     }
   }
   &-a {
+    font-weight: bold;
     @include media-breakpoint-up(lg) {
       font-size: 1.4rem;
     }

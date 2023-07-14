@@ -10,7 +10,7 @@ import {
 } from '@angular/core';
 
 import { gsap } from 'gsap';
-import { ProjectDescriptions } from '../../components/project-description/project-description.component';
+import { ProjectDescriptions } from '../../interfaces/project-descriptions.interface';
 
 @Component({
   selector: 'app-my-description',
@@ -71,7 +71,7 @@ export class MyDescriptionComponent implements OnInit, AfterViewInit {
       repositorio:
         'https://github.com/JuanTasayco/06-WebConta-Angular/tree/main/src',
       link: 'https://lpmapp.vercel.app/',
-      tecnologias: 'Angular 14, ',
+      tecnologias: 'Angular 14, Bootstrap, NGPrime ',
     },
     {
       title: 'Lpm App V2',

@@ -1,9 +1,10 @@
 <div class="Principal-content h-100 d-lg-flex mb-5">
+  <div class="Principal-scrollCircle Principal-scrollCircle--animate"></div>
   <!-- contendor del recuadro -->
   <section class="Principal-section1 gap-5 mt-5 m-md-auto overflow-hidden">
-    <div #principalTitle class="Principal-description" >
+    <div #principalTitle class="Principal-description">
       <h1 class="Principal-h1 display-1">Juan Tasayco</h1>
-      <h2 class="Principal-h2 mx-2">Frontend Developer</h2>
+      <h2 class="Principal-h2 mx-2">Desarrollador Web</h2>
     </div>
     <div #principalText class="Principal-aboutme">
       <h5>Acerca de mi :</h5>
@@ -134,7 +135,7 @@
   <section appToScroll idName="inicio" class="Principal-section2">
     <!--  -->
     <div class="Projects-content mt-5">
-      <h3 class="Principal-h3 Principal-h3--uppercase">Habilidades técnicas</h3>
+      <h3 class="Principal-h3">Habilidades técnicas</h3>
       <p class="Principal-p">
         En la siguiente gráfica te presento mis habilidades en base a mi
         experiencia utilizando las tecnologías.
@@ -147,9 +148,7 @@
       <hr appToScroll idName="trabajos" class="Principal-hr" />
 
       <div class="Principal-projects">
-        <h3 class="Principal-h3 Principal-h3--uppercase pt-md-5">
-          Proyectos personales
-        </h3>
+        <h3 class="Principal-h3 py-md-5">Proyectos personales</h3>
         <app-project-description
           [contenido]="infoProject"
         ></app-project-description>

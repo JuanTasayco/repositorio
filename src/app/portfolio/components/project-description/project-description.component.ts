@@ -8,15 +8,7 @@ import {
 } from '@angular/core';
 import { Input } from '@angular/core';
 import { gsap } from 'gsap';
-
-export interface ProjectDescriptions {
-  title: string;
-  description: string;
-  imagenes: any[];
-  tecnologias?: string;
-  repositorio?: string;
-  link?: string;
-}
+import { ProjectDescriptions } from '../../interfaces/project-descriptions.interface';
 
 @Component({
   selector: 'app-project-description',
