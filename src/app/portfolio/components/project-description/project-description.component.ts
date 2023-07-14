@@ -8,6 +8,7 @@ import {
 } from '@angular/core';
 import { Input } from '@angular/core';
 import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ProjectDescriptions } from '../../interfaces/project-descriptions.interface';
 
 @Component({
@@ -22,6 +23,7 @@ export class ProjectDescriptionComponent implements OnInit, AfterViewInit {
   @ViewChildren('containerRef') containers!: QueryList<ElementRef>;
   ngOnInit(): void {
     gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin();
   }
   ngAfterViewInit(): void {
     this.containers.forEach((containerRef) => {

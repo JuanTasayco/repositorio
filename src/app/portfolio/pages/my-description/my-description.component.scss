@@ -104,4 +104,37 @@
       }
     }
   }
+
+  &-scroll {
+    &--container {
+      box-shadow: 1px 2px black;
+      border: 1px solid black;
+      position: relative;
+      border-radius: 40%;
+      position: fixed;
+      width: 2rem;
+      height: 3rem;
+      top: 50%;
+      left: 50%;
+      /*    &::before {
+        content: "Scroll me";
+        position: absolute;
+        bottom: -30px;
+        width: 300%;
+        text-align: center;
+     transform: translateX(-30%);
+      } */
+    }
+
+    &--circle {
+      border-radius: 50%;
+      background-color: black;
+      width: 0.6rem;
+      height: 0.6rem;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%);
+    }
+  }
 }
