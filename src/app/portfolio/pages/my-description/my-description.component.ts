@@ -1,12 +1,50 @@
-import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnInit,
+  QueryList,
+  ViewChild,
+  ViewChildren,
+  ViewEncapsulation,
+} from '@angular/core';
+
+import { gsap } from 'gsap';
 import { ProjectDescriptions } from '../../components/project-description/project-description.component';
 
 @Component({
   selector: 'app-my-description',
   templateUrl: './my-description.component.html',
-  styleUrls: ['./my-description.component.scss'],
+  styleUrls: [],
 })
-export class MyDescriptionComponent implements OnInit {
+export class MyDescriptionComponent implements OnInit, AfterViewInit {
+  @ViewChildren('iconDev') iconsDev!: QueryList<ElementRef>;
+  @ViewChildren('principalText,principalTitle')
+  mainText!: QueryList<ElementRef>;
+
+  ngAfterViewInit(): void {
+    this.mainText.forEach((result) => {
+      gsap.set(result.nativeElement, {
+        xPercent: -100,
+        opacity: 0,
+      });
+      gsap.to(result.nativeElement, {
+        duration: 1,
+        xPercent: 0,
+        opacity: 1,
+      });
+    });
+
+    let tl = gsap.timeline({ duration: 0.1 });
+    this.iconsDev.forEach((result) => {
+      tl.from(result.nativeElement, {
+        opacity: 0,
+      });
+    });
+    tl.timeScale(3);
+  }
+
+  /* only data  */
   public infoProject: ProjectDescriptions[] = [
     {
       title: 'Lpm App V1',
