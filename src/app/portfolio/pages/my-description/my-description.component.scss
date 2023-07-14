@@ -33,7 +33,7 @@
 
   &-section2 {
     position: relative;
-
+    overflow-x: hidden;
     @include media-breakpoint-up(lg) {
       padding: 3rem 4rem;
       width: 50%;
@@ -77,12 +77,12 @@
   }
 
   &-chart {
-/*     border:2px solid red; */
     position: relative;
     max-height: 100rem;
     margin: auto;
     display: flex;
     justify-content: center;
+
     /*    @include media-breakpoint-down(sm){
       height: 25rem;
     } */

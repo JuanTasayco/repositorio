@@ -1,5 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnInit,
+  QueryList,
+  ViewChildren,
+} from '@angular/core';
 import { Input } from '@angular/core';
+import { gsap } from 'gsap';
 
 export interface ProjectDescriptions {
   title: string;
@@ -15,9 +23,34 @@ export interface ProjectDescriptions {
   templateUrl: './project-description.component.html',
   styleUrls: [],
 })
-export class ProjectDescriptionComponent implements OnInit {
+export class ProjectDescriptionComponent implements OnInit, AfterViewInit {
   constructor() {}
+
   @Input('contenido') contentProjects: ProjectDescriptions[] = [];
+  @ViewChildren('containerRef') containers!: QueryList<ElementRef>;
+  ngOnInit(): void {
+    gsap.registerPlugin(ScrollTrigger);
+  }
+  ngAfterViewInit(): void {
+    this.containers.forEach((containerRef) => {
+      gsap.set(containerRef.nativeElement, {
+        opacity: 0,
+        xPercent: 50,
+      });
+      gsap.to(containerRef.nativeElement, {
+        opacity: 1,
+        duration: 0.5,
+        xPercent: 0,
+        scrollTrigger: {
+          trigger: containerRef.nativeElement,
+          start: 'top 80%',
+          end: 'bottom 20%',
+          toggleActions: 'play none none reverse',
+          markers: false,
+        },
+      });
+    });
+  }
 
   responsiveOptions: any[] = [
     {
@@ -33,5 +66,4 @@ export class ProjectDescriptionComponent implements OnInit {
       numVisible: 1,
     },
   ];
-  ngOnInit(): void {}
 }

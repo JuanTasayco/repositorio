@@ -70,7 +70,8 @@ export class MyDescriptionComponent implements OnInit, AfterViewInit {
       ],
       repositorio:
         'https://github.com/JuanTasayco/06-WebConta-Angular/tree/main/src',
-      link: 'www.paginaSpotify.com',
+      link: 'https://lpmapp.vercel.app/',
+      tecnologias: 'Angular 14, ',
     },
     {
       title: 'Lpm App V2',
@@ -118,10 +119,9 @@ export class MyDescriptionComponent implements OnInit, AfterViewInit {
           alt: 'lpmv1Img4',
         },
       ],
-      repositorio:
-        'https://github.com/JuanTasayco/F1-LpmGuideFrontend , https://github.com/JuanTasayco/F1-LpmGuideBackend ',
+      repositorio: 'https://github.com/JuanTasayco/F1-LpmGuideFrontend ',
       link: 'www.paginaSpotify.com',
-    },
+    } /* , https://github.com/JuanTasayco/F1-LpmGuideBackend  */,
     {
       title: 'Spotify API',
       description:
@@ -171,7 +171,7 @@ export class MyDescriptionComponent implements OnInit, AfterViewInit {
         },
       ],
       repositorio: 'https://github.com/JuanTasayco/PF4-MapsAngular',
-      link: 'www.paginaSpotify.com',
+      link: 'https://pf-4-maps-angular-juantasayco.vercel.app',
     },
 
     {
@@ -198,7 +198,7 @@ export class MyDescriptionComponent implements OnInit, AfterViewInit {
       ],
       repositorio:
         'https://github.com/JuanTasayco/PF3-WebAppEntertainment , https://github.com/JuanTasayco/BF3-WebAppEntertainment ',
-      link: 'www.paginaSpotify.com',
+      link: 'www.youtube.com',
     },
 
     {
@@ -220,7 +220,7 @@ export class MyDescriptionComponent implements OnInit, AfterViewInit {
         },
       ],
       repositorio: 'https://github.com/JuanTasayco/PF5-CountryAPI',
-      link: 'www.paginaSpotify.com',
+      link: 'https://country-app-angular.vercel.app/paises/fronteras',
     },
   ];
 
