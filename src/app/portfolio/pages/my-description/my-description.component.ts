@@ -2,11 +2,11 @@ import {
   AfterViewInit,
   Component,
   ElementRef,
+  HostListener,
   OnInit,
   QueryList,
   ViewChild,
   ViewChildren,
-  ViewEncapsulation,
 } from '@angular/core';
 
 import { gsap } from 'gsap';
@@ -16,7 +16,6 @@ import { HardDataService } from '../../services/hard-data.service';
 @Component({
   selector: 'app-my-description',
   templateUrl: './my-description.component.html',
-  styleUrls: [],
 })
 export class MyDescriptionComponent implements OnInit, AfterViewInit {
   @ViewChildren('iconDev') iconsDev!: QueryList<ElementRef>;
@@ -25,6 +24,7 @@ export class MyDescriptionComponent implements OnInit, AfterViewInit {
   @ViewChild('circleScroll') circleScroll!: ElementRef<HTMLElement>;
 
   ngAfterViewInit(): void {
+    this.getSizeViewPort();
     /* animaciones del texto */
     this.mainText.forEach((result) => {
       gsap.set(result.nativeElement, {
@@ -67,6 +67,19 @@ export class MyDescriptionComponent implements OnInit, AfterViewInit {
   public infoProject: ProjectDescriptions[] = [];
 
   ngOnInit(): void {}
+
+  hideScrollButton(status: boolean) {
+    const buttonScroll = document.querySelector(
+      '.Principal-scroll--container'
+    ) as HTMLElement;
+
+    buttonScroll.hidden = status;
+  }
+
+  @HostListener('window:resize', [])
+  getSizeViewPort() {
+    this.hideScrollButton(window.innerWidth <= 1290);
+  }
 
   constructor(private dataService: HardDataService) {
     /* obtener data en duro del servicio hardData, esta info se envía al component */
