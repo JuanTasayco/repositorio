@@ -157,8 +157,7 @@ export class HardDataService {
           alt: 'lpmv1Img4',
         },
       ],
-      repositorio:
-        'https://github.com/JuanTasayco/PF3-WebAppEntertainment , https://github.com/JuanTasayco/BF3-WebAppEntertainment ',
+      repositorio: 'https://github.com/JuanTasayco/FM3-WebAppIOnyFrontend',
       link: 'www.youtube.com',
     },
 

@@ -12,6 +12,7 @@ import {
 import { gsap } from 'gsap';
 import { ProjectDescriptions } from '../../interfaces/project-descriptions.interface';
 import { HardDataService } from '../../services/hard-data.service';
+import { ScrollTrigger } from 'gsap/all';
 
 @Component({
   selector: 'app-my-description',
@@ -22,6 +23,11 @@ export class MyDescriptionComponent implements OnInit, AfterViewInit {
   @ViewChildren('principalText,principalTitle')
   mainText!: QueryList<ElementRef>;
   @ViewChild('circleScroll') circleScroll!: ElementRef<HTMLElement>;
+  @ViewChild('appToScroll') containerScroll!: ElementRef<HTMLElement>;
+
+  ngOnInit(): void {
+    gsap.registerPlugin(ScrollTrigger);
+  }
 
   ngAfterViewInit(): void {
     this.getSizeViewPort();
@@ -61,18 +67,29 @@ export class MyDescriptionComponent implements OnInit, AfterViewInit {
         yoyo: false,
       }
     );
+
+    /* desaparecer boton scroll al llegar abajo */
+    ScrollTrigger.create({
+      trigger: this.containerScroll.nativeElement,
+      start: 'top center',
+      end: 'center center',
+      markers: true,
+      onEnter: () => {
+        console.log('estoy en enter');
+      },
+      onLeaveBack: () => {
+        console.log('llegué abajo');
+      },
+    });
   }
 
   /* only data  */
   public infoProject: ProjectDescriptions[] = [];
 
-  ngOnInit(): void {}
-
   hideScrollButton(status: boolean) {
     const buttonScroll = document.querySelector(
       '.Principal-scroll--container'
     ) as HTMLElement;
-
     buttonScroll.hidden = status;
   }
 
@@ -80,6 +97,16 @@ export class MyDescriptionComponent implements OnInit, AfterViewInit {
   getSizeViewPort() {
     this.hideScrollButton(window.innerWidth <= 1290);
   }
+
+  /*  @HostListener('window:scroll', ['$event'])
+  onScroll(event: Event) {
+    const buttonScroll = document.querySelector(
+      '.Principal-scroll--container'
+    ) as HTMLElement;
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+  
+    }
+  } */
 
   constructor(private dataService: HardDataService) {
     /* obtener data en duro del servicio hardData, esta info se envía al component */
