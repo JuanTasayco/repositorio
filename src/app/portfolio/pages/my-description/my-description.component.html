@@ -1,7 +1,8 @@
 <div class="Principal-content h-100 d-lg-flex mb-5">
-  <div class="Principal-scroll Principal-scroll--container">
+  <!-- scroll button -->
+  <!--   <div class="Principal-scroll Principal-scroll--container">
     <div #circleScroll class="Principal-scroll Principal-scroll--circle"></div>
-  </div>
+  </div> -->
 
   <!-- contendor del recuadro -->
   <section class="Principal-section1 gap-5 mt-5 m-md-auto overflow-hidden">
@@ -11,7 +12,7 @@
     </div>
     <div #principalText class="Principal-aboutme">
       <h5>Acerca de mi :</h5>
-      <p class="Principal-text">
+      <p class="Principal-text mt-3 mt-md-0">
         Holaa!! Soy un profesional dedicado al desarrollo web, mis frameworks
         favoritos de utilizar son Angular y Nest JS; para Front-end y Back-end
         respectivamente, estas involucran una serie de conocimientos en
@@ -134,10 +135,10 @@
     </div>
   </section>
 
-  <section #appToScroll idName="inicio" class="Principal-section2" style="border:2px solid green">
+  <section appToScroll #appToScroll idName="inicio" class="Principal-section2">
     <!--  -->
     <div class="Projects-content mt-5">
-      <h3 class="Principal-h3">Habilidades técnicas</h3>
+      <h3 class="Principal-h3 text-uppercase">Habilidades técnicas</h3>
       <p class="Principal-p">
         En la siguiente gráfica te presento mis habilidades en base a mi
         experiencia utilizando las tecnologías.
@@ -150,7 +151,7 @@
       <hr appToScroll idName="trabajos" class="Principal-hr" />
 
       <div class="Principal-projects">
-        <h3 class="Principal-h3 py-md-5">Proyectos personales</h3>
+        <h3 class="Principal-h3 py-md-5 text-uppercase">Proyectos personales</h3>
         <app-project-description
           [contenido]="infoProject"
         ></app-project-description>

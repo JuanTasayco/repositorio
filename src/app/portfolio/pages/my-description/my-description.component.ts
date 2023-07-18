@@ -54,7 +54,7 @@ export class MyDescriptionComponent implements OnInit, AfterViewInit {
 
     /* animaciones del boton scroll */
 
-    gsap.fromTo(
+    /* gsap.fromTo(
       this.circleScroll.nativeElement,
       {
         yPercent: -150,
@@ -68,7 +68,7 @@ export class MyDescriptionComponent implements OnInit, AfterViewInit {
       }
     );
 
-    /* desaparecer boton scroll al llegar abajo */
+    
     ScrollTrigger.create({
       trigger: this.containerScroll.nativeElement,
       start: 'top center',
@@ -80,33 +80,24 @@ export class MyDescriptionComponent implements OnInit, AfterViewInit {
       onLeaveBack: () => {
         console.log('llegué abajo');
       },
-    });
+    }); */
   }
 
   /* only data  */
   public infoProject: ProjectDescriptions[] = [];
 
-  hideScrollButton(status: boolean) {
+/*   hideScrollButton(status: boolean) {
     const buttonScroll = document.querySelector(
       '.Principal-scroll--container'
     ) as HTMLElement;
     buttonScroll.hidden = status;
-  }
+  } */
 
   @HostListener('window:resize', [])
   getSizeViewPort() {
-    this.hideScrollButton(window.innerWidth <= 1290);
+    /* this.hideScrollButton(window.innerWidth <= 1290); */
   }
 
-  /*  @HostListener('window:scroll', ['$event'])
-  onScroll(event: Event) {
-    const buttonScroll = document.querySelector(
-      '.Principal-scroll--container'
-    ) as HTMLElement;
-    if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-  
-    }
-  } */
 
   constructor(private dataService: HardDataService) {
     /* obtener data en duro del servicio hardData, esta info se envía al component */
