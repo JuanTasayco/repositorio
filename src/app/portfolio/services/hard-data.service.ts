@@ -82,6 +82,7 @@ export class HardDataService {
       ],
       repositorio: 'https://github.com/JuanTasayco/F1-LpmGuideFrontend ',
       link: 'www.paginaSpotify.com',
+      tecnologias: 'Angular 14, Bootstrap, NGPrime ',
     } /* , https://github.com/JuanTasayco/F1-LpmGuideBackend  */,
     {
       title: 'Spotify API',
@@ -131,6 +132,7 @@ export class HardDataService {
           alt: 'mapImg4',
         },
       ],
+      tecnologias: 'Angular 14, Bootstrap, NGPrime ',
       repositorio: 'https://github.com/JuanTasayco/PF4-MapsAngular',
       link: 'https://pf-4-maps-angular-juantasayco.vercel.app',
     },
@@ -157,6 +159,7 @@ export class HardDataService {
           alt: 'lpmv1Img4',
         },
       ],
+      tecnologias: 'Angular 14, Bootstrap, NGPrime ',
       repositorio: 'https://github.com/JuanTasayco/FM3-WebAppIOnyFrontend',
       link: 'www.youtube.com',
     },
@@ -179,8 +182,58 @@ export class HardDataService {
           alt: 'restCountryimg',
         },
       ],
+      tecnologias: 'Angular 14, Bootstrap, NGPrime ',
       repositorio: 'https://github.com/JuanTasayco/PF5-CountryAPI',
       link: 'https://country-app-angular.vercel.app/paises/fronteras',
+    },
+    {
+      title: 'Lpm App V1',
+      description:
+        'Aplicación responsive con data propia que permite visualizar información de una guía de contabilidad para LPM, cuenta con características muy simples y fáciles de usar para el usuario, esta es la primera versión (solo front).',
+      imagenes: [
+        {
+          itemImageSrc: 'assets/imagenes/lpmOne1.png',
+          alt: 'lpmv1Img1',
+        },
+        {
+          itemImageSrc: 'assets/imagenes/lpmOne2.png',
+          alt: 'lpmv1Img2',
+        },
+        {
+          itemImageSrc: 'assets/imagenes/lpmOne3.png',
+          alt: 'lpmv1Img3',
+        },
+        {
+          itemImageSrc: 'assets/imagenes/lpmOne4.png',
+          alt: 'lpmv1Img4',
+        },
+      ],
+      repositorio:
+        'https://github.com/JuanTasayco/06-WebConta-Angular/tree/main/src',
+      link: 'https://lpmapp.vercel.app/',
+      tecnologias: 'Angular 14, Bootstrap, NGPrime ',
+    },
+    {
+      title: 'MoonApp',
+      description:
+        'Aplicación responsive sobre el espacio, que describe las tecnologías, los involucrados y algunos planetas descubiertos a la actualidad, uso de otro framework css y alto uso de observables con una API local. ',
+      imagenes: [
+        {
+          itemImageSrc: 'assets/imagenes/moon2.png',
+          alt: 'moonImg2',
+        },
+        {
+          itemImageSrc: 'assets/imagenes/moon3.png',
+          alt: 'moonImg3',
+        },
+        {
+          itemImageSrc: 'assets/imagenes/moon4.png',
+          alt: 'moonImg4',
+        },
+      ],
+      repositorio: 'https://github.com/JuanTasayco/PF6-MoonProjectFront',
+      link: 'https://moon-project2.vercel.app/moon/principal',
+      tecnologias: 'Angular 14, Tailwind, Typescript,  ',
     },
   ];
 
