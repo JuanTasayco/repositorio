@@ -5,29 +5,44 @@
   justify-content: center;
   flex-direction: column;
   height: 100%;
-  @include media-breakpoint-up(xxl) {
+  @include media-breakpoint-up(md) {
     border: 2px solid yellow;
     padding: 0rem 8rem;
   }
   &-letter {
-    font-size: clamp(2rem, 8vw, 10rem);
+    font-size: clamp(2rem, 7.5vw, 10rem);
     font-weight: 100;
     display: inline-block;
   }
 
   &-content {
-    border: 2px solid red;
-
-    &--name {
+    flex-wrap: wrap;
+    &--present {
       display: flex;
-      @include media-breakpoint-down(md) {
+    }
+    &--name {
+      border: 2px solid red;
+      display: flex;
+      flex-direction: row;
+      /*      @include media-breakpoint-down(md) {
         flex-direction: column;
-      }
+      } */
+    }
+  }
+
+  &-names {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &-span {
+    &--developer {
+      margin-left: auto;
+      border: 2px solid red;
     }
   }
 
   &-text {
-    max-width: 30%;
+    flex-basis: 30%;
     @include media-breakpoint-down(md) {
       max-width: 100%;
     }
