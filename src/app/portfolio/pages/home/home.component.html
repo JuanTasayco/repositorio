@@ -1,16 +1,16 @@
-<div class="Home container-lg-fluid position-relative">
+<div #homeContainer class="Home container-lg-fluid position-relative">
   <app-nav id="nav" class="position-absolute w-100 top-0 start-0"></app-nav>
-  <h2 class="Home-content Home-content--present gap-3 gap-md-5 mt-md-5">
+  <h2 class="Home-content Home-content--present gap-2 gap-md-5 mt-md-5">
     <span class="Home-span Home-span--web ps-3 ps-md-0">
-      <div #letterPresent class="Home-letter">W</div>
-      <div #letterPresent class="Home-letter">E</div>
-      <div #letterPresent class="Home-letter">B</div>
+      <div #letterPresent class="Home-letter Home-letter--title">W</div>
+      <div #letterPresent class="Home-letter Home-letter--title">E</div>
+      <div #letterPresent class="Home-letter Home-letter--title">B</div>
     </span>
 
     <span class="Home-span Home-span--developer pe-5 pe-sm-0 ms-auto">
       <div
         #letterPresent
-        class="Home-letter"
+        class="Home-letter Home-letter--title"
         *ngFor="let letter of ['D', 'E', 'V', 'E', 'L', 'O', 'P', 'E', 'R']"
       >
         {{ letter }}
@@ -19,36 +19,40 @@
   </h2>
 
   <h2 class="Home-content Home-content--name">
-    <div class="Home-names order-md-2 gap-4">
+    <div class="Home-names order-md-2 gap-md-5 my-auto ms-md-auto">
       <span #letterName class="Home-span Home-span--firstName">
-        <div class="Home-letter">J</div>
-        <div class="Home-letter">U</div>
-        <div class="Home-letter">A</div>
-        <div class="Home-letter">N</div>
+        <div class="Home-letter Home-letter--name">J</div>
+        <div class="Home-letter Home-letter--name">U</div>
+        <div class="Home-letter Home-letter--name">A</div>
+        <div class="Home-letter Home-letter--name">N</div>
       </span>
 
-      <span #letterName class="Home-span Home-span--lastName">
-        <div class="Home-letter">T</div>
-        <div class="Home-letter">A</div>
-        <div class="Home-letter">S</div>
-        <div class="Home-letter">A</div>
-        <div class="Home-letter">Y</div>
-        <div class="Home-letter">C</div>
-        <div class="Home-letter">O</div>
+      <span #letterName class="Home-span Home-span--lastName ms-md-auto">
+        <div class="Home-letter Home-letter--name">T</div>
+        <div class="Home-letter Home-letter--name">A</div>
+        <div class="Home-letter Home-letter--name">S</div>
+        <div class="Home-letter Home-letter--name">A</div>
+        <div class="Home-letter Home-letter--name">Y</div>
+        <div class="Home-letter Home-letter--name">C</div>
+        <div class="Home-letter Home-letter--name">O</div>
       </span>
     </div>
 
     <div class="Home-text order-md-1 mt-5 mt-md-0">
-      <p #parrafoTitle class="Home-p position-md-absolute">
-        Hola soy un desarrollador full stack, mis dos tecnologías favoritas de
-        usar son Angular y Nest Js. Possimus dolore similique ipsum velit
-        minima, adipisci, earum quis provident ut quas dolor explicabo, ducimus
-        laboriosam recusandae debitis cumque commodi reiciendis eveniet.
+      <p #parrafoTitle class="Home-p text-center text-md-start">
+        Holaa!! Soy un profesional dedicado al desarrollo web, mis frameworks
+        favoritos de utilizar son Angular y Nest JS; para Front-end y Back-end
+        respectivamente, estas involucran una serie de conocimientos en
+        distintos lenguajes y tecnologías, tales como HTML, CSS, SASS,
+        Javascript, Typescript, Docker, Mongo, PostgresSQL, GitHub, entre otros.
       </p>
     </div>
   </h2>
 
-  <div class="position-absolute text-light bottom-0 p-3">
+  <div
+    id="continueArrow"
+    class="position-absolute text-light bottom-0 p-5 start-0"
+  >
     <svg
       class=""
       width="24"
@@ -65,4 +69,4 @@
   </div>
 </div>
 
-<div class="Home container-fluid bg-dark"></div>
+<div class="Home container-fluid"></div>
