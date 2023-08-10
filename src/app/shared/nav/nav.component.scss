@@ -1,16 +1,16 @@
 @use "src/_custom" as *;
 
 .Header {
+  height: 4rem;
+  background-color: black;
   &-nav {
     display: flex;
     justify-content: center;
     position: relative;
-    background-color: black;
 
     @include media-breakpoint-up(lg) {
       width: 100%;
       right: 0;
-      border-bottom: 1px solid;
       position: fixed;
       display: flex;
     }

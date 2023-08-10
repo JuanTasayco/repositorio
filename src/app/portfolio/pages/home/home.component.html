@@ -1,7 +1,4 @@
-<nav>
-  <app-nav></app-nav>
-</nav>
-<div class="Home h-100 container-fluid">
+<div class="Home h-100 container-fluid position-relative">
   <h2 class="Home-content Home-content--present">
     <span class="Home-span Home-span--web">
       <div #letterPresent class="Home-letter">W</div>
@@ -21,35 +18,39 @@
   </h2>
 
   <h2 class="Home-content Home-content--name">
-    <span #letterName class="Home-span Home-span--firstName">
-      <div class="Home-letter">J</div>
-      <div class="Home-letter">U</div>
-      <div class="Home-letter">A</div>
-      <div class="Home-letter">N</div>
-    </span>
+    <div
+      class="ms-auto order-md-2 d-flex gap-3"
+      style="border: 2px solid green"
+    >
+      <span #letterName class="Home-span Home-span--firstName">
+        <div class="Home-letter">J</div>
+        <div class="Home-letter">U</div>
+        <div class="Home-letter">A</div>
+        <div class="Home-letter">N</div>
+      </span>
 
-    <span #letterName class="Home-span Home-span--lastName">
-      <div class="Home-letter">T</div>
-      <div class="Home-letter">A</div>
-      <div class="Home-letter">S</div>
-      <div class="Home-letter">A</div>
-      <div class="Home-letter">Y</div>
-      <div class="Home-letter">C</div>
-      <div class="Home-letter">O</div>
-    </span>
-  </h2>
-</div>
+      <span #letterName class="Home-span Home-span--lastName">
+        <div class="Home-letter">T</div>
+        <div class="Home-letter">A</div>
+        <div class="Home-letter">S</div>
+        <div class="Home-letter">A</div>
+        <div class="Home-letter">Y</div>
+        <div class="Home-letter">C</div>
+        <div class="Home-letter">O</div>
+      </span>
+    </div>
 
-<div class="Home h-100">
-  <div class="Home-design">
-    <h2></h2>
-    <div>
-      <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum rerum,
-        deserunt modi quaerat animi asperiores soluta ab repudiandae, placeat
-        nobis nihil labore possimus architecto at perspiciatis non? Maxime,
-        dolorum ut.
+    <div class="Home-text order-md-1">
+      <p class="Home-p" style="border: 2px solid green">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus
+        dolore similique ipsum velit minima, adipisci, earum quis provident ut
+        quas dolor explicabo, ducimus laboriosam recusandae debitis cumque
+        commodi reiciendis eveniet.
       </p>
     </div>
-  </div>
+  </h2>
+
+  <div class="position-absolute text-light bottom-0 p-3">Pulsa para bajar</div>
 </div>
+
+<div class="Home container-fluid"></div>

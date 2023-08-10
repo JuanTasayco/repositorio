@@ -3,48 +3,52 @@
 .Home {
   display: flex;
   justify-content: center;
-  align-items: center;
   flex-direction: column;
-  gap: 2rem;
-  @include media-breakpoint-down(sm) {
-    justify-content: flex-start;
-    padding-top: 4rem;
+  height: 100%;
+  @include media-breakpoint-up(xxl) {
+    border: 2px solid yellow;
+    padding: 0rem 8rem;
+  }
+  &-letter {
+    font-size: clamp(2rem, 8vw, 10rem);
+    font-weight: 100;
+    display: inline-block;
   }
 
   &-content {
-    display: flex;
-    width: 90%;
-    flex-wrap: wrap;
-    overflow: hidden;
     border: 2px solid red;
-    @include media-breakpoint-up(xl) {
-      padding: 0rem 10rem;
-    }
-  /*   @include media-breakpoint-down(lg) {
-      padding: 0rem 8rem;
-    } */
-  }
-  &-letter {
-    position: relative;
-    display: inline-block;
-    font-size: clamp(2.5rem, 8vw, 15rem);
-    font-weight: 100;
-  }
-  &-span {
-    &--web {
-      margin-right: 0.7rem;
-    }
 
-    &--developer {
-      margin-left: auto;
-    }
-
-    &--firstName {
-      margin-left: auto;
-    }
-
-    &--lastName {
-      margin-left: 2rem;
+    &--name {
+      display: flex;
+      @include media-breakpoint-down(md) {
+        flex-direction: column;
+      }
     }
   }
+
+  &-text {
+    max-width: 30%;
+    @include media-breakpoint-down(md) {
+      max-width: 100%;
+    }
+  }
+  &-p {
+    height: 100%;
+    font-size: 1rem;
+  }
+}
+
+.padre {
+  color: white;
+  /*   display: grid;
+  height: 100%;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 2;
+  place-items: center; */
+}
+
+.hijo {
+  grid-column: 2/12;
+  border: 2px solid blue;
+  display: flex;
 }
