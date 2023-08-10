@@ -1,20 +1,55 @@
-<app-nav (emitElementNav)="getNavElement($event)"></app-nav>
+<nav>
+  <app-nav></app-nav>
+</nav>
+<div class="Home h-100 container-fluid">
+  <h2 class="Home-content Home-content--present">
+    <span class="Home-span Home-span--web">
+      <div #letterPresent class="Home-letter">W</div>
+      <div #letterPresent class="Home-letter">E</div>
+      <div #letterPresent class="Home-letter">B</div>
+    </span>
 
-<section class="Home container-fluid h-100 ">
-  <!-- button change color -->
-  <div class="Home-check form-check form-switch ">
-    <input
-      class="form-check-input"
-      type="checkbox"
-      role="switch"
-      id="DarkMode"
-      (click)="changeColor($event)"
-    />
+    <span class="Home-span Home-span--developer">
+      <div
+        #letterPresent
+        class="Home-letter"
+        *ngFor="let letter of ['D', 'E', 'V', 'E', 'L', 'O', 'P', 'E', 'R']"
+      >
+        {{ letter }}
+      </div>
+    </span>
+  </h2>
+
+  <h2 class="Home-content Home-content--name">
+    <span #letterName class="Home-span Home-span--firstName">
+      <div class="Home-letter">J</div>
+      <div class="Home-letter">U</div>
+      <div class="Home-letter">A</div>
+      <div class="Home-letter">N</div>
+    </span>
+
+    <span #letterName class="Home-span Home-span--lastName">
+      <div class="Home-letter">T</div>
+      <div class="Home-letter">A</div>
+      <div class="Home-letter">S</div>
+      <div class="Home-letter">A</div>
+      <div class="Home-letter">Y</div>
+      <div class="Home-letter">C</div>
+      <div class="Home-letter">O</div>
+    </span>
+  </h2>
+</div>
+
+<div class="Home h-100">
+  <div class="Home-design">
+    <h2></h2>
+    <div>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum rerum,
+        deserunt modi quaerat animi asperiores soluta ab repudiandae, placeat
+        nobis nihil labore possimus architecto at perspiciatis non? Maxime,
+        dolorum ut.
+      </p>
+    </div>
   </div>
-  <!-- sign for me -->
-  <div class="Home-name d-none d-xl-block">
-    <h5 class="Home-h5">Design by.Juan Tasayco</h5>
-  </div>
-  <!-- Home content (components) -->
-  <router-outlet></router-outlet>
-</section>
+</div>

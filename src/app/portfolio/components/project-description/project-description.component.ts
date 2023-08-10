@@ -9,7 +9,7 @@ import {
 import { Input } from '@angular/core';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ProjectDescriptions } from '../../interfaces/project-descriptions.interface';
+import { ProjectDescriptions } from '../../pages/interfaces/project-descriptions.interface';
 
 @Component({
   selector: 'app-project-description',

@@ -1,37 +1,50 @@
 @use "src/_custom" as *;
 
 .Home {
-  @include media-breakpoint-up(lg) {
-    padding: 4.5rem 5.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  @include media-breakpoint-down(sm) {
+    justify-content: flex-start;
+    padding-top: 4rem;
   }
 
-  &-name {
-    position: fixed;
-    left: 0;
-    top: 40%;
-    writing-mode: vertical-lr;
-    transform: rotate(180deg);
+  &-content {
+    display: flex;
+    width: 90%;
+    flex-wrap: wrap;
+    overflow: hidden;
+    border: 2px solid red;
+    @include media-breakpoint-up(xl) {
+      padding: 0rem 10rem;
+    }
+  /*   @include media-breakpoint-down(lg) {
+      padding: 0rem 8rem;
+    } */
+  }
+  &-letter {
+    position: relative;
+    display: inline-block;
+    font-size: clamp(2.5rem, 8vw, 15rem);
+    font-weight: 100;
+  }
+  &-span {
+    &--web {
+      margin-right: 0.7rem;
+    }
 
-    & h5 {
-      opacity: 0.7;
-      font-size: 1.2rem;
+    &--developer {
+      margin-left: auto;
+    }
+
+    &--firstName {
+      margin-left: auto;
+    }
+
+    &--lastName {
+      margin-left: 2rem;
     }
   }
-
-  &-check {
-    position: fixed;
-    left: 0;
-    top: 0;
-    margin: 1rem;
-  }
-}
-
-.darkMode {
-  background-color: #332d2d;
-  color: rgb(194, 161, 94);
-}
-
-.lightMode {
-  background-color: #eeefee;
-  color: rgb(77, 72, 74);
 }

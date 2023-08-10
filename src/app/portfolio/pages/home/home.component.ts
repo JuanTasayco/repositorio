@@ -1,48 +1,58 @@
-import { DOCUMENT } from '@angular/common';
 import {
+  AfterViewInit,
   Component,
   ElementRef,
-  Inject,
+  HostListener,
   OnInit,
-  Renderer2,
+  QueryList,
   ViewChild,
+  ViewChildren,
 } from '@angular/core';
-import { TriggersService } from '../../services/triggers.service';
+import { Scroll } from '@angular/router';
+import Lenis from '@studio-freight/lenis';
 
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent {
-  nav!: ElementRef;
-  darkModeActive: boolean = false;
-
-  getNavElement(element: ElementRef) {
-    this.nav = element;
+export class HomeComponent implements OnInit, AfterViewInit {
+  @ViewChildren('letterPresent') letterPresent!: QueryList<ElementRef>;
+  @ViewChildren('letterName') letterName!: QueryList<ElementRef>;
+  lenis: any;
+  ngOnInit(): void {
+    /* declaracion lenin  */
+    /*     this.lenis = new Lenis();
+    this.lenis.on('scroll', (e: Event) => {
+      console.log(e);
+    });
+    const raf = (time: any) => {
+      this.lenis.raf(time);
+      requestAnimationFrame(raf);
+    };
+    requestAnimationFrame(raf); */
+    /* final de declaracion */
+    /* declaracion de gsap (es necesario que esté después de lenin) */
+    gsap.registerPlugin(ScrollTrigger);
   }
 
-  changeColor(clickEvent: Event) {
-    this.darkModeActive = !this.darkModeActive;
-    if (this.darkModeActive) {
-      this.render.removeClass(this.nav, 'lightMode');
-      this.render.removeClass(this.document.body, 'lightMode');
-      this.render.addClass(this.document.body, 'darkMode');
-      this.render.addClass(this.nav, 'darkMode');
-    } else {
-      this.render.removeClass(this.nav, 'darkMode');
-      this.render.removeClass(this.document.body, 'darkMode');
-      this.render.addClass(this.document.body, 'lightMode');
-      this.render.addClass(this.nav, 'lightMode');
-    }
+  constructor() {}
 
-    /* asignando evento disparador para componente */
-    this.triggerService.setClickEventButton = clickEvent;
+  ngAfterViewInit(): void {
+  /*   let tl = gsap.timeline({ duration: 0.5, ease: 'elastic' });
+    tl.timeScale(4);
+    this.letterPresent.forEach((element) => {
+      tl.from(element.nativeElement, {
+        yPercent: 100,
+        timeScale: 5,
+      });
+    });
+    let tl2 = gsap.timeline({ ease: 'steps' });
+    this.letterName.forEach((element) => {
+      tl2.from(element.nativeElement, {
+        yPercent: 100,
+      });
+    }); */
   }
-
-  constructor(
-    private render: Renderer2,
-    @Inject(DOCUMENT) private document: Document,
-    private triggerService: TriggersService
-  ) {}
 }

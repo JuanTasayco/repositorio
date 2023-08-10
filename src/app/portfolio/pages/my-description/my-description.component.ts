@@ -10,7 +10,7 @@ import {
 } from '@angular/core';
 
 import { gsap } from 'gsap';
-import { ProjectDescriptions } from '../../interfaces/project-descriptions.interface';
+import { ProjectDescriptions } from '../interfaces/project-descriptions.interface';
 import { HardDataService } from '../../services/hard-data.service';
 import { ScrollTrigger } from 'gsap/all';
 
@@ -86,7 +86,7 @@ export class MyDescriptionComponent implements OnInit, AfterViewInit {
   /* only data  */
   public infoProject: ProjectDescriptions[] = [];
 
-/*   hideScrollButton(status: boolean) {
+  /*   hideScrollButton(status: boolean) {
     const buttonScroll = document.querySelector(
       '.Principal-scroll--container'
     ) as HTMLElement;
@@ -97,7 +97,6 @@ export class MyDescriptionComponent implements OnInit, AfterViewInit {
   getSizeViewPort() {
     /* this.hideScrollButton(window.innerWidth <= 1290); */
   }
-
 
   constructor(private dataService: HardDataService) {
     /* obtener data en duro del servicio hardData, esta info se envía al component */

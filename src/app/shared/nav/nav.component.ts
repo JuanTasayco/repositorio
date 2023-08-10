@@ -52,7 +52,7 @@ export class NavComponent implements AfterViewInit, OnInit {
   }
 
   myRoutes: Routes[] = [
-    { name: 'Inicio', path: '/portfolio/myDescription', nameSection: 'inicio' },
+    /*   { name: 'Inicio', path: '/portfolio/myDescription', nameSection: 'inicio' },
     {
       name: 'Mis Trabajos',
       path: '/portfolio/myProjects',
@@ -62,7 +62,7 @@ export class NavComponent implements AfterViewInit, OnInit {
       name: 'Contactame',
       path: '/portfolio/contactMe',
       nameSection: 'contactame',
-    },
+    }, */
   ];
 
   isActive(path: string): boolean {

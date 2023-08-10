@@ -1,17 +1,6 @@
 <header class="Header">
-  <nav class="Header-nav navbar navbar-expand-lg lightMode" #nav>
+  <nav class="Header-nav navbar navbar-expand-lg" #nav>
     <div class="Header-container container-fluid">
-      <button
-        class="Header-button navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="Header-span navbar-toggler-icon"></span>
-      </button>
       <div
         class="Header-collapse collapse navbar-collapse"
         id="navbarNavAltMarkup"
@@ -24,7 +13,7 @@
             routerLink="routes.path"
             [attr.aria-current]="isActive(routes.path) ? 'page' : null"
             (click)="moveToSection(routes.nameSection)"
-            >{{ routes.name  }}</a
+            >{{ routes.name }}</a
           >
         </div>
       </div>
