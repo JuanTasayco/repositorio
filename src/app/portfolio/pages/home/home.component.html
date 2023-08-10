@@ -1,72 +1,120 @@
-<div #homeContainer class="Home container-lg-fluid position-relative">
-  <app-nav id="nav" class="position-absolute w-100 top-0 start-0"></app-nav>
-  <h2 class="Home-content Home-content--present gap-2 gap-md-5 mt-md-5">
-    <span class="Home-span Home-span--web ps-3 ps-md-0">
-      <div #letterPresent class="Home-letter Home-letter--title">W</div>
-      <div #letterPresent class="Home-letter Home-letter--title">E</div>
-      <div #letterPresent class="Home-letter Home-letter--title">B</div>
-    </span>
-
-    <span class="Home-span Home-span--developer pe-5 pe-sm-0 ms-auto">
-      <div
-        #letterPresent
-        class="Home-letter Home-letter--title"
-        *ngFor="let letter of ['D', 'E', 'V', 'E', 'L', 'O', 'P', 'E', 'R']"
-      >
-        {{ letter }}
+<main class="Home h-100 w-100">
+  <section class="Home-content">
+    <div class="Home-grid h-100">
+      <div class="Home-gridItem Home-gridItem--square">
+        <img
+          #iconDev
+          class="Icons-img"
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+        />
       </div>
-    </span>
-  </h2>
+      <div class="Home-gridItem Home-gridItem--circle">
+        <img
+          #iconDev
+          class="Icons-img"
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+        />
+      </div>
+      <!--  -->
+      <div class="Home-gridItem Home-gridItem--square">
+        <img
+          #iconDev
+          class="Icons-img"
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+        />
+      </div>
 
-  <h2 class="Home-content Home-content--name">
-    <div class="Home-names order-md-2 gap-md-5 my-auto ms-md-auto">
-      <span #letterName class="Home-span Home-span--firstName">
-        <div class="Home-letter Home-letter--name">J</div>
-        <div class="Home-letter Home-letter--name">U</div>
-        <div class="Home-letter Home-letter--name">A</div>
-        <div class="Home-letter Home-letter--name">N</div>
-      </span>
+      <div class="Home-gridItem Home-gridItem-normal">
+        <img
+          #iconDev
+          class="Icons-img"
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+        />
+      </div>
 
-      <span #letterName class="Home-span Home-span--lastName ms-md-auto">
-        <div class="Home-letter Home-letter--name">T</div>
-        <div class="Home-letter Home-letter--name">A</div>
-        <div class="Home-letter Home-letter--name">S</div>
-        <div class="Home-letter Home-letter--name">A</div>
-        <div class="Home-letter Home-letter--name">Y</div>
-        <div class="Home-letter Home-letter--name">C</div>
-        <div class="Home-letter Home-letter--name">O</div>
-      </span>
+      <div class="Home-gridItem Home-gridItem--square">
+        <img
+          #iconDev
+          class="Icons-img"
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg"
+        />
+      </div>
+
+      <div class="Home-gridItem Home-gridItem-normal">
+        <img
+          #iconDev
+          class="Icons-img"
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
+        />
+      </div>
+
+      <div class="Home-gridItem Home-gridItem--square">
+        <img
+          #iconDev
+          class="Icons-img"
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+        />
+      </div>
+
+      <div class="Home-gridItem Home-gridItem--circle">
+        <img
+          #iconDev
+          class="Icons-img"
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-plain.svg"
+        />
+      </div>
+
+      <div class="Home-gridItem Home-gridItem-normal">
+        <img
+          #iconDev
+          class="Icons-img"
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+        />
+      </div>
+
+      <div class="Home-gridItem Home-gridItem--square">
+        <img
+          #iconDev
+          class="Icons-img"
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+        />
+      </div>
+
+      <div class="Home-gridItem Home-gridItem--circle">
+        <img
+          #iconDev
+          class="Icons-img"
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg"
+        />
+      </div>
+
+      <div class="Home-gridItem Home-gridItem--square">
+        <img
+          #iconDev
+          class="Icons-img"
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg"
+        />
+      </div>
+
+      <div class="Home-gridItem Home-gridItem-normal">
+        <img
+          #iconDev
+          class="Icons-img"
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
+        />
+      </div>
+
+      <!--  -->
+
+      <div></div>
     </div>
+    <section class="Home-cover" style="border: 2px solid red">
+      <h1 class="Home-h1 Home-h1--name">Juan Tasayco</h1>
+      <h1 class="Home-h1 Home-h1--title text-center">Desarrollador web</h1>
+    </section>
+    <section class="Home-descriptions"></section>
+    <footer class="Home-footer"></footer>
+  </section>
 
-    <div class="Home-text order-md-1 mt-5 mt-md-0">
-      <p #parrafoTitle class="Home-p text-center text-md-start">
-        Holaa!! Soy un profesional dedicado al desarrollo web, mis frameworks
-        favoritos de utilizar son Angular y Nest JS; para Front-end y Back-end
-        respectivamente, estas involucran una serie de conocimientos en
-        distintos lenguajes y tecnologías, tales como HTML, CSS, SASS,
-        Javascript, Typescript, Docker, Mongo, PostgresSQL, GitHub, entre otros.
-      </p>
-    </div>
-  </h2>
-
-  <div
-    id="continueArrow"
-    class="position-absolute text-light bottom-0 p-5 start-0"
-  >
-    <svg
-      class=""
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      style="opacity: 0.8465; transform: translate3d(0px, -15.3488px, 0px)"
-    >
-      <line x1="12" y1="4" x2="12" y2="20" stroke="white"></line>
-      <path d="M20 12L12 20L4 12" stroke="white"></path>
-    </svg>
-    <small class="d-block text-uppercase"> BAJA PARA CONTINUAR</small>
-  </div>
-</div>
-
-<div class="Home container-fluid"></div>
+  <section class="Home-content"></section>
+</main>
