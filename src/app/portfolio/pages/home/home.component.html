@@ -1,12 +1,13 @@
-<div class="Home h-100 container-fluid position-relative">
-  <h2 class="Home-content Home-content--present">
-    <span class="Home-span Home-span--web ps-lg-5">
+<div class="Home container-lg-fluid position-relative">
+  <app-nav id="nav" class="position-absolute w-100 top-0 start-0"></app-nav>
+  <h2 class="Home-content Home-content--present gap-3 gap-md-5 mt-md-5">
+    <span class="Home-span Home-span--web ps-3 ps-md-0">
       <div #letterPresent class="Home-letter">W</div>
       <div #letterPresent class="Home-letter">E</div>
       <div #letterPresent class="Home-letter">B</div>
     </span>
 
-    <span class="Home-span Home-span--developer">
+    <span class="Home-span Home-span--developer pe-5 pe-sm-0 ms-auto">
       <div
         #letterPresent
         class="Home-letter"
@@ -18,7 +19,7 @@
   </h2>
 
   <h2 class="Home-content Home-content--name">
-    <div class="Home-names order-md-2 gap-3" style="border: 2px solid green">
+    <div class="Home-names order-md-2 gap-4">
       <span #letterName class="Home-span Home-span--firstName">
         <div class="Home-letter">J</div>
         <div class="Home-letter">U</div>
@@ -26,7 +27,7 @@
         <div class="Home-letter">N</div>
       </span>
 
-      <span #letterName class="Home-span Home-span--lastName ms-auto">
+      <span #letterName class="Home-span Home-span--lastName">
         <div class="Home-letter">T</div>
         <div class="Home-letter">A</div>
         <div class="Home-letter">S</div>
@@ -37,17 +38,31 @@
       </span>
     </div>
 
-    <div class="Home-text order-md-1">
-      <p class="Home-p position-absolute" style="border: 2px solid green">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus
-        dolore similique ipsum velit minima, adipisci, earum quis provident ut
-        quas dolor explicabo, ducimus laboriosam recusandae debitis cumque
-        commodi reiciendis eveniet.
+    <div class="Home-text order-md-1 mt-5 mt-md-0">
+      <p #parrafoTitle class="Home-p position-md-absolute">
+        Hola soy un desarrollador full stack, mis dos tecnologías favoritas de
+        usar son Angular y Nest Js. Possimus dolore similique ipsum velit
+        minima, adipisci, earum quis provident ut quas dolor explicabo, ducimus
+        laboriosam recusandae debitis cumque commodi reiciendis eveniet.
       </p>
     </div>
   </h2>
 
-  <div class="position-absolute text-light bottom-0 p-3">Pulsa para bajar</div>
+  <div class="position-absolute text-light bottom-0 p-3">
+    <svg
+      class=""
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      style="opacity: 0.8465; transform: translate3d(0px, -15.3488px, 0px)"
+    >
+      <line x1="12" y1="4" x2="12" y2="20" stroke="white"></line>
+      <path d="M20 12L12 20L4 12" stroke="white"></path>
+    </svg>
+    <small class="d-block text-uppercase"> BAJA PARA CONTINUAR</small>
+  </div>
 </div>
 
-<div class="Home container-fluid"></div>
+<div class="Home container-fluid bg-dark"></div>

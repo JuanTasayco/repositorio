@@ -20,7 +20,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 export class HomeComponent implements OnInit, AfterViewInit {
   @ViewChildren('letterPresent') letterPresent!: QueryList<ElementRef>;
   @ViewChildren('letterName') letterName!: QueryList<ElementRef>;
-  lenis: any;
+  @ViewChild('parrafoTitle') parrafoTitle!: ElementRef<HTMLElement>;
+  enis: any;
   ngOnInit(): void {
     /* declaracion lenin  */
     /*     this.lenis = new Lenis();
@@ -40,19 +41,31 @@ export class HomeComponent implements OnInit, AfterViewInit {
   constructor() {}
 
   ngAfterViewInit(): void {
-  /*   let tl = gsap.timeline({ duration: 0.5, ease: 'elastic' });
-    tl.timeScale(4);
+    /* inicio de todo */
+    const nav = document.querySelector('#nav');
+    gsap.from(nav, {
+      yPercent: -100,
+      opacity: 0,
+    });
+
+    let tl = gsap.timeline({ duration: 1 });
+    tl.timeScale(5);
     this.letterPresent.forEach((element) => {
       tl.from(element.nativeElement, {
+        opacity: 0,
         yPercent: 100,
-        timeScale: 5,
+        ease: 'cine',
       });
     });
     let tl2 = gsap.timeline({ ease: 'steps' });
     this.letterName.forEach((element) => {
       tl2.from(element.nativeElement, {
+        opacity: 0,
         yPercent: 100,
       });
-    }); */
+    });
+    tl2.from(this.parrafoTitle.nativeElement, {
+      opacity: 0,
+    });
   }
 }
