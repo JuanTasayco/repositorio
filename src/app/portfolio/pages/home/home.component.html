@@ -1,14 +1,14 @@
-<main class="Home h-100 w-100">
+<main class="Home h-100 w-100 position-relative">
   <section class="Home-content">
-    <div class="Home-grid h-100">
-      <div class="Home-gridItem Home-gridItem--square">
+    <div #containerGrid class="Home-grid">
+      <div #figure class="Home-gridItem Home-gridItem--square">
         <img
           #iconDev
           class="Icons-img"
           src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
         />
       </div>
-      <div class="Home-gridItem Home-gridItem--circle">
+      <div #figure class="Home-gridItem Home-gridItem--circle">
         <img
           #iconDev
           class="Icons-img"
@@ -16,7 +16,7 @@
         />
       </div>
       <!--  -->
-      <div class="Home-gridItem Home-gridItem--square">
+      <div #figure class="Home-gridItem Home-gridItem--square">
         <img
           #iconDev
           class="Icons-img"
@@ -24,7 +24,7 @@
         />
       </div>
 
-      <div class="Home-gridItem Home-gridItem-normal">
+      <div #figure class="Home-gridItem Home-gridItem--normal">
         <img
           #iconDev
           class="Icons-img"
@@ -32,7 +32,7 @@
         />
       </div>
 
-      <div class="Home-gridItem Home-gridItem--square">
+      <div #figure class="Home-gridItem Home-gridItem--square">
         <img
           #iconDev
           class="Icons-img"
@@ -40,7 +40,7 @@
         />
       </div>
 
-      <div class="Home-gridItem Home-gridItem-normal">
+      <div #figure class="Home-gridItem Home-gridItem--normal">
         <img
           #iconDev
           class="Icons-img"
@@ -48,7 +48,7 @@
         />
       </div>
 
-      <div class="Home-gridItem Home-gridItem--square">
+      <div #figure class="Home-gridItem Home-gridItem--square">
         <img
           #iconDev
           class="Icons-img"
@@ -56,7 +56,7 @@
         />
       </div>
 
-      <div class="Home-gridItem Home-gridItem--circle">
+      <div #figure class="Home-gridItem Home-gridItem--circle">
         <img
           #iconDev
           class="Icons-img"
@@ -64,7 +64,7 @@
         />
       </div>
 
-      <div class="Home-gridItem Home-gridItem-normal">
+      <div #figure class="Home-gridItem Home-gridItem--normal">
         <img
           #iconDev
           class="Icons-img"
@@ -72,7 +72,7 @@
         />
       </div>
 
-      <div class="Home-gridItem Home-gridItem--square">
+      <div #figure class="Home-gridItem Home-gridItem--square">
         <img
           #iconDev
           class="Icons-img"
@@ -80,7 +80,7 @@
         />
       </div>
 
-      <div class="Home-gridItem Home-gridItem--circle">
+      <div #figure class="Home-gridItem Home-gridItem--circle">
         <img
           #iconDev
           class="Icons-img"
@@ -88,7 +88,7 @@
         />
       </div>
 
-      <div class="Home-gridItem Home-gridItem--square">
+      <div #figure class="Home-gridItem Home-gridItem--square">
         <img
           #iconDev
           class="Icons-img"
@@ -96,7 +96,7 @@
         />
       </div>
 
-      <div class="Home-gridItem Home-gridItem-normal">
+      <div #figure class="Home-gridItem Home-gridItem--normal">
         <img
           #iconDev
           class="Icons-img"
@@ -104,17 +104,31 @@
         />
       </div>
 
+      <div #figure class="Home-gridItem Home-gridItem--normal">
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original-wordmark.svg"
+        />
+      </div>
+
       <!--  -->
 
       <div></div>
     </div>
-    <section class="Home-cover" style="border: 2px solid red">
-      <h1 class="Home-h1 Home-h1--name">Juan Tasayco</h1>
-      <h1 class="Home-h1 Home-h1--title text-center">Desarrollador web</h1>
+    <section class="Home-cover">
+      <div
+        #coverTitle
+        class="d-flex flex-column justify-content-center align-items-center"
+        style="border: 2px solid green"
+      >
+        <h1 class="Home-h1 Home-h1--name" style="border: 2px solid red">
+          Juan Tasayco
+        </h1>
+        <h1 class="Home-h1 Home-h1--title text-center">Desarrollador web</h1>
+      </div>
     </section>
-    <section class="Home-descriptions"></section>
+    <section class="Home-descriptions">
+      <app-my-description></app-my-description>
+    </section>
     <footer class="Home-footer"></footer>
   </section>
-
-  <section class="Home-content"></section>
 </main>

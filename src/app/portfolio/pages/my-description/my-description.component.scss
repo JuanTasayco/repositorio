@@ -32,14 +32,14 @@
   }
 
   &-section2 {
-    position: relative;
+   /*  position: relative;
     overflow-x: hidden;
     @include media-breakpoint-up(lg) {
       padding: 3rem 4rem;
       width: 50%;
       position: absolute;
       left: 50%;
-    }
+    } */
   }
 
   &-content2 {
