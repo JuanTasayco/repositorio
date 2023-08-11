@@ -30,16 +30,16 @@
   &-p {
     padding: 1rem 0rem;
   }
-
+/* si le quito esto se va al chorizo, ocupa más del 100% */
   &-section2 {
-   /*  position: relative;
+    position: relative;
     overflow-x: hidden;
     @include media-breakpoint-up(lg) {
       padding: 3rem 4rem;
       width: 50%;
       position: absolute;
       left: 50%;
-    } */
+    }
   }
 
   &-content2 {
