@@ -8,13 +8,11 @@
     align-items: center;
     padding: 5rem 3rem;
     @include media-breakpoint-up(xl) {
-      margin: 13px 1rem;
-/*       border-bottom: 1px solid;
+      /*       border-bottom: 1px solid;
       border-left: 1px solid; */
       height: 100%;
       padding: 9rem 6rem;
       text-align: start;
-      
     }
   }
 

@@ -11,7 +11,8 @@ import {
 import Lenis from '@studio-freight/lenis';
 
 import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { HardDataService } from '../../services/hard-data.service';
+import { ProjectDescriptions } from '../interfaces/project-descriptions.interface';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -23,7 +24,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   lenis: any;
   ngOnInit(): void {
     /* declaracion lenin  */
-    this.lenis = new Lenis({
+    /*  this.lenis = new Lenis({
       smoothWheel: true,
       duration: 0,
     });
@@ -32,8 +33,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
       requestAnimationFrame(raf);
     };
     requestAnimationFrame(raf);
-    /* declaracion de gsap (es necesario que esté después de lenin) */
-    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.registerPlugin(ScrollTrigger); */
   }
 
   ngAfterViewInit(): void {
@@ -61,7 +62,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
       scrollTrigger: {
         trigger: this.containerGrid.nativeElement,
         scrub: true,
-        markers: true,
         start: 'top top',
         end: '80% center',
       },
@@ -73,6 +73,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
       });
     });
   }
-
-  constructor() {}
+  public infoProject: ProjectDescriptions[] = [];
+  constructor(private dataService: HardDataService) {
+    this.infoProject = dataService.hardDataProjects;
+  }
 }

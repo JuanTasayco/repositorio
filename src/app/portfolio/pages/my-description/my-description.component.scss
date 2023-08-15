@@ -11,53 +11,20 @@
     margin: 13px 1rem;
   }
 
-  &-section1 {
-    @include media-breakpoint-up(lg) {
-      border-top: 1px solid;
-      height: 100%;
-      width: 46%;
-      padding: 9rem 6rem;
-      text-align: start;
-      position: fixed;
-      border-left: 1px solid;
-    }
-
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-  }
-
   &-p {
     padding: 1rem 0rem;
   }
-/* si le quito esto se va al chorizo, ocupa más del 100% */
-  &-section2 {
-    position: relative;
-    overflow-x: hidden;
-    @include media-breakpoint-up(lg) {
-      padding: 3rem 4rem;
-      width: 50%;
-      position: absolute;
-      left: 50%;
-    }
-  }
 
-  &-content2 {
-    padding-top: 2rem;
-    z-index: -99;
+  &-myDescription {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   &-h1 {
     text-transform: uppercase;
     font-weight: bold;
-    /*     background: linear-gradient(
-      90deg,
-      rgba(77, 72, 74, 1) 0%,
-      rgba(93, 85, 88, 1) 46%,
-      rgba(77, 72, 74, 1) 100%
-    );
-    background-clip: text;
-    -webkit-text-fill-color: transparent; */
   }
 
   &-h2 {
@@ -76,64 +43,9 @@
     }
   }
 
-  &-chart {
-    position: relative;
-    max-height: 100rem;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    /*    @include media-breakpoint-down(sm){
-      height: 25rem;
-    } */
-  }
-
   &-hr {
     padding: 1.5rem 0rem;
   }
 
   /* utilizo > para seleccionar directamente img que es descendido directo de .Icons y agrego Icons-img para llegar al elemento específico   */
-  &-devIcon {
-    display: flex;
-    justify-content: flex-start;
-    gap: 1rem;
-    flex-wrap: wrap;
-    &.Icons {
-      & > img.Icons-img {
-        max-width: 3rem;
-      }
-    }
-  }
-
-  &-scroll {
-    &--container {
-      box-shadow: 1px 2px black;
-      border: 1px solid black;
-      position: relative;
-      border-radius: 40%;
-      position: fixed;
-      width: 2rem;
-      height: 3rem;
-      top: 30%;
-      left: 50%;
-      /*    &::before {
-        content: "Scroll me";
-        position: absolute;
-        bottom: -30px;
-        width: 300%;
-        text-align: center;
-     transform: translateX(-30%);
-      } */
-    }
-
-    &--circle {
-      border-radius: 50%;
-      background-color: black;
-      width: 0.6rem;
-      height: 0.6rem;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%);
-    }
-  }
 }

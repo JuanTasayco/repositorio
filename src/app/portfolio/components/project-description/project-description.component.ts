@@ -26,24 +26,22 @@ export class ProjectDescriptionComponent implements OnInit, AfterViewInit {
     gsap.registerPlugin();
   }
   ngAfterViewInit(): void {
-    this.containers.forEach((containerRef) => {
-      gsap.set(containerRef.nativeElement, {
-        opacity: 0,
-        xPercent: 50,
-      });
-      gsap.to(containerRef.nativeElement, {
-        opacity: 1,
-        duration: 0.5,
-        xPercent: 0,
-        scrollTrigger: {
-          trigger: containerRef.nativeElement,
-          start: 'top 80%',
-          end: 'bottom 20%',
-          toggleActions: 'play none none reverse',
-          markers: false,
-        },
-      });
-    });
+    this.containers.forEach(
+      ({ nativeElement: elemento }: ElementRef, index) => {
+        gsap.from(elemento, {
+          opacity: 0,
+          xPercent: index % 2 == 0 ? 50 : -50,
+          scrollTrigger: {
+            trigger: elemento,
+            start: 'top 90%',
+            end: `+=${elemento.clientHeight}`,
+            toggleActions: 'play none none reverse',
+            markers: true,
+            scrub: true,
+          },
+        });
+      }
+    );
   }
 
   responsiveOptions: any[] = [

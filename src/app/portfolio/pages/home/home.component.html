@@ -1,5 +1,5 @@
-<main class="Home h-100 w-100 position-relative">
-  <section class="Home-content">
+<div class="Home h-100 w-100 position-relative">
+  <main class="Home-content">
     <div #containerGrid class="Home-grid">
       <div #figure class="Home-gridItem Home-gridItem--square">
         <img
@@ -118,17 +118,25 @@
       <div
         #coverTitle
         class="d-flex flex-column justify-content-center align-items-center"
-        style="border: 2px solid green"
       >
-        <h1 class="Home-h1 Home-h1--name" style="border: 2px solid red">
-          Juan Tasayco
-        </h1>
+        <h1 class="Home-h1 Home-h1--name text-danger">Juan Tasayco</h1>
         <h1 class="Home-h1 Home-h1--title text-center">Desarrollador web</h1>
       </div>
     </section>
     <section class="Home-descriptions">
       <app-my-description></app-my-description>
     </section>
-    <footer class="Home-footer"></footer>
-  </section>
-</main>
+
+    <div class="Home-cards">
+      <hr appToScroll idName="trabajos" class="Principal-hr" />
+
+      <app-project-description
+        [contenido]="infoProject"
+      ></app-project-description>
+    </div>
+
+    <footer class="Home-footer">
+      <app-contact-me></app-contact-me>
+    </footer>
+  </main>
+</div>

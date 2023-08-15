@@ -1,45 +1,33 @@
-<div class="Principal-content h-100 d-lg-flex mb-5" style="border:2px solid green">
+<div class="Principal-content d-lg-flex mb-5 h-50">
+  <!--     href="https://www.linkedin.com/in/juan-jos%C3%A9-tasayco-ninaquispe-49198a13a/" -->
+  <!-- https://github.com/JuanTasayco -->
 
-
-<!--     href="https://www.linkedin.com/in/juan-jos%C3%A9-tasayco-ninaquispe-49198a13a/" -->
-   <!-- https://github.com/JuanTasayco -->
-
-<!-- app to Scroll directives for scrolling strategy -->
-
+  <!-- app to Scroll directives for scrolling strategy -->
 
   <section appToScroll #appToScroll idName="inicio" class="Principal-section2">
     <!--  -->
-    <div class="Projects-content mt-5">
-      <h3 class="Principal-h3 text-uppercase">Habilidades técnicas</h3>
-      <p class="Principal-p">
-        En la siguiente gráfica te presento mis habilidades en base a mi
-        experiencia utilizando las tecnologías.
-      </p>
 
-      <div class="Principal-chart">
+    <div #containerSection2 class="Principal-chart row m-0 position-relative">
+      <div #myDescription class="Principal-myDescription col-md-6">
+        <h3 class="Principal-h3">Acerca de mi</h3>
+        <p class="Principal-p text-center">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt enim
+          soluta necessitatibus distinctio omnis sequi nobis similique ipsam
+          tenetur sint, vero at ea veritatis recusandae rerum quaerat laudantium
+          sed ipsa.
+        </p>
+      </div>
+      <div #myGraphic class="Principal-graphic col-md-6">
+        <p class="Principal-p">
+          En la siguiente gráfica te presento mis habilidades en base a mi
+          experiencia utilizando las tecnologías.
+        </p>
         <app-horizontal-chart></app-horizontal-chart>
       </div>
-
-      <hr appToScroll idName="trabajos" class="Principal-hr" />
-
-      <div class="Principal-projects">
-        <h3 class="Principal-h3 py-md-5 text-uppercase">
-          Proyectos personales
-        </h3>
-        <app-project-description
-          [contenido]="infoProject"
-        ></app-project-description>
-      </div>
-
-      <hr appToScroll idName="contactame" class="Principal-hr" />
-
-      <div class="Principal-contact pt-md-5">
-        <h3 class="Principal-h3 Principal-h3--uppercase">Contacto</h3>
-        <app-contact-me></app-contact-me>
-      </div>
     </div>
+
     <!--  -->
   </section>
-<!--   <hr /> -->
-<!--   <hr /> -->
+  <!--   <hr /> -->
+  <!--   <hr /> -->
 </div>
