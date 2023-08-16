@@ -49,18 +49,15 @@ export class HomeComponent implements OnInit, AfterViewInit {
     });
 
     /* fin animacion pinTitleText */
-
-    this.figuresIcon.forEach((icon, index) => {
-      /*  if (index == 4 || index == 6) {
-        gsap.set(icon.nativeElement, {
-          scale: 1.5,
-        });
-      } */
-      gsap.from(icon.nativeElement, {
+    const tlPresentation = gsap.timeline();
+    const figures = document.querySelectorAll('.Home-gridItem');
+    tlPresentation
+      .from(figures, {
         scale: 3,
-        duration: 1,
+      })
+      .to(figures, {
+        rotateX: 360,
       });
-    });
 
     const tlFigures = gsap.timeline({
       scrollTrigger: {

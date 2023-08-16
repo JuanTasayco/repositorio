@@ -54,10 +54,16 @@ export class NavComponent implements AfterViewInit, OnInit {
   myRoutes: Routes[] = [
     { name: 'Inicio', path: '/portfolio/myDescription', nameSection: 'inicio' },
     {
+      name: 'Conoceme',
+      path: '/portfolio/conoceme',
+      nameSection: 'descripcion',
+    },
+    {
       name: 'Mis proyectos',
       path: '/portfolio/myProjects',
       nameSection: 'trabajos',
     },
+
     {
       name: 'Contactame',
       path: '/portfolio/contactMe',
@@ -82,8 +88,6 @@ export class NavComponent implements AfterViewInit, OnInit {
 
   constructor(
     private router: Router,
-    private sharedService: CommunicateLinksService,
-    private triggerService: TriggersService,
-    private renderer: Renderer2
+    private sharedService: CommunicateLinksService
   ) {}
 }

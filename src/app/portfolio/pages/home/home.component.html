@@ -1,5 +1,5 @@
 <app-nav></app-nav>
-<div class="Home h-100 w-100 position-relative">
+<div appToScroll idName="inicio" class="Home h-100 w-100 position-relative">
   <main class="Home-content">
     <div #containerGrid class="Home-grid">
       <div #figure class="Home-gridItem Home-gridItem--square">
@@ -118,13 +118,13 @@
     <section class="Home-cover">
       <div
         #coverTitle
-        class="d-flex flex-column justify-content-center align-items-center"
+        class="d-flex flex-column justify-content-center align-items-center w-100"
       >
         <h1 class="Home-h1 Home-h1--name">Juan Tasayco</h1>
         <h1 class="Home-h1 Home-h1--title">Desarrollador web</h1>
       </div>
     </section>
-    <section class="Home-descriptions">
+    <section appToScroll idName="descripcion" class="Home-descriptions">
       <app-my-description></app-my-description>
     </section>
 
@@ -136,7 +136,7 @@
       ></app-project-description>
     </div>
 
-    <footer class="Home-footer">
+    <footer appToScroll idName="contactame" class="Home-footer">
       <app-contact-me></app-contact-me>
     </footer>
   </main>
