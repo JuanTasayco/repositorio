@@ -21,20 +21,18 @@ export class HomeComponent implements OnInit, AfterViewInit {
   @ViewChild('coverTitle') coverTitle!: ElementRef<HTMLElement>;
   @ViewChild('containerGrid') containerGrid!: ElementRef<HTMLElement>;
   @ViewChildren('figure') figuresIcon!: QueryList<ElementRef>;
-  lenis: any;
-  ngOnInit(): void {
-    /* declaracion lenin  */
-    /*  this.lenis = new Lenis({
-      smoothWheel: true,
-      duration: 0,
-    });
-    const raf = (time: any) => {
-      this.lenis.raf(time);
-      requestAnimationFrame(raf);
-    };
-    requestAnimationFrame(raf);
 
-    gsap.registerPlugin(ScrollTrigger); */
+  ngOnInit(): void {
+    /*  const lenis = new Lenis();
+
+    lenis.on('scroll', (e: any) => {});
+
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf); */
   }
 
   ngAfterViewInit(): void {
@@ -52,16 +50,22 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
     /* fin animacion pinTitleText */
 
-    this.figuresIcon.forEach((icon) => {
+    this.figuresIcon.forEach((icon, index) => {
+      /*  if (index == 4 || index == 6) {
+        gsap.set(icon.nativeElement, {
+          scale: 1.5,
+        });
+      } */
       gsap.from(icon.nativeElement, {
-        scale: 0.3,
+        scale: 3,
+        duration: 1,
       });
     });
 
     const tlFigures = gsap.timeline({
       scrollTrigger: {
         trigger: this.containerGrid.nativeElement,
-        scrub: true,
+        scrub: 1,
         start: 'top top',
         end: '80% center',
       },
@@ -69,7 +73,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
     this.figuresIcon.forEach((icon) => {
       tlFigures.to(icon.nativeElement, {
-        scale: 0.2,
+        scale: 0.5,
       });
     });
   }

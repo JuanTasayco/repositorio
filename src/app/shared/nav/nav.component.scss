@@ -2,23 +2,48 @@
 
 .Header {
   height: 4rem;
-  background-color: black;
+  /*  background-color: $light; */
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  &-black {
+    background-color: #000000;
+  }
   &-nav {
     display: flex;
     justify-content: center;
-    position: relative;
+    width: 100%;
 
-    @include media-breakpoint-up(lg) {
-      width: 100%;
+    /*   @include media-breakpoint-up(lg) {
+ 
       right: 0;
       position: fixed;
       display: flex;
-    }
+    } */
+  }
+
+  &-navbar {
+    /* determinar posición del menu */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
   }
 
   &-a {
     font-weight: bold;
+    cursor: pointer;
     color: white;
+    &:hover {
+      color: red;
+    }
+  }
+
+  &-aRed {
+    color: red;
+    &:hover {
+      color: white;
+    }
   }
 }
 

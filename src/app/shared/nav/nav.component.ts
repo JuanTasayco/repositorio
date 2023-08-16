@@ -3,18 +3,16 @@ import {
   Component,
   ElementRef,
   EventEmitter,
-  Input,
   OnInit,
   Output,
-  QueryList,
   Renderer2,
   ViewChild,
-  ViewChildren,
 } from '@angular/core';
 import { IsActiveMatchOptions, Router } from '@angular/router';
 import { CommunicateLinksService } from '../services/communicate-links.service';
 import { TriggersService } from '../../portfolio/services/triggers.service';
-
+import { gsap } from 'gsap';
+import Lenis from '@studio-freight/lenis';
 interface Routes {
   name: string;
   path: string;
@@ -28,33 +26,35 @@ interface Routes {
 })
 export class NavComponent implements AfterViewInit, OnInit {
   @Output() emitElementNav: EventEmitter<any> = new EventEmitter();
-  @ViewChild('nav') navElement!: ElementRef;
-  @ViewChildren('aLink') aLinksNav!: QueryList<any>;
+  @ViewChild('nav') barraNavegacion!: ElementRef<HTMLElement>;
+  @ViewChild('aHeaderLink') headerA!: ElementRef<HTMLElement>;
   activeModeDarkNav: boolean = true;
 
+  ngOnInit(): void {}
   ngAfterViewInit(): void {
-    this.emitElementNav.emit(this.navElement.nativeElement);
+    this.emitElementNav.emit(this.barraNavegacion.nativeElement);
+    this.gsapToggleClassNav(this.headerA.nativeElement, 'Header-aRed');
+  }
 
-    this.triggerService.getClickEventButton.subscribe(() => {
-      this.activeModeDarkNav = !this.activeModeDarkNav;
-
-      const className = 'gold';
-
-      /* en base al boolean activeMode.. se aplica addClass or remove */
-      /* recorriendo  */
-      this.aLinksNav.forEach((result: ElementRef) => {
-        this.renderer[this.activeModeDarkNav ? 'addClass' : 'removeClass'](
-          result.nativeElement,
-          className
-        );
-      });
+  gsapToggleClassNav(elemento: HTMLElement, clase: string) {
+    gsap.to(this.barraNavegacion.nativeElement, {
+      scrollTrigger: {
+        start: 'top top',
+        markers: true,
+        scrub: true,
+        toggleClass: {
+          className: clase,
+          targets: [elemento],
+        },
+        /* toggleActions: 'play none none none' */
+      },
     });
   }
 
   myRoutes: Routes[] = [
-    /*   { name: 'Inicio', path: '/portfolio/myDescription', nameSection: 'inicio' },
+    { name: 'Inicio', path: '/portfolio/myDescription', nameSection: 'inicio' },
     {
-      name: 'Mis Trabajos',
+      name: 'Mis proyectos',
       path: '/portfolio/myProjects',
       nameSection: 'trabajos',
     },
@@ -62,7 +62,7 @@ export class NavComponent implements AfterViewInit, OnInit {
       name: 'Contactame',
       path: '/portfolio/contactMe',
       nameSection: 'contactame',
-    }, */
+    },
   ];
 
   isActive(path: string): boolean {
@@ -79,10 +79,6 @@ export class NavComponent implements AfterViewInit, OnInit {
   moveToSection(routeName: string) {
     this.sharedService.setLinkName = routeName;
   }
-
-  /* @ViewChild('aLink') aLinkNav!: ElementRef; */
-
-  ngOnInit(): void {}
 
   constructor(
     private router: Router,

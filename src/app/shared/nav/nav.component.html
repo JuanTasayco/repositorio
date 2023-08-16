@@ -1,5 +1,5 @@
-<header class="Header">
-  <nav class="Header-nav navbar navbar-expand-lg" #nav>
+<header #nav class="Header">
+  <nav class="Header-nav navbar navbar-expand-lg">
     <div class="Header-container container-fluid">
       <div
         class="Header-collapse collapse navbar-collapse"
@@ -7,10 +7,9 @@
       >
         <div class="Header-navbar navbar-nav">
           <a
-            #aLink
+            #aHeaderLink
             class="Header-a nav-link"
             *ngFor="let routes of myRoutes"
-            routerLink="routes.path"
             [attr.aria-current]="isActive(routes.path) ? 'page' : null"
             (click)="moveToSection(routes.nameSection)"
             >{{ routes.name }}</a

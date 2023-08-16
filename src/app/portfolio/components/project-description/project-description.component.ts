@@ -36,7 +36,6 @@ export class ProjectDescriptionComponent implements OnInit, AfterViewInit {
             start: 'top 90%',
             end: `+=${elemento.clientHeight}`,
             toggleActions: 'play none none reverse',
-            markers: true,
             scrub: true,
           },
         });
