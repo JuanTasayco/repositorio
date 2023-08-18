@@ -1,5 +1,5 @@
 @use "src/_custom" as *;
-.Contact {
+.Contactme {
   &-content {
     text-align: center;
     display: flex;
@@ -29,6 +29,7 @@
   }
 
   &-svg {
+    border: 2px solid green;
     height: 5rem;
     padding: 0rem 2rem;
     @include media-breakpoint-down(xl) {

@@ -5,14 +5,11 @@ import {
   EventEmitter,
   OnInit,
   Output,
-  Renderer2,
   ViewChild,
 } from '@angular/core';
 import { IsActiveMatchOptions, Router } from '@angular/router';
 import { CommunicateLinksService } from '../services/communicate-links.service';
-import { TriggersService } from '../../portfolio/services/triggers.service';
-import { gsap } from 'gsap';
-import Lenis from '@studio-freight/lenis';
+
 interface Routes {
   name: string;
   path: string;
@@ -32,25 +29,10 @@ export class NavComponent implements AfterViewInit, OnInit {
   ngOnInit(): void {}
   ngAfterViewInit(): void {
     this.emitElementNav.emit(this.barraNavegacion.nativeElement);
-    this.gsapToggleClassNav(this.headerA.nativeElement, 'Header-aRed');
 
-    const navElement: any = document.querySelector('.Header');
+    const navElement: NodeListOf<HTMLElement> =
+      document.querySelectorAll('.Header-a');
     this.sharedService.setReferenceNavElement(navElement);
-  }
-
-  gsapToggleClassNav(elemento: HTMLElement, clase: string) {
-    gsap.to(this.barraNavegacion.nativeElement, {
-      scrollTrigger: {
-        start: 'top top',
-        markers: true,
-        scrub: true,
-        toggleClass: {
-          className: clase,
-          targets: [elemento],
-        },
-        /* toggleActions: 'play none none none' */
-      },
-    });
   }
 
   isActive(path: string): boolean {

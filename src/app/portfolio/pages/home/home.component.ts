@@ -14,6 +14,7 @@ import Lenis from '@studio-freight/lenis';
 import { gsap } from 'gsap';
 import { HardDataService } from '../../services/hard-data.service';
 import { ProjectDescriptions } from '../interfaces/project-descriptions.interface';
+import { CommunicateLinksService } from 'src/app/shared/services/communicate-links.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -23,19 +24,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
   @ViewChild('coverTitle') coverTitle!: ElementRef<HTMLElement>;
   @ViewChild('containerGrid') containerGrid!: ElementRef<HTMLElement>;
   @ViewChildren('figure') figuresIcon!: QueryList<ElementRef>;
+  @ViewChildren('c') principalContainers!: QueryList<ElementRef>;
 
-  ngOnInit(): void {
-    /*  const lenis = new Lenis();
-
-    lenis.on('scroll', (e: any) => {});
-
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf); */
-  }
+  ngOnInit(): void {}
 
   ngAfterViewInit(): void {
     /* animacion pin titleText */
@@ -51,6 +42,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
     });
 
     /* fin animacion pinTitleText */
+
+    /* animacion de figuras */
+    /* al iniciar */
     const tlPresentation = gsap.timeline();
     const figures = document.querySelectorAll('.Home-gridItem');
     tlPresentation
@@ -61,6 +55,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
         rotateX: 360,
       });
 
+    /* al bajar */
     const tlFigures = gsap.timeline({
       scrollTrigger: {
         trigger: this.containerGrid.nativeElement,
@@ -75,9 +70,34 @@ export class HomeComponent implements OnInit, AfterViewInit {
         scale: 0.5,
       });
     });
+
+    /* fin de al bajar */
+    /* fin animaciones figuras */
+
+    /* contenedores para cambiar color de nav */
+    const navItems: NodeListOf<HTMLElement> = this.sharedModule.linkNavElements;
+    console.log(navItems[0]);
+    this.principalContainers.forEach((element, index) => {
+      gsap.to(element.nativeElement, {
+        scrollTrigger: {
+          trigger: element.nativeElement,
+          markers: true,
+          start: 'top 2%',
+          end: "bottom 2%",
+          scrub: 1,
+          toggleClass: {
+            targets: navItems[index],
+            className: 'Home-activeColor',
+          },
+        },
+      });
+    });
   }
   public infoProject: ProjectDescriptions[] = [];
-  constructor(private dataService: HardDataService) {
+  constructor(
+    private dataService: HardDataService,
+    private sharedModule: CommunicateLinksService
+  ) {
     this.infoProject = dataService.hardDataProjects;
   }
 }

@@ -22,7 +22,7 @@ export class ToScrollDirective implements AfterViewInit, OnInit {
     gsap.registerPlugin(ScrollTrigger);
     gsap.registerPlugin(ScrollToPlugin);
   }
-  navReferenceElement!: HTMLElement;
+  navLinksElements!: NodeListOf<HTMLElement>;
   currentName: string = '';
   linkName: string = '';
 
@@ -31,7 +31,7 @@ export class ToScrollDirective implements AfterViewInit, OnInit {
   }
 
   ngAfterViewInit(): void {
-    this.navReferenceElement = this.sharedService.navElement;
+    this.navLinksElements = this.sharedService.linkNavElements;
     this.getObservableNameLink();
   }
 
@@ -47,6 +47,12 @@ export class ToScrollDirective implements AfterViewInit, OnInit {
           duration: 0.1,
         });
       }
+    });
+  }
+
+  deleteClassColorNav() {
+    this.navLinksElements.forEach((element) => {
+      element.classList.remove('Header-aRed');
     });
   }
 

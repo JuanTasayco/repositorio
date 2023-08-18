@@ -32,11 +32,9 @@ export class MyDescriptionComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     gsap.from(this.containerGraphic.nativeElement, {
       xPercent: '50',
-
       scrollTrigger: {
         trigger: this.containerSection2.nativeElement,
         scrub: true,
-
         start: '-40% bottom',
         end: 'center center',
       },

@@ -1,5 +1,5 @@
 <app-nav></app-nav>
-<div appToScroll idName="inicio" class="Home h-100 w-100 position-relative">
+<div #c appToScroll idName="inicio" class="Home h-100 w-100 position-relative">
   <main class="Home-content">
     <div #containerGrid class="Home-grid">
       <div #figure class="Home-gridItem Home-gridItem--square">
@@ -139,11 +139,11 @@
         <h1 class="Home-h1 Home-h1--title">Desarrollador web</h1>
       </div>
     </section>
-    <section appToScroll idName="descripcion" class="Home-descriptions">
+    <section #c appToScroll idName="descripcion" class="Home-descriptions">
       <app-my-description></app-my-description>
     </section>
 
-    <div class="Home-cards">
+    <div #c class="Home-cards">
       <hr appToScroll idName="trabajos" class="Principal-hr" />
 
       <app-project-description
@@ -151,7 +151,13 @@
       ></app-project-description>
     </div>
 
-    <footer appToScroll idName="contactame" class="Home-footer">
+    <footer
+      #c
+      appToScroll
+      idName="contactame"
+      class="Home-footer"
+      style="border: 2px solid red"
+    >
       <app-contact-me></app-contact-me>
     </footer>
   </main>

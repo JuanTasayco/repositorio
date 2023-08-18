@@ -10,7 +10,7 @@ export interface NavElements {
   providedIn: 'root',
 })
 export class CommunicateLinksService {
-  navElement!: HTMLElement;
+  linkNavElements!: NodeListOf<HTMLElement>;
 
   private communicateNavLinks: Subject<NavElements> = new Subject();
 
@@ -23,8 +23,8 @@ export class CommunicateLinksService {
   }
 
   /* getNavReference */
-  public setReferenceNavElement(element: HTMLElement) {
-    this.navElement = element;
+  public setReferenceNavElement(element: NodeListOf<HTMLElement>) {
+    this.linkNavElements = element;
   }
 
   constructor() {}

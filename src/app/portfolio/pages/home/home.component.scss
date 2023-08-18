@@ -187,7 +187,8 @@
     color: white;
   }
 
-  .activeColor {
-    color: red;
+  &-activeColor {
+    color: red !important; 
+    border: 2px solid green;
   }
 }
