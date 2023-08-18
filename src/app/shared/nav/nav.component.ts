@@ -9,6 +9,8 @@ import {
 } from '@angular/core';
 import { IsActiveMatchOptions, Router } from '@angular/router';
 import { CommunicateLinksService } from '../services/communicate-links.service';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 interface Routes {
   name: string;
@@ -26,13 +28,28 @@ export class NavComponent implements AfterViewInit, OnInit {
   @ViewChild('nav') barraNavegacion!: ElementRef<HTMLElement>;
   @ViewChild('aHeaderLink') headerA!: ElementRef<HTMLElement>;
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    gsap.registerPlugin(ScrollTrigger);
+  }
   ngAfterViewInit(): void {
     this.emitElementNav.emit(this.barraNavegacion.nativeElement);
 
+    /* enviar links de referencia (small) */
     const navElement: NodeListOf<HTMLElement> =
       document.querySelectorAll('.Header-a');
     this.sharedService.setReferenceNavElement(navElement);
+
+    const barraNavegacion = this.barraNavegacion.nativeElement;
+    /* animación de cambio al bajar  */
+    ScrollTrigger.create({
+      scrub: 1,
+      markers: true,
+      start: 'top top',
+      toggleClass: {
+        targets: barraNavegacion,
+        className: 'bg-none',
+      },
+    });
   }
 
   isActive(path: string): boolean {

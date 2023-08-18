@@ -3,6 +3,7 @@
 .Home {
   display: block;
   z-index: 1;
+  background-color: #000000;
 
   &-content {
     box-sizing: border-box;
@@ -86,8 +87,8 @@
 
     &:nth-child(8) {
       /* nest */
-      top: 33%;
-      left: 50%;
+      top: 40%;
+      left: 60%;
       @include media-breakpoint-down(md) {
         left: auto;
         top: 35%;
@@ -144,13 +145,13 @@
 
   &-h1 {
     &--title {
-      font-size: clamp(2rem, 2vw, 7rem);
+      font-size: clamp(1.5rem, 2vw, 7rem);
       text-transform: uppercase;
       text-align: center;
     }
 
     &--name {
-      font-size: clamp(2rem, 7vw, 9rem);
+      font-size: clamp(1.5rem, 7vw, 9rem);
       font-weight: 600;
       text-transform: uppercase;
       color: $danger;
@@ -174,6 +175,10 @@
     align-items: center;
     background-color: #000000;
     color: white;
+    @include media-breakpoint-down(sm) {
+      border: 2px solid green;
+      
+    }
   }
 
   &-cards {
@@ -185,10 +190,10 @@
   &-footer {
     background-color: #000000;
     color: white;
+    height: 50%;
   }
 
   &-activeColor {
-    color: red !important; 
-    border: 2px solid green;
+    color: red !important;
   }
 }

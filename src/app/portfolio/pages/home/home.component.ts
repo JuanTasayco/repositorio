@@ -76,14 +76,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
     /* contenedores para cambiar color de nav */
     const navItems: NodeListOf<HTMLElement> = this.sharedModule.linkNavElements;
-    console.log(navItems[0]);
     this.principalContainers.forEach((element, index) => {
       gsap.to(element.nativeElement, {
         scrollTrigger: {
           trigger: element.nativeElement,
-          markers: true,
           start: 'top 2%',
-          end: "bottom 2%",
+          end: 'bottom 2%',
           scrub: 1,
           toggleClass: {
             targets: navItems[index],

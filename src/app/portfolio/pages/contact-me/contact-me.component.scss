@@ -6,7 +6,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 5rem 3rem;
+    padding: 0rem 3rem;
     @include media-breakpoint-up(xl) {
       /*       border-bottom: 1px solid;
       border-left: 1px solid; */
@@ -29,7 +29,6 @@
   }
 
   &-svg {
-    border: 2px solid green;
     height: 5rem;
     padding: 0rem 2rem;
     @include media-breakpoint-down(xl) {

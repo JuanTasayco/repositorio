@@ -6,9 +6,7 @@
   position: fixed;
   inset: 0;
   z-index: 10;
-  &-black {
-    background-color: #000000;
-  }
+
   &-nav {
     display: flex;
     justify-content: center;
@@ -47,6 +45,10 @@
   }
 }
 
-.gold {
-  color: rgb(194, 161, 94);
+.bg-none {
+  background: none !important;
 }
+
+/* .gold {
+  color: rgb(194, 161, 94);
+} */
