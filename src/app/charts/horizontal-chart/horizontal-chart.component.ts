@@ -10,7 +10,7 @@ import { LegendPosition } from '@swimlane/ngx-charts';
 @Component({
   selector: 'app-horizontal-chart',
   templateUrl: './horizontal-chart.component.html',
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class HorizontalChartComponent implements AfterViewInit {
   results: any[] = [
@@ -59,7 +59,7 @@ export class HorizontalChartComponent implements AfterViewInit {
   yAxisLabel: string = 'Lenguajes';
   showYAxisLabel: boolean = true;
   xAxisLabel = 'Nivel';
-  theme  = 'dark'
+  theme = 'dark';
   colorScheme = 'nightLights';
   /* schemeType: string = 'linear'; */
 
@@ -85,16 +85,3 @@ export class HorizontalChartComponent implements AfterViewInit {
 
   constructor(private cdr: ChangeDetectorRef) {}
 }
-
-/*  onSelect(data: any): void {
-    console.log('Item clicked', JSON.parse(JSON.stringify(data)));
-  }
-
-  onActivate(data: any): void {
-    console.log('Activate', JSON.parse(JSON.stringify(data)));
-  }
-
-  onDeactivate(data: any): void {
-    console.log('Deactivate', JSON.parse(JSON.stringify(data)));
-  }
- */

@@ -21,7 +21,6 @@ import { ScrollTrigger } from 'gsap/all';
   encapsulation: ViewEncapsulation.None,
 })
 export class MyDescriptionComponent implements OnInit, AfterViewInit {
-  @ViewChild('appToScroll') containerScroll!: ElementRef<HTMLElement>;
   @ViewChild('containerSection2') containerSection2!: ElementRef<HTMLElement>;
   @ViewChild('myDescription') containerDescription!: ElementRef<HTMLElement>;
   @ViewChild('myGraphic') containerGraphic!: ElementRef<HTMLElement>;
@@ -56,10 +55,5 @@ export class MyDescriptionComponent implements OnInit, AfterViewInit {
 
   /* only data  */
 
-  @HostListener('window:resize', [])
-  getSizeViewPort() {}
-
-  constructor() {
-    /* obtener data en duro del servicio hardData, esta info se envía al component */
-  }
+  constructor() {}
 }

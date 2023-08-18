@@ -1,21 +1,31 @@
-import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { ElementRef, Injectable } from '@angular/core';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
+
+export interface NavElements {
+  nameLink: string;
+  divElement: HTMLElement;
+}
 
 @Injectable({
   providedIn: 'root',
 })
 export class CommunicateLinksService {
-  constructor() {}
+  navElement!: HTMLElement;
 
-  private communicateNavLinks: BehaviorSubject<string> = new BehaviorSubject(
-    'string'
-  );
+  private communicateNavLinks: Subject<NavElements> = new Subject();
 
-  public set setLinkName(nameLink: string) {
-    this.communicateNavLinks.next(nameLink);
+  /* linksNames */
+  public set setLinkName(navElement: NavElements) {
+    this.communicateNavLinks.next(navElement);
   }
-
-  public get getLinkName(): Observable<string> {
+  public get getLinkName(): Observable<NavElements> {
     return this.communicateNavLinks.asObservable();
   }
+
+  /* getNavReference */
+  public setReferenceNavElement(element: HTMLElement) {
+    this.navElement = element;
+  }
+
+  constructor() {}
 }

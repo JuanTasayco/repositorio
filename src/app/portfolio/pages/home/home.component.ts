@@ -1,5 +1,6 @@
 import {
   AfterViewInit,
+  ChangeDetectionStrategy,
   Component,
   ElementRef,
   OnInit,
@@ -16,6 +17,7 @@ import { ProjectDescriptions } from '../interfaces/project-descriptions.interfac
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeComponent implements OnInit, AfterViewInit {
   @ViewChild('coverTitle') coverTitle!: ElementRef<HTMLElement>;

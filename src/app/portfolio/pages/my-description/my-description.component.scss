@@ -1,12 +1,6 @@
 @use "src/_custom" as *;
 
-.Principal {
-  &-text {
-    @include media-breakpoint-up(xxl) {
-      width: 75%;
-    }
-  }
-
+.Descriptions {
   &-content {
     margin: 13px 1rem;
   }
@@ -25,24 +19,15 @@
   &-h1 {
     text-transform: uppercase;
     font-weight: bold;
+    font-size: clamp(1rem, 2vw, 5rem);
   }
 
-  &-h2 {
-    color: rgb(77, 72, 74);
+  &-graphic {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
-
-  &-svg {
-    &:hover {
-      cursor: pointer;
-    }
-  }
-
-  &-h3 {
-    &--uppercase {
-      text-transform: uppercase;
-    }
-  }
-
   &-hr {
     padding: 1.5rem 0rem;
   }

@@ -6,13 +6,13 @@
         id="navbarNavAltMarkup"
       >
         <div class="Header-navbar navbar-nav">
-          <a
+          <small
             #aHeaderLink
             class="Header-a nav-link"
             *ngFor="let routes of myRoutes"
             [attr.aria-current]="isActive(routes.path) ? 'page' : null"
-            (click)="moveToSection(routes.nameSection)"
-            >{{ routes.name }}</a
+            (click)="moveToSection(routes.nameSection, aHeaderLink)"
+            >{{ routes.name }}</small
           >
         </div>
       </div>

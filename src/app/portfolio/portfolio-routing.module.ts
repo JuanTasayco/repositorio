@@ -9,7 +9,7 @@ const routes: Routes = [
     path: '',
     component: HomeComponent,
     children: [
-      { path: 'myDescription', component: MyDescriptionComponent },
+      { path: 'principal', component: MyDescriptionComponent },
       { path: 'contactMe', component: ContactMeComponent },
       { path: '**', redirectTo: 'myDescription' },
     ],

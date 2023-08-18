@@ -1,5 +1,6 @@
 import {
   AfterViewInit,
+  ChangeDetectionStrategy,
   Component,
   ElementRef,
   OnInit,
@@ -14,6 +15,7 @@ import { ProjectDescriptions } from '../../pages/interfaces/project-descriptions
 @Component({
   selector: 'app-project-description',
   templateUrl: './project-description.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: [],
 })
 export class ProjectDescriptionComponent implements OnInit, AfterViewInit {

@@ -28,12 +28,14 @@ export class NavComponent implements AfterViewInit, OnInit {
   @Output() emitElementNav: EventEmitter<any> = new EventEmitter();
   @ViewChild('nav') barraNavegacion!: ElementRef<HTMLElement>;
   @ViewChild('aHeaderLink') headerA!: ElementRef<HTMLElement>;
-  activeModeDarkNav: boolean = true;
 
   ngOnInit(): void {}
   ngAfterViewInit(): void {
     this.emitElementNav.emit(this.barraNavegacion.nativeElement);
     this.gsapToggleClassNav(this.headerA.nativeElement, 'Header-aRed');
+
+    const navElement: any = document.querySelector('.Header');
+    this.sharedService.setReferenceNavElement(navElement);
   }
 
   gsapToggleClassNav(elemento: HTMLElement, clase: string) {
@@ -51,6 +53,30 @@ export class NavComponent implements AfterViewInit, OnInit {
     });
   }
 
+  isActive(path: string): boolean {
+    const isActiveOptions: IsActiveMatchOptions = {
+      paths: 'exact',
+      matrixParams: 'exact',
+      queryParams: 'exact',
+      fragment: 'exact',
+    };
+
+    return this.router.isActive(path, isActiveOptions);
+  }
+
+  moveToSection(routeName: string, element: HTMLElement) {
+    this.sharedService.setLinkName = {
+      nameLink: routeName,
+      divElement: element,
+    };
+  }
+
+  constructor(
+    private router: Router,
+    private sharedService: CommunicateLinksService
+  ) {}
+
+  /* hard data */
   myRoutes: Routes[] = [
     { name: 'Inicio', path: '/portfolio/myDescription', nameSection: 'inicio' },
     {
@@ -70,24 +96,4 @@ export class NavComponent implements AfterViewInit, OnInit {
       nameSection: 'contactame',
     },
   ];
-
-  isActive(path: string): boolean {
-    const isActiveOptions: IsActiveMatchOptions = {
-      paths: 'exact',
-      matrixParams: 'exact',
-      queryParams: 'exact',
-      fragment: 'exact',
-    };
-
-    return this.router.isActive(path, isActiveOptions);
-  }
-
-  moveToSection(routeName: string) {
-    this.sharedService.setLinkName = routeName;
-  }
-
-  constructor(
-    private router: Router,
-    private sharedService: CommunicateLinksService
-  ) {}
 }

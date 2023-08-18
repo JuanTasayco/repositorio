@@ -7,7 +7,10 @@ import {
 } from '@angular/core';
 import { gsap } from 'gsap';
 import { ScrollTrigger, ScrollToPlugin } from 'gsap/all';
-import { CommunicateLinksService } from 'src/app/shared/services/communicate-links.service';
+import {
+  CommunicateLinksService,
+  NavElements,
+} from 'src/app/shared/services/communicate-links.service';
 @Directive({
   selector: '[appToScroll]',
 })
@@ -18,9 +21,8 @@ export class ToScrollDirective implements AfterViewInit, OnInit {
   ngOnInit(): void {
     gsap.registerPlugin(ScrollTrigger);
     gsap.registerPlugin(ScrollToPlugin);
-    this.getObservableNameLink();
   }
-
+  navReferenceElement!: HTMLElement;
   currentName: string = '';
   linkName: string = '';
 
@@ -28,11 +30,15 @@ export class ToScrollDirective implements AfterViewInit, OnInit {
     this.currentName = value;
   }
 
-  ngAfterViewInit(): void {}
+  ngAfterViewInit(): void {
+    this.navReferenceElement = this.sharedService.navElement;
+    this.getObservableNameLink();
+  }
 
   getObservableNameLink() {
-    this.sharedModule.getLinkName.subscribe((data) => {
-      this.linkName = data.toLocaleLowerCase();
+    /* necesito esta lógica porque necesito el evento del nav al dar click, la directiva por si sola no obtiene el evento, solo la referencia del elemento oal que iré */
+    this.sharedService.getLinkName.subscribe((data: NavElements) => {
+      this.linkName = data.nameLink.toLocaleLowerCase();
       if (this.currentName == this.linkName) {
         gsap.to(window, {
           scrollTo: {
@@ -46,6 +52,6 @@ export class ToScrollDirective implements AfterViewInit, OnInit {
 
   constructor(
     private el: ElementRef<HTMLElement>,
-    private sharedModule: CommunicateLinksService
+    private sharedService: CommunicateLinksService
   ) {}
 }
