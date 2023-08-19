@@ -63,7 +63,11 @@ export class ContactMeComponent implements OnInit, AfterViewInit {
 
   enviarFormulario() {
     const resultado = this.formContact.value;
-    console.log(this.formContact.get('email')?.errors);
+    if (this.formContact.valid) {
+    } else {
+      this.formContact.markAsTouched();
+      console.log('el formulario no es valido');
+    }
   }
 
   getErrorsForm(formControlName: string, elementClass: string) {
