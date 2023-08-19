@@ -43,7 +43,6 @@ export class NavComponent implements AfterViewInit, OnInit {
     /* animación de cambio al bajar  */
     ScrollTrigger.create({
       scrub: 1,
-      markers: true,
       start: 'top top',
       toggleClass: {
         targets: barraNavegacion,
