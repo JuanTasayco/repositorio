@@ -1,17 +1,148 @@
 @use "src/_custom" as *;
 
 .Home {
-  display: block;
-  z-index: 1;
-  background-color: #000000;
+  height: 100%;
 
-  &-content {
-    box-sizing: border-box;
-    height: 200%;
+  &-principal {
+    height: 100%;
+    @include media-breakpoint-down(lg) {
+      border: 2px solid red;
+      display: flex;
+    }
+  }
+
+  &-section {
+    color: white;
+    padding: 0;
+    &--cover {
+      height: 100%;
+      position: fixed;
+      background-color: #030712;
+      background-image: linear-gradient(45deg, #030712 0%, #143477 100%);
+      @include media-breakpoint-down(lg) {
+        height: 80%;
+        position: relative;
+      }
+    }
+
+    &--content {
+      background-color: black;
+      @include media-breakpoint-down(lg) {
+        flex-grow: 1;
+        position: relative;
+      }
+    }
+  }
+
+  /* contenedor que agrega el padding para dar el efecto container de boostrap */
+  &-container {
+    /*     width: min(90%, 560px); */
+    height: 100%;
+    @include media-breakpoint-down(lg) {
+      margin: auto;
+    }
+    &--cover {
+      width: min(90%, 550px);
+      margin-left: auto;
+      display: flex;
+      flex-direction: column;
+      & .Titles {
+        &-description {
+          height: 95%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+
+        &-socials {
+          display: flex;
+          @include media-breakpoint-down(lg) {
+            justify-content: center;
+            align-items: center;
+          }
+        }
+
+        &-msg {
+          flex-grow: 1;
+          text-align: center;
+          @include media-breakpoint-up(lg) {
+            text-align: flex-start;
+          }
+        }
+        &-h1 {
+          font-weight: lighter;
+          font-size: clamp(2rem, 2vw, 2.25rem);
+          &--position {
+            color: $danger;
+          }
+        }
+        &-p {
+          font-size: 0.875rem;
+          @include media-breakpoint-up(lg) {
+            width: 75%;
+          }
+        }
+
+        &-svg {
+          height: 1rem;
+          /*   padding: 0rem 1rem; */
+          margin: 0;
+          padding: 0;
+          &--me {
+            padding: 0;
+            display: flex;
+            align-items: center;
+            @include media-breakpoint-down(lg) {
+              justify-content: center;
+            }
+          }
+        }
+      }
+    }
+    &--content {
+      position: relative;
+      width: min(90%, 620px);
+    }
+  }
+
+  &-p {
+    font-size: 0.875rem;
+  }
+  img {
+    width: 100%;
+    max-height: 100%;
+    border-radius: 1rem;
+    object-fit: fill;
+  }
+
+  &-descriptions {
+    overflow-x: hidden;
+    height: 50%;
+    z-index: 50;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+    color: white;
+    @include media-breakpoint-down(sm) {
+      border: 2px solid green;
+    }
+  }
+
+  &-cards {
+    overflow-x: hidden;
+    background-color: #000000;
+    color: white;
+  }
+
+  &-footer {
+    background-color: #000000;
+    color: white;
+    height: 50%;
   }
 
   &-grid {
-    background-color: #000000;
     z-index: 1;
     display: grid;
     width: 100%;
@@ -127,73 +258,5 @@
       top: 85%;
       scale: 2;
     }
-  }
-
-  &-cover {
-    display: flex;
-    position: absolute;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0rem 2rem;
-    z-index: 20;
-    color: white;
-  }
-
-  &-h1 {
-    &--title {
-      font-size: clamp(1.5rem, 2vw, 7rem);
-      text-transform: uppercase;
-      text-align: center;
-    }
-
-    &--name {
-      font-size: clamp(1.5rem, 7vw, 9rem);
-      font-weight: 600;
-      text-transform: uppercase;
-      color: $danger;
-    }
-  }
-
-  img {
-    width: 100%;
-    max-height: 100%;
-    border-radius: 1rem;
-    object-fit: fill;
-  }
-
-  &-descriptions {
-    overflow-x: hidden;
-    height: 50%;
-    z-index: 50;
-    max-width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #000000;
-    color: white;
-    @include media-breakpoint-down(sm) {
-      border: 2px solid green;
-      
-    }
-  }
-
-  &-cards {
-    overflow-x: hidden;
-    background-color: #000000;
-    color: white;
-  }
-
-  &-footer {
-    background-color: #000000;
-    color: white;
-    height: 50%;
-  }
-
-  &-activeColor {
-    color: red !important;
   }
 }

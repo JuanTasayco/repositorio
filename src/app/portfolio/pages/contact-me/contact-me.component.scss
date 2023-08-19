@@ -27,13 +27,4 @@
       border-color: white;
     }
   }
-
-  &-svg {
-    height: 5rem;
-    padding: 0rem 2rem;
-    @include media-breakpoint-down(xl) {
-      height: 2rem;
-      padding: 0rem 1rem;
-    }
-  }
 }

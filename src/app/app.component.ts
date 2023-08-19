@@ -11,10 +11,7 @@ import { PrimeNGConfig } from 'primeng/api';
 export class AppComponent implements OnInit {
   title = 'portfolio';
 
-  @ViewChild(BaseChartDirective) chart: BaseChartDirective | undefined;
-
   constructor(
-    private render: Renderer2,
     @Inject(DOCUMENT) private document: Document,
     private primengConfig: PrimeNGConfig
   ) {}

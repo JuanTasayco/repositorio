@@ -1,0 +1,9 @@
+@use "src/_custom" as *;
+.Socials {
+  display: flex;
+  gap:2rem;
+  &-svg {
+    height: 2rem;
+    padding: 0rem 0rem;
+  }
+}

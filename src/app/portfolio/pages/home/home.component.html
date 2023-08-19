@@ -1,7 +1,8 @@
-<app-nav></app-nav>
-<div #c appToScroll idName="inicio" class="Home h-100 w-100 position-relative">
-  <main class="Home-content">
-    <div #containerGrid class="Home-grid">
+<!-- <app-nav></app-nav> -->
+<div #c appToScroll idName="inicio" class="Home">
+  <main class="Home-principal row m-0 p-0">
+    <!-- grid icons -->
+    <!--   <div #containerGrid class="Home-grid">
       <div #figure class="Home-gridItem Home-gridItem--square">
         <img
           alt="devjavascript"
@@ -18,7 +19,7 @@
           src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
         />
       </div>
-      <!--  -->
+
       <div #figure class="Home-gridItem Home-gridItem--square">
         <img
           alt="devhtml5"
@@ -126,33 +127,137 @@
         />
       </div>
 
-      <!--  -->
+
 
       <div></div>
-    </div>
-    <section class="Home-cover">
-      <div
-        #coverTitle
-        class="d-flex flex-column justify-content-center align-items-center w-100"
-      >
-        <h1 class="Home-h1 Home-h1--name">Juan Tasayco</h1>
-        <h1 class="Home-h1 Home-h1--title">Desarrollador web</h1>
+    </div> -->
+
+    <section #pinSection class="Home-section Home-section--cover col-lg-6">
+      <div class="Home-container Home-container--cover">
+        <div class="Titles-description">
+          <h1 class="Titles-h1 Titles-h1--position mb-5">Desarrollador web</h1>
+          <h1 class="Titles-h1 Titles-h1--name">Juan Tasayco</h1>
+
+          <p class="Titles-p">
+            Hola!! Soy un profesional dedicado al desarrollo web, ubicado en
+            Lima Perú, mis frameworks favoritos de utilizar son Angular y Nest
+            JS; para Front-end y Back-end respectivamente, estas involucran una
+            serie de conocimientos en distintos lenguajes y tecnologías, tales
+            como HTML, CSS, SASS, Javascript, Typescript, Docker, Mongo,
+            PostgresSQL, GitHub, entre otros.
+          </p>
+          <div class="Titles-socials mt-4">
+            <app-svg-socials></app-svg-socials>
+          </div>
+        </div>
+        <div class="Titles-msg">
+          <small class="Titles-svg Titles-svg--me">
+            Conóceme
+            <svg
+              class="Titles-svg mx-2"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+            >
+              <path
+                d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"
+              />
+            </svg>
+            Juan Tasayco
+          </small>
+        </div>
       </div>
     </section>
-    <section #c appToScroll idName="descripcion" class="Home-descriptions">
-      <app-my-description></app-my-description>
+    <section
+      #contentSection
+      class="Home-section Home-section--content offset-lg-6 col-lg-6"
+    >
+      <div class="Home-container Home-container--content">
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias vel
+          voluptate placeat laudantium aperiam nisi ea distinctio? Earum, sit
+          iusto. Quidem quod ab dignissimos cumque aut ea architecto repellat
+          maxime?
+        </p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias vel
+          voluptate placeat laudantium aperiam nisi ea distinctio? Earum, sit
+          iusto. Quidem quod ab dignissimos cumque aut ea architecto repellat
+          maxime?
+        </p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias vel
+          voluptate placeat laudantium aperiam nisi ea distinctio? Earum, sit
+          iusto. Quidem quod ab dignissimos cumque aut ea architecto repellat
+          maxime?
+        </p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias vel
+          voluptate placeat laudantium aperiam nisi ea distinctio? Earum, sit
+          iusto. Quidem quod ab dignissimos cumque aut ea architecto repellat
+          maxime?
+        </p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias vel
+          voluptate placeat laudantium aperiam nisi ea distinctio? Earum, sit
+          iusto. Quidem quod ab dignissimos cumque aut ea architecto repellat
+          maxime?
+        </p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias vel
+          voluptate placeat laudantium aperiam nisi ea distinctio? Earum, sit
+          iusto. Quidem quod ab dignissimos cumque aut ea architecto repellat
+          maxime?
+        </p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias vel
+          voluptate placeat laudantium aperiam nisi ea distinctio? Earum, sit
+          iusto. Quidem quod ab dignissimos cumque aut ea architecto repellat
+          maxime?
+        </p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias vel
+          voluptate placeat laudantium aperiam nisi ea distinctio? Earum, sit
+          iusto. Quidem quod ab dignissimos cumque aut ea architecto repellat
+          maxime?
+        </p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias vel
+          voluptate placeat laudantium aperiam nisi ea distinctio? Earum, sit
+          iusto. Quidem quod ab dignissimos cumque aut ea architecto repellat
+          maxime?
+        </p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias vel
+          voluptate placeat laudantium aperiam nisi ea distinctio? Earum, sit
+          iusto. Quidem quod ab dignissimos cumque aut ea architecto repellat
+          maxime?
+        </p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias vel
+          voluptate placeat laudantium aperiam nisi ea distinctio? Earum, sit
+          iusto. Quidem quod ab dignissimos cumque aut ea architecto repellat
+          maxime?
+        </p>
+        
+      </div>
     </section>
+    <!-- descriptions -->
+    <!--   <section #c appToScroll idName="descripcion" class="Home-descriptions">
+      <app-my-description></app-my-description>
+    </section> -->
 
-    <div #c class="Home-cards">
+    <!-- cards proyects -->
+    <!--  <div #c class="Home-cards">
       <hr appToScroll idName="trabajos" class="Principal-hr" />
 
       <app-project-description
         [contenido]="infoProject"
       ></app-project-description>
-    </div>
+    </div> -->
 
-    <footer #c appToScroll idName="contactame" class="Home-footer">
+    <!-- contactme section -->
+    <!--    <footer #c appToScroll idName="contactame" class="Home-footer">
       <app-contact-me></app-contact-me>
-    </footer>
+    </footer> -->
   </main>
 </div>

@@ -4,7 +4,13 @@
   height: 4rem;
   /*  background-color: $light; */
   position: fixed;
-  inset: 0;
+  @include media-breakpoint-up(lg) {
+    width: 50%;
+  }
+
+  float: right;
+  top: 0;
+  right: 0;
   z-index: 10;
 
   &-nav {

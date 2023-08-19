@@ -11,6 +11,7 @@ import { NgPrimeModule } from '../ng-prime/ng-prime.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ChartsModule } from '../charts/charts.module';
 import { ToScrollDirective } from './directives/to-scroll.directive';
+import { SvgSocialsComponent } from './components/svg-socials/svg-socials.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ToScrollDirective } from './directives/to-scroll.directive';
     ProjectDescriptionComponent,
     ContactMeComponent,
     ToScrollDirective,
+    SvgSocialsComponent,
   ],
   imports: [
     CommonModule,
