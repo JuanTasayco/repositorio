@@ -1,6 +1,7 @@
 <!-- <app-nav></app-nav> -->
 <div #c appToScroll idName="inicio" class="Home">
-  <main class="Home-principal row m-0 p-0">
+  <!--   <app-nav></app-nav> -->
+  <main class="Home-principal row">
     <!-- grid icons -->
     <!--   <div #containerGrid class="Home-grid">
       <div #figure class="Home-gridItem Home-gridItem--square">
@@ -167,78 +168,21 @@
         </div>
       </div>
     </section>
+
     <section
       #contentSection
       class="Home-section Home-section--content offset-lg-6 col-lg-6"
     >
       <div class="Home-container Home-container--content">
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias vel
-          voluptate placeat laudantium aperiam nisi ea distinctio? Earum, sit
-          iusto. Quidem quod ab dignissimos cumque aut ea architecto repellat
-          maxime?
-        </p>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias vel
-          voluptate placeat laudantium aperiam nisi ea distinctio? Earum, sit
-          iusto. Quidem quod ab dignissimos cumque aut ea architecto repellat
-          maxime?
-        </p>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias vel
-          voluptate placeat laudantium aperiam nisi ea distinctio? Earum, sit
-          iusto. Quidem quod ab dignissimos cumque aut ea architecto repellat
-          maxime?
-        </p>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias vel
-          voluptate placeat laudantium aperiam nisi ea distinctio? Earum, sit
-          iusto. Quidem quod ab dignissimos cumque aut ea architecto repellat
-          maxime?
-        </p>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias vel
-          voluptate placeat laudantium aperiam nisi ea distinctio? Earum, sit
-          iusto. Quidem quod ab dignissimos cumque aut ea architecto repellat
-          maxime?
-        </p>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias vel
-          voluptate placeat laudantium aperiam nisi ea distinctio? Earum, sit
-          iusto. Quidem quod ab dignissimos cumque aut ea architecto repellat
-          maxime?
-        </p>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias vel
-          voluptate placeat laudantium aperiam nisi ea distinctio? Earum, sit
-          iusto. Quidem quod ab dignissimos cumque aut ea architecto repellat
-          maxime?
-        </p>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias vel
-          voluptate placeat laudantium aperiam nisi ea distinctio? Earum, sit
-          iusto. Quidem quod ab dignissimos cumque aut ea architecto repellat
-          maxime?
-        </p>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias vel
-          voluptate placeat laudantium aperiam nisi ea distinctio? Earum, sit
-          iusto. Quidem quod ab dignissimos cumque aut ea architecto repellat
-          maxime?
-        </p>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias vel
-          voluptate placeat laudantium aperiam nisi ea distinctio? Earum, sit
-          iusto. Quidem quod ab dignissimos cumque aut ea architecto repellat
-          maxime?
-        </p>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias vel
-          voluptate placeat laudantium aperiam nisi ea distinctio? Earum, sit
-          iusto. Quidem quod ab dignissimos cumque aut ea architecto repellat
-          maxime?
-        </p>
-        
+        <div class="Home-descriptions" #c appToScroll idName="descripcion">
+          <app-my-description></app-my-description>
+        </div>
+
+        <div class="Home-projects" #c appToScroll idName="trabajos">
+          <app-project-description
+            [contenido]="infoProject"
+          ></app-project-description>
+        </div>
       </div>
     </section>
     <!-- descriptions -->

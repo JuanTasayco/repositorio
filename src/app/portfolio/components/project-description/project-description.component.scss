@@ -1,21 +1,42 @@
 @use "src/_custom" as *;
 
 .Cards {
+  &-row {
+    margin: 0;
+    padding: 0;
+    height: 660px;
+    overflow-y: auto;
+    background-color: #ff3cac;
+    background-image: linear-gradient(
+      225deg,
+      #ff3cac 0%,
+      #784ba0 50%,
+      #2b86c5 100%
+    );
+
+    color: white;
+  }
   &-visual {
     display: flex;
     justify-content: center;
     max-height: 40rem;
   }
 
-  &-row {
-    justify-content: center;
-    align-items: center;
-    max-width: 100%;
+  &-h2 {
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    font-weight: lighter;
   }
   &-img {
     max-height: 20rem;
   }
 
+  &-p {
+    font-size: 0.875rem;
+  }
+  &-a {
+    font-size: 0.875rem;
+  }
   &-pimage {
     display: block;
   }

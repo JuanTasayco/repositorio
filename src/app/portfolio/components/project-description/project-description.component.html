@@ -1,18 +1,17 @@
-<section class="Cards container">
-  <h3 class="Principal-h3 my-5 text-uppercase">Mis proyectos</h3>
+<section class="Cards overflow-x-hidden">
   <div
-    class="Cards-row row mb-5 rounded-3 p-5 border shadow-lg mx-auto"
+    class="Cards-row row rounded-3 shadow-lg mx-auto my-5 p-5"
     #containerRef
     *ngFor="let content of contentProjects"
   >
-    <div class="Cards-text col-md-6 text-center">
-      <h2 class="CompoProject-h2 my-4">{{ content.title }}</h2>
+    <div class="Cards-text col-12 text-center">
+      <h2 class="Cards-h2 mt-2">{{ content.title }}</h2>
       <p class="Cards-p">{{ content.description }}</p>
 
-      <p>Tecnologías --> {{ content.tecnologias }}</p>
+      <p class="Cards-p">Tecnologías --> {{ content.tecnologias }}</p>
       <div class="Cards-links">
-        <a class="" [href]="content.repositorio" target="_blank">
-          Github :
+        <a class="Cards-a text-light" [href]="content.repositorio" target="_blank">
+          Github:
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="30"
@@ -26,11 +25,11 @@
             />
           </svg>
         </a>
-        <div class="d-flex justify-content-center mt-2">
-          Web Demo:
+        <div class="Cards-a d-flex justify-content-center">
+          <small>Web Demo:</small>
           <a
             [href]="content.link"
-            class="nav-link text-primary ms-2"
+            class="Cards-a nav-link text-primary ms-2 text-light"
             target="_blank"
           >
             {{ content.link }}</a
@@ -39,7 +38,7 @@
       </div>
     </div>
 
-    <div class="Cards-visual col-md-6 p-5">
+    <div class="Cards-visual col-12 px-5">
       <p-galleria
         [value]="content.imagenes"
         [numVisible]="5"

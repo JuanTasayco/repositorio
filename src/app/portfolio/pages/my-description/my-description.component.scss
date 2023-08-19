@@ -1,51 +1,9 @@
 @use "src/_custom" as *;
 
 .Descriptions {
-  &-content {
-    height: 50%;
-  }
-
-  &-container {
-    position: relative;
-    margin: 0;
-  }
+  /* utilizo > para seleccionar directamente img que es descendido directo de .Icons y agrego Icons-img para llegar al elemento específico   */
 
   &-p {
-    padding: 1rem 0rem;
-    font-size: clamp(1rem, 0.5vw, 1.5rem);
+    font-size: 0.875rem;
   }
-
-  &-myDescription {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-  }
-
-  &-h1 {
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: clamp(1rem, 2vw, 7rem);
-    background: linear-gradient(
-      90deg,
-      rgba(255, 0, 0, 1) 24%,
-      rgba(255, 255, 255, 1) 41%,
-      rgba(246, 246, 246, 1) 60%,
-      rgba(255, 0, 0, 0.9738270308123249) 77%
-    );
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  &-graphic {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  &-hr {
-    padding: 1.5rem 0rem;
-  }
-
-  /* utilizo > para seleccionar directamente img que es descendido directo de .Icons y agrego Icons-img para llegar al elemento específico   */
 }

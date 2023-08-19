@@ -2,8 +2,14 @@ import {
   AfterViewInit,
   ChangeDetectionStrategy,
   Component,
+  ElementRef,
   OnInit,
+  QueryList,
+  ViewChild,
+  ViewChildren,
 } from '@angular/core';
+
+import Lenis from '@studio-freight/lenis';
 
 import { gsap } from 'gsap';
 import { HardDataService } from '../../services/hard-data.service';
@@ -15,12 +21,13 @@ import { CommunicateLinksService } from 'src/app/shared/services/communicate-lin
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeComponent implements OnInit, AfterViewInit {
-  ngOnInit(): void {}
+  @ViewChild('coverTitle') coverTitle!: ElementRef<HTMLElement>;
+  @ViewChild('containerGrid') containerGrid!: ElementRef<HTMLElement>;
+  @ViewChildren('figure') figuresIcon!: QueryList<ElementRef>;
+  @ViewChildren('c') principalContainers!: QueryList<ElementRef>;
 
-  ngAfterViewInit(): void {
-    /* contenedores para cambiar color de nav */
-    const navItems: NodeListOf<HTMLElement> = this.sharedModule.linkNavElements;
-  }
+  ngOnInit(): void {}
+  ngAfterViewInit(): void {}
   public infoProject: ProjectDescriptions[] = [];
   constructor(
     private dataService: HardDataService,
