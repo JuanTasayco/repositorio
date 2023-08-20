@@ -12,6 +12,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ChartsModule } from '../charts/charts.module';
 import { ToScrollDirective } from './directives/to-scroll.directive';
 import { SvgSocialsComponent } from './components/svg-socials/svg-socials.component';
+import { SvgDevIconsComponent } from './components/svg-dev-icons/svg-dev-icons.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { SvgSocialsComponent } from './components/svg-socials/svg-socials.compon
     ContactMeComponent,
     ToScrollDirective,
     SvgSocialsComponent,
+    SvgDevIconsComponent,
   ],
   imports: [
     CommonModule,

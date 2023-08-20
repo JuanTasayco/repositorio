@@ -1,16 +1,17 @@
-<div class="Contactme-content rounded-3 h-100">
-  <h2 class="Contactme-h2 display-2 mb-5">Contáctame!</h2>
-
+<h1 class="Contactme-h1 mb-5">Contactame:</h1>
+<p class="Contactme-p">
+  Escribeme cualquier consulta que tengas, estoy a tu disposición :)
+</p>
+<div class="Contactme-content rounded-3">
   <form
     [formGroup]="formContact"
     action=""
     class="Contactme-form row my-5 needs-validation"
     novalidate
   >
-    <div class="Contactme-col col-md-6">
-      <!--name -->
+    <div class="Contactme-col col-12">
       <div class="Contactme-group form-group">
-        <label for="nameInput"> Nombres : </label>
+        <label class="Contactme-label" for="nameInput"> Nombres : </label>
         <input
           type="text"
           id="nameInput"
@@ -19,13 +20,13 @@
           class="Contactme-input form-control"
           placeholder=""
         />
-        <!-- esto se turna en base a si colocamos la clase is-valid o is-invalid -->
+
         <div class="valid-feedback">Luce bien</div>
         <div class="invalid-feedback">{{ validateErrorName }}</div>
       </div>
-      <!-- email -->
+
       <div class="Contactme-group form-group">
-        <label for="emailInput"> Email :</label>
+        <label class="Contactme-label" for="emailInput"> Email :</label>
         <input
           type="text"
           id="emailInput"
@@ -36,9 +37,9 @@
         <div class="valid-feedback">Luce bien</div>
         <div class="invalid-feedback">{{ validateEmailError }}</div>
       </div>
-      <!-- country -->
+
       <div class="Contactme-group form-group">
-        <label for="paisInput"> País </label>
+        <label class="Contactme-label" for="paisInput"> País </label>
         <input
           type="text"
           id="paisInput"
@@ -51,14 +52,13 @@
       </div>
     </div>
 
-    <!-- textArea -->
-    <div class="Contactme-col col-md-6">
+    <div class="Contactme-col col-12">
       <div class="Contactme-group form-group">
         <label for="reasonInput" class="Contactme-label form-label"
           >Escríbe el motivo</label
         >
         <textarea
-          class="Contactme-area form-control form-control-lg"
+          class="Contactme-area form-control form-control"
           id="reasonInput"
           rows="3"
           formControlName="area"
@@ -66,8 +66,7 @@
       </div>
     </div>
 
-    <!-- send form -->
-    <div class="Contactme-buttonGroup">
+    <div class="Contactme-buttonContainer">
       <button
         id="buttonSend"
         aria-labelledby="buttonSendFormulary"
@@ -79,6 +78,4 @@
       </button>
     </div>
   </form>
-  <!-- svg sections contact -->
-  <app-svg-socials></app-svg-socials>
 </div>

@@ -1,0 +1,8 @@
+@use "_custom" as *;
+
+.DevIcon {
+  display: flex;
+  &-p {
+    font-size: 0.875rem;
+  }
+}

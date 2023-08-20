@@ -27,7 +27,26 @@ export class HomeComponent implements OnInit, AfterViewInit {
   @ViewChildren('c') principalContainers!: QueryList<ElementRef>;
 
   ngOnInit(): void {}
-  ngAfterViewInit(): void {}
+
+  ngAfterViewInit(): void {
+    /* contenedores para cambiar color de nav */
+    const navItems: NodeListOf<HTMLElement> = this.sharedModule.linkNavElements;
+    this.principalContainers.forEach((element, index) => {
+      gsap.to(element.nativeElement, {
+        scrollTrigger: {
+          trigger: element.nativeElement,
+          start: 'top 2%',
+          end: 'bottom bottom',
+          scrub: 1,
+          toggleClass: {
+            targets: navItems[index],
+            className: 'Home-activeColor',
+          },
+        },
+      });
+    });
+  }
+
   public infoProject: ProjectDescriptions[] = [];
   constructor(
     private dataService: HardDataService,

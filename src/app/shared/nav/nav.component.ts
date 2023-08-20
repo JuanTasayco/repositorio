@@ -76,12 +76,11 @@ export class NavComponent implements AfterViewInit, OnInit {
 
   /* hard data */
   myRoutes: Routes[] = [
-    { name: 'Inicio', path: '/portfolio/myDescription', nameSection: 'inicio' },
-    {
-      name: 'Conoceme',
-      path: '/portfolio/conoceme',
-      nameSection: 'descripcion',
-    },
+    { name: 'Inicio', 
+    path: '/portfolio/myDescription', 
+    nameSection: 'inicio' 
+  },
+
     {
       name: 'Mis proyectos',
       path: '/portfolio/myProjects',

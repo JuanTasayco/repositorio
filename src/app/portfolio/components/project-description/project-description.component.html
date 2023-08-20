@@ -1,4 +1,9 @@
 <section class="Cards overflow-x-hidden">
+  <p class="Cards-p mt-3">
+    Mis proyectos personales, aquí uso todo tipo de técnicas manteniendo siempre
+    una arquitectura limpia y escalable.
+  </p>
+
   <div
     class="Cards-row row rounded-3 shadow-lg mx-auto my-5 p-5"
     #containerRef
@@ -10,7 +15,11 @@
 
       <p class="Cards-p">Tecnologías --> {{ content.tecnologias }}</p>
       <div class="Cards-links">
-        <a class="Cards-a text-light" [href]="content.repositorio" target="_blank">
+        <a
+          class="Cards-a text-light"
+          [href]="content.repositorio"
+          target="_blank"
+        >
           Github:
           <svg
             xmlns="http://www.w3.org/2000/svg"

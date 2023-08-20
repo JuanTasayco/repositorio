@@ -1,138 +1,7 @@
 <!-- <app-nav></app-nav> -->
-<div #c appToScroll idName="inicio" class="Home">
-  <!--   <app-nav></app-nav> -->
+<div class="Home">
+  <app-nav></app-nav>
   <main class="Home-principal row">
-    <!-- grid icons -->
-    <!--   <div #containerGrid class="Home-grid">
-      <div #figure class="Home-gridItem Home-gridItem--square">
-        <img
-          alt="devjavascript"
-          #iconDev
-          class="Icons-img"
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-        />
-      </div>
-      <div #figure class="Home-gridItem Home-gridItem--circle">
-        <img
-          alt="devtypescript"
-          #iconDev
-          class="Icons-img"
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
-        />
-      </div>
-
-      <div #figure class="Home-gridItem Home-gridItem--square">
-        <img
-          alt="devhtml5"
-          #iconDev
-          class="Icons-img"
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
-        />
-      </div>
-
-      <div #figure class="Home-gridItem Home-gridItem--normal">
-        <img
-          alt="devcss3"
-          #iconDev
-          class="Icons-img"
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
-        />
-      </div>
-
-      <div #figure class="Home-gridItem Home-gridItem--square">
-        <img
-          alt="devangularjs"
-          #iconDev
-          class="Icons-img"
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg"
-        />
-      </div>
-
-      <div #figure class="Home-gridItem Home-gridItem--normal">
-        <img
-          alt="devbootstrap"
-          #iconDev
-          class="Icons-img"
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
-        />
-      </div>
-
-      <div #figure class="Home-gridItem Home-gridItem--square">
-        <img
-          alt="devdocker"
-          #iconDev
-          class="Icons-img"
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
-        />
-      </div>
-
-      <div #figure class="Home-gridItem Home-gridItem--circle">
-        <img
-          alt="devnestjs"
-          #iconDev
-          class="Icons-img"
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-plain.svg"
-        />
-      </div>
-
-      <div #figure class="Home-gridItem Home-gridItem--normal">
-        <img
-          alt="devgithub"
-          #iconDev
-          class="Icons-img"
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
-        />
-      </div>
-
-      <div #figure class="Home-gridItem Home-gridItem--square">
-        <img
-          alt="devmongodb"
-          #iconDev
-          class="Icons-img"
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
-        />
-      </div>
-
-      <div #figure class="Home-gridItem Home-gridItem--circle">
-        <img
-          alt="devsass"
-          #iconDev
-          class="Icons-img"
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg"
-        />
-      </div>
-
-      <div #figure class="Home-gridItem Home-gridItem--square">
-        <img
-          alt="devnpm"
-          #iconDev
-          class="Icons-img"
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg"
-        />
-      </div>
-
-      <div #figure class="Home-gridItem Home-gridItem--normal">
-        <img
-          alt="devpostgresql"
-          #iconDev
-          class="Icons-img"
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
-        />
-      </div>
-
-      <div #figure class="Home-gridItem Home-gridItem--normal">
-        <img
-          alt="devtailwindcss"
-          #iconDev
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original-wordmark.svg"
-        />
-      </div>
-
-
-
-      <div></div>
-    </div> -->
-
     <section #pinSection class="Home-section Home-section--cover col-lg-6">
       <div class="Home-container Home-container--cover">
         <div class="Titles-description">
@@ -174,7 +43,7 @@
       class="Home-section Home-section--content offset-lg-6 col-lg-6"
     >
       <div class="Home-container Home-container--content">
-        <div class="Home-descriptions" #c appToScroll idName="descripcion">
+        <div class="Home-descriptions" #c appToScroll idName="inicio">
           <app-my-description></app-my-description>
         </div>
 
@@ -183,25 +52,13 @@
             [contenido]="infoProject"
           ></app-project-description>
         </div>
+        <footer #c appToScroll idName="contactame" class="Home-footer">
+          <app-contact-me></app-contact-me>
+        </footer>
       </div>
     </section>
     <!-- descriptions -->
-    <!--   <section #c appToScroll idName="descripcion" class="Home-descriptions">
-      <app-my-description></app-my-description>
-    </section> -->
-
-    <!-- cards proyects -->
-    <!--  <div #c class="Home-cards">
-      <hr appToScroll idName="trabajos" class="Principal-hr" />
-
-      <app-project-description
-        [contenido]="infoProject"
-      ></app-project-description>
-    </div> -->
 
     <!-- contactme section -->
-    <!--    <footer #c appToScroll idName="contactame" class="Home-footer">
-      <app-contact-me></app-contact-me>
-    </footer> -->
   </main>
 </div>

@@ -50,12 +50,6 @@ export class ToScrollDirective implements AfterViewInit, OnInit {
     });
   }
 
-  deleteClassColorNav() {
-    this.navLinksElements.forEach((element) => {
-      element.classList.remove('Header-aRed');
-    });
-  }
-
   constructor(
     private el: ElementRef<HTMLElement>,
     private sharedService: CommunicateLinksService

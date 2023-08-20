@@ -1,30 +1,35 @@
 @use "src/_custom" as *;
 .Contactme {
-  &-content {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0rem 3rem;
-    @include media-breakpoint-up(xl) {
-      /*       border-bottom: 1px solid;
-      border-left: 1px solid; */
-      height: 100%;
-      padding: 9rem 6rem;
-      text-align: start;
-    }
-  }
-
   &-group {
     margin-bottom: 1rem;
   }
+  &-p {
+    font-size: 0.875rem;
+  }
 
+  &-label {
+    font-size: 0.875rem;
+  }
+
+  &-buttonContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+  }
   &-button {
     &--send {
-      background-color: #332d2d;
       color: white;
-      border-color: white;
+      background-color: #060f23;
+
+      &:hover {
+        background-color: #ff3cac;
+        background-image: linear-gradient(
+          225deg,
+          #ff3cac 0%,
+          #784ba0 50%,
+          #2b86c5 100%
+        );
+      }
     }
   }
 }

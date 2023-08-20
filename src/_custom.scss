@@ -1,11 +1,12 @@
-$family : 'Inter',
-sans-serif;
+$family: "Inter", sans-serif;
 $font-family-sans-serif: $family;
 $headings-font-weight: 800;
 $form-check-input-width: 2em;
-$form-check-input-checked-bg-color: #FFD700;
-$form-check-input-checked-border-color: #FFD700;
-$input-focus-box-shadow: 0rem 0rem 1rem white;
-$input-bg: #EEEFEE;
-$input-border-color: #726F70;
-@import "../node_modules/bootstrap/scss/bootstrap.scss"
+$form-check-input-checked-bg-color: #ffd700;
+$form-check-input-checked-border-color: #ffd700;
+$input-focus-box-shadow: 0rem 0rem 1rem #111827;
+$input-bg: #111827;
+$input-border-color: #726f70;
+$input-color: white;
+$input-font-size: 0.875rem;
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
