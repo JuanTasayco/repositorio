@@ -6,24 +6,12 @@
   background-image: linear-gradient(45deg, #030712 0%, #143477 100%);
   position: fixed;
   width: 100%;
-  @include media-breakpoint-up(lg) {
-    width: 50%;
-  }
-
   top: 0;
   left: 0;
   z-index: 10;
 
-  &-nav {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    /*   @include media-breakpoint-up(lg) {
- 
-      right: 0;
-      position: fixed;
-      display: flex;
-    } */
+  @include media-breakpoint-up(lg) {
+    width: 50%;
   }
 
   &-navbar {
@@ -32,6 +20,24 @@
     display: flex;
     justify-content: center;
     gap: 1rem;
+  }
+
+  &-container {
+    @include media-breakpoint-down(sm) {
+      border: 2px solid red;
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 70%;
+      height: 100dvh;
+      z-index: 100;
+      background-color: #143477;
+    }
+  }
+
+  &-nav {
+    display: flex;
+    justify-content: center;
+    width: 100%;
   }
 
   &-a {
@@ -48,6 +54,17 @@
     &:hover {
       color: white;
     }
+  }
+
+  &-button {
+    background-color: #143477;
+    border-radius: 20%;
+    box-shadow: none;
+  }
+
+  &-svg {
+    fill: white;
+    border-radius: 20%;
   }
 }
 
