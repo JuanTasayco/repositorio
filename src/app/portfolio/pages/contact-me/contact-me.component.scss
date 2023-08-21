@@ -20,15 +20,18 @@
     &--send {
       color: white;
       background-color: #060f23;
+      transition: transform 0.3s ease;
 
       &:hover {
         background-color: #ff3cac;
+        border-color: white;
         background-image: linear-gradient(
           225deg,
           #ff3cac 0%,
           #784ba0 50%,
           #2b86c5 100%
         );
+        transform: scale(1.2);
       }
     }
   }

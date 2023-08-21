@@ -1,11 +1,13 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
 import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  Validators,
-} from '@angular/forms';
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { debounceTime } from 'rxjs';
+import { gsap } from 'gsap';
 
 @Component({
   selector: 'app-contact-me',
@@ -13,7 +15,7 @@ import { debounceTime } from 'rxjs';
   styleUrls: [],
 })
 export class ContactMeComponent implements OnInit, AfterViewInit {
-  constructor(private formBuilder: FormBuilder) {}
+  constructor() {}
 
   formContact: FormGroup = new FormBuilder().group({
     name: ['', Validators.required],
@@ -24,9 +26,10 @@ export class ContactMeComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {}
   ngAfterViewInit(): void {
-    this.getErrorsForm('name', 'nameInput');
-    this.getErrorsForm('email', 'emailInput');
-    this.getErrorsForm('pais', 'paisInput');
+    /* para validar cuando se escribe */
+    this.getErrorsFormDebounce('name', 'nameInput');
+    this.getErrorsFormDebounce('email', 'emailInput');
+    this.getErrorsFormDebounce('pais', 'paisInput');
   }
 
   /* controla el mensaje a mostrar, el getErrorsForm decide si se muestra el error o el checkGood */
@@ -57,33 +60,46 @@ export class ContactMeComponent implements OnInit, AfterViewInit {
     return '';
   }
 
-  getTextUser(event: Event) {
-    /* console.log((event?.target as HTMLInputElement).value); */
-  }
-
   enviarFormulario() {
     const resultado = this.formContact.value;
+    console.log(resultado);
     if (this.formContact.valid) {
+      console.log('formulario valido');
     } else {
-      this.formContact.markAsTouched();
-      console.log('el formulario no es valido');
+      this.formContact.markAllAsTouched();
+      /* para validar al dar click en send y el form es inválido */
+      this.getErrorsBeforeSend('name', 'nameInput');
+      this.getErrorsBeforeSend('email', 'emailInput');
+      this.getErrorsBeforeSend('pais', 'paisInput');
     }
   }
 
-  getErrorsForm(formControlName: string, elementClass: string) {
+  /* validacion cuando el usario empieza a escribir en el input*/
+  getErrorsFormDebounce(formControlName: string, elementClass: string) {
     this.formContact
       .get(formControlName)
       ?.valueChanges.pipe(debounceTime(400))
       .subscribe(() => {
-        const elemento = document.querySelector(`#${elementClass}`);
-        if (this.formContact.get(formControlName)?.errors) {
-          console.log(this.formContact.get(formControlName)?.errors);
-          elemento?.classList.remove('is-valid');
-          elemento?.classList.add('is-invalid');
-        } else {
-          elemento?.classList.add('is-valid');
-          elemento?.classList.remove('is-invalid');
-        }
+        this.validateErrorsForClass(formControlName, elementClass);
       });
+  }
+
+  /* validacion por si el usuario no escriba nada y simplemente presiona send, tomar en cuenta el markAllAsTouched antes de donde se declara esta función */
+  getErrorsBeforeSend(formControlName: string, elementClass: string) {
+    if (this.formContact.get(formControlName)?.touched) {
+      this.validateErrorsForClass(formControlName, elementClass);
+    }
+  }
+
+  /* validacion que va dentro de getErrorsFormDebounce y getErrorsBeforeSend, al escribir y al dar enviar  */
+  validateErrorsForClass(formControlName: string, elementClass: string) {
+    const elemento = document.querySelector(`#${elementClass}`);
+    if (this.formContact.get(formControlName)?.errors) {
+      elemento?.classList.remove('is-valid');
+      elemento?.classList.add('is-invalid');
+    } else {
+      elemento?.classList.add('is-valid');
+      elemento?.classList.remove('is-invalid');
+    }
   }
 }

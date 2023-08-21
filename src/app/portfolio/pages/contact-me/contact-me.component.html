@@ -16,7 +16,6 @@
           type="text"
           id="nameInput"
           formControlName="name"
-          (input)="getTextUser($event)"
           class="Contactme-input form-control"
           placeholder=""
         />
@@ -35,7 +34,9 @@
           placeholder=""
         />
         <div class="valid-feedback">Luce bien</div>
-        <div class="invalid-feedback">{{ validateEmailError }}</div>
+        <div class="invalid-feedback">
+          {{ validateEmailError }}
+        </div>
       </div>
 
       <div class="Contactme-group form-group">
@@ -68,6 +69,7 @@
 
     <div class="Contactme-buttonContainer">
       <button
+        #buttonSend
         id="buttonSend"
         aria-labelledby="buttonSendFormulary"
         (click)="enviarFormulario()"
