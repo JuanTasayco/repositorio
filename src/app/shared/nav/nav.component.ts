@@ -3,6 +3,7 @@ import {
   Component,
   ElementRef,
   EventEmitter,
+  HostListener,
   OnInit,
   Output,
   ViewChild,
@@ -49,6 +50,32 @@ export class NavComponent implements AfterViewInit, OnInit {
         className: 'bg-none',
       },
     });
+
+    /* lógica para barra mobile (nav) */
+    this.calcSizeVwForNavBarMobile();
+  }
+
+  @HostListener('window:resize', [])
+  calcSizeVwForNavBarMobile() {
+    const containerLinks = document.querySelector('.Header-container');
+    if (window.innerWidth < 576) {
+      gsap.set(containerLinks, {
+        xPercent: '-100',
+      });
+    } else {
+      gsap.set(containerLinks, {
+        xPercent: '0',
+      });
+    }
+  }
+
+  openNavMobile() {
+    const containerLinks = document.querySelector('.Header-container');
+    gsap.to(containerLinks, {
+      xPercent: 0,
+      duration: .5,
+      ease: 'power2.easeOut',
+    });
   }
 
   isActive(path: string): boolean {
@@ -76,10 +103,7 @@ export class NavComponent implements AfterViewInit, OnInit {
 
   /* hard data */
   myRoutes: Routes[] = [
-    { name: 'Inicio', 
-    path: '/portfolio/myDescription', 
-    nameSection: 'inicio' 
-  },
+    { name: 'Inicio', path: '/portfolio/myDescription', nameSection: 'inicio' },
 
     {
       name: 'Mis proyectos',

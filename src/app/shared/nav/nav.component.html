@@ -1,6 +1,9 @@
 <header #nav class="Header">
   <nav class="Header-nav navbar navbar-expand">
-    <button class="Header-button d-block d-sm-none ms-auto mx-2">
+    <button
+      class="Header-button d-block d-sm-none ms-auto mx-2"
+      (click)="openNavMobile()"
+    >
       <!--   <img src="assets/hamburguer.png" alt=" hamburguer" class="Header-img" /> -->
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -16,7 +19,7 @@
       </svg>
     </button>
 
-    <div class="Header-container container-fluid">
+    <div class="Header-container container-fluid" #containerLinks>
       <div
         class="Header-collapse collapse navbar-collapse"
         id="navbarNavAltMarkup"
