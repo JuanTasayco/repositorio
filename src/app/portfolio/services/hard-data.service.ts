@@ -84,6 +84,62 @@ export class HardDataService {
       link: 'www.paginaSpotify.com',
       tecnologias: 'Angular 14, Bootstrap, NGPrime ',
     } /* , https://github.com/JuanTasayco/F1-LpmGuideBackend  */,
+
+    {
+      title: 'Lpm App V3',
+      description:
+        'Aplicación responsive full stack, esta es la tercera versión de la app de LPM, añade características adicionales para posicionar los elementos de la guía ( draggable), también añade una animación más suavizada, un mayor orden de navegación y se aumenta la accesibilidad de la guía',
+      imagenes: [
+        {
+          itemImageSrc: 'assets/imagenes/lpmapp3.0.png',
+          alt: 'lpmapp3.0',
+        },
+        {
+          itemImageSrc: 'assets/imagenes/lpmapp3.2.png',
+          alt: 'lpmapp3.2',
+        },
+        {
+          itemImageSrc: 'assets/imagenes/lpmapp3.1.png',
+          alt: 'lpmapp3.1',
+        },
+        {
+          itemImageSrc: 'assets/imagenes/lpmapp3.3.png',
+          alt: 'lpmapp3.3',
+        },
+        {
+          itemImageSrc: 'assets/imagenes/lpmapp3.4.png',
+          alt: 'lpmapp3.4',
+        },
+        {
+          itemImageSrc: 'assets/imagenes/lpmapp3.5.png',
+          alt: 'lpmapp3.5',
+        },
+        {
+          itemImageSrc: 'assets/imagenes/lpmapp3.6.png',
+          alt: 'lpmapp3.6',
+        },
+        {
+          itemImageSrc: 'assets/imagenes/lpmapp3.7.png',
+          alt: 'lpmapp3.7',
+        },
+        {
+          itemImageSrc: 'assets/imagenes/lpmapp3.8.png',
+          alt: 'lpmapp3.8',
+        },
+        {
+          itemImageSrc: 'assets/imagenes/lpmapp3.9.png',
+          alt: 'lpmapp3.9',
+        },
+        {
+          itemImageSrc: 'assets/imagenes/lpmapp4.0.png',
+          alt: 'lpmapp4.0',
+        },
+      ],
+      repositorio: 'https://github.com/JuanTasayco/F1-LpmGuideFrontend ',
+      link: 'www.paginaSpotify.com',
+      tecnologias: 'Angular 14, Bootstrap, NGPrime ',
+    } /* , https://github.com/JuanTasayco/F1-LpmGuideBackend  */,
+
     {
       title: 'Spotify API',
       description:
@@ -92,6 +148,10 @@ export class HardDataService {
         {
           itemImageSrc: 'assets/imagenes/spotifyapp1.png',
           alt: 'spotImage',
+        },
+        {
+          itemImageSrc: 'assets/imagenes/spotifyapp5.png',
+          alt: 'spotImage4',
         },
         {
           itemImageSrc: 'assets/imagenes/spotifyapp2.png',

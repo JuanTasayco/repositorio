@@ -1,83 +1,85 @@
-<h1 class="Contactme-h1 mb-5">Contactame:</h1>
-<p class="Contactme-p">
-  Escribeme cualquier consulta que tengas, estoy a tu disposición :)
-</p>
-<div class="Contactme-content rounded-3">
-  <form
-    [formGroup]="formContact"
-    action=""
-    class="Contactme-form row my-5 needs-validation"
-    novalidate
-  >
-    <div class="Contactme-col col-12">
-      <div class="Contactme-group form-group">
-        <label class="Contactme-label" for="nameInput"> Nombres : </label>
-        <input
-          type="text"
-          id="nameInput"
-          formControlName="name"
-          class="Contactme-input form-control"
-          placeholder=""
-        />
+<div class="Contactme p-5 mb-5 rounded shadow-lg">
+  <h1 class="Contactme-h1 mb-5">Contactame:</h1>
+  <p class="Contactme-p">
+    Escribeme cualquier consulta que tengas, estoy a tu disposición :)
+  </p>
+  <div class="Contactme-content rounded-3">
+    <form
+      [formGroup]="formContact"
+      action=""
+      class="Contactme-form row my-5 needs-validation"
+      novalidate
+    >
+      <div class="Contactme-col col-12">
+        <div class="Contactme-group form-group">
+          <label class="Contactme-label" for="nameInput"> Nombres : </label>
+          <input
+            type="text"
+            id="nameInput"
+            formControlName="name"
+            class="Contactme-input form-control"
+            placeholder=""
+          />
 
-        <div class="valid-feedback">Luce bien</div>
-        <div class="invalid-feedback">{{ validateErrorName }}</div>
-      </div>
+          <div class="valid-feedback">Luce bien</div>
+          <div class="invalid-feedback">{{ validateErrorName }}</div>
+        </div>
 
-      <div class="Contactme-group form-group">
-        <label class="Contactme-label" for="emailInput"> Email :</label>
-        <input
-          type="text"
-          id="emailInput"
-          formControlName="email"
-          class="Contactme-input form-control"
-          placeholder=""
-        />
-        <div class="valid-feedback">Luce bien</div>
-        <div class="invalid-feedback">
-          {{ validateEmailError }}
+        <div class="Contactme-group form-group">
+          <label class="Contactme-label" for="emailInput"> Email :</label>
+          <input
+            type="text"
+            id="emailInput"
+            formControlName="email"
+            class="Contactme-input form-control"
+            placeholder=""
+          />
+          <div class="valid-feedback">Luce bien</div>
+          <div class="invalid-feedback">
+            {{ validateEmailError }}
+          </div>
+        </div>
+
+        <div class="Contactme-group form-group">
+          <label class="Contactme-label" for="paisInput"> País </label>
+          <input
+            type="text"
+            id="paisInput"
+            formControlName="pais"
+            class="Contactme-input form-control"
+            placeholder=""
+          />
+          <div class="valid-feedback">Luce bien</div>
+          <div class="invalid-feedback">{{ validateErrorCountry }}</div>
         </div>
       </div>
 
-      <div class="Contactme-group form-group">
-        <label class="Contactme-label" for="paisInput"> País </label>
-        <input
-          type="text"
-          id="paisInput"
-          formControlName="pais"
-          class="Contactme-input form-control"
-          placeholder=""
-        />
-        <div class="valid-feedback">Luce bien</div>
-        <div class="invalid-feedback">{{ validateErrorCountry }}</div>
+      <div class="Contactme-col col-12">
+        <div class="Contactme-group form-group">
+          <label for="reasonInput" class="Contactme-label form-label"
+            >Escríbe el motivo</label
+          >
+          <textarea
+            class="Contactme-area form-control form-control"
+            id="reasonInput"
+            rows="3"
+            formControlName="area"
+          ></textarea>
+        </div>
       </div>
-    </div>
 
-    <div class="Contactme-col col-12">
-      <div class="Contactme-group form-group">
-        <label for="reasonInput" class="Contactme-label form-label"
-          >Escríbe el motivo</label
+      <div class="Contactme-buttonContainer">
+        <button
+          #buttonSend
+          id="buttonSend"
+          aria-labelledby="buttonSendFormulary"
+          (click)="enviarFormulario()"
+          class="Contactme-button Contactme-button--send btn"
+          type="submit"
         >
-        <textarea
-          class="Contactme-area form-control form-control"
-          id="reasonInput"
-          rows="3"
-          formControlName="area"
-        ></textarea>
+          Enviar
+        </button>
       </div>
-    </div>
-
-    <div class="Contactme-buttonContainer">
-      <button
-        #buttonSend
-        id="buttonSend"
-        aria-labelledby="buttonSendFormulary"
-        (click)="enviarFormulario()"
-        class="Contactme-button Contactme-button--send btn"
-        type="submit"
-      >
-        Enviar
-      </button>
-    </div>
-  </form>
+    </form>
+  </div>
 </div>
