@@ -33,6 +33,14 @@ export class NavComponent implements AfterViewInit, OnInit {
     gsap.registerPlugin(ScrollTrigger);
   }
   ngAfterViewInit(): void {
+    /* provisional */
+    const containerLinks = document.querySelector('.Header-container');
+    gsap.to(containerLinks, {
+      xPercent: 0,
+      duration: 0.5,
+      ease: 'power2.easeOut',
+    });
+    /* provisional */
     this.emitElementNav.emit(this.barraNavegacion.nativeElement);
 
     /* enviar links de referencia (small) */
@@ -73,7 +81,7 @@ export class NavComponent implements AfterViewInit, OnInit {
     const containerLinks = document.querySelector('.Header-container');
     gsap.to(containerLinks, {
       xPercent: 0,
-      duration: .5,
+      duration: 0.5,
       ease: 'power2.easeOut',
     });
   }

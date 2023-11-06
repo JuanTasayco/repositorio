@@ -14,17 +14,29 @@
     width: 50%;
   }
 
+  &-collapse {
+    height: 100%;
+  }
+
   &-navbar {
     /* determinar posición del menu */
     width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
+/*     justify-content: flex-end; */
+    align-items: center;
+    gap: 3rem;
+    margin: 0 3rem 0 0;
+    @include media-breakpoint-down(sm) {
+      margin-top: 3rem;
+      gap: 1.5rem;
+      height: 100%;
+ /*      justify-content: flex-start; */
+      /*      align-items: center;
+       */
+    }
   }
 
   &-container {
     @include media-breakpoint-down(sm) {
-      border: 2px solid red;
       position: absolute;
       inset: 0 auto 0 0;
       width: 70%;
@@ -46,6 +58,10 @@
     color: white;
     &:hover {
       color: red;
+    }
+
+    @include media-breakpoint-down(sm) {
+      margin: 0 auto;
     }
   }
 
