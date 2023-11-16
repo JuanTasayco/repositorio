@@ -24,7 +24,6 @@ export class ProjectDescriptionComponent implements OnInit, AfterViewInit {
   @Input('contenido') contentProjects: ProjectDescriptions[] = [];
   @ViewChildren('containerRef') containers!: QueryList<ElementRef>;
   ngOnInit(): void {
-    gsap.registerPlugin(ScrollTrigger);
     gsap.registerPlugin();
   }
   ngAfterViewInit(): void {

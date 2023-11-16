@@ -6,3 +6,23 @@
 @use "app/charts/horizontal-chart/horizontal-chart.component";
 @use "app/portfolio/components/svg-socials/svg-socials.component";
 @use "app/portfolio/components/svg-dev-icons/svg-dev-icons.component";
+
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}

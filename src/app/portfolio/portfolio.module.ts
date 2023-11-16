@@ -8,11 +8,11 @@ import { SharedModule } from '../shared/shared.module';
 import { ProjectDescriptionComponent } from './components/project-description/project-description.component';
 import { ContactMeComponent } from './pages/contact-me/contact-me.component';
 import { NgPrimeModule } from '../ng-prime/ng-prime.module';
-import { ReactiveFormsModule } from '@angular/forms';
 import { ChartsModule } from '../charts/charts.module';
 import { ToScrollDirective } from './directives/to-scroll.directive';
 import { SvgSocialsComponent } from './components/svg-socials/svg-socials.component';
 import { SvgDevIconsComponent } from './components/svg-dev-icons/svg-dev-icons.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,11 +25,11 @@ import { SvgDevIconsComponent } from './components/svg-dev-icons/svg-dev-icons.c
     SvgDevIconsComponent,
   ],
   imports: [
+    ReactiveFormsModule,
     CommonModule,
     PortfolioRoutingModule,
     SharedModule,
     NgPrimeModule,
-    ReactiveFormsModule,
     ChartsModule,
   ],
 })

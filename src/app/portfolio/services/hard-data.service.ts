@@ -137,7 +137,7 @@ export class HardDataService {
       ],
       repositorio: 'https://github.com/JuanTasayco/F1-LpmGuideFrontend ',
       link: 'www.paginaSpotify.com',
-      tecnologias: 'Angular 14, Bootstrap, NGPrime ',
+      tecnologias: 'Angular 16+, Bootstrap, NGPrime ',
     } /* , https://github.com/JuanTasayco/F1-LpmGuideBackend  */,
 
     {

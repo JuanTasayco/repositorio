@@ -19,7 +19,7 @@
     "@angular/platform-browser": "^16.1.8",
     "@angular/platform-browser-dynamic": "^16.1.8",
     "@angular/router": "^16.1.8",
-    "@studio-freight/lenis": "^1.0.19",
+    "@studio-freight/lenis": "^1.0.27",
     "@swimlane/ngx-charts": "^20.4.1",
     "bootstrap": "^5.3.1",
     "chart.js": "^4.3.3",

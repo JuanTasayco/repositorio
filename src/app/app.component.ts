@@ -1,8 +1,9 @@
-import { Component, Inject, OnInit, Renderer2, ViewChild } from '@angular/core';
-import { BaseChartDirective } from 'ng2-charts';
-import { DOCUMENT } from '@angular/common';
-import { PrimeNGConfig } from 'primeng/api';
+import { Component, OnInit } from '@angular/core';
 
+import { PrimeNGConfig } from 'primeng/api';
+import Lenis from '@studio-freight/lenis';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,11 +12,19 @@ import { PrimeNGConfig } from 'primeng/api';
 export class AppComponent implements OnInit {
   title = 'portfolio';
 
-  constructor(
-    @Inject(DOCUMENT) private document: Document,
-    private primengConfig: PrimeNGConfig
-  ) {}
+  constructor(private primengConfig: PrimeNGConfig) {}
   ngOnInit(): void {
+    const lenis = new Lenis();
+
+    lenis.on('scroll', ScrollTrigger.update);
+
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 1000);
+    });
+
+    gsap.ticker.lagSmoothing(0);
+
+    gsap.registerPlugin(ScrollTrigger);
     this.primengConfig.ripple = true;
   }
 }

@@ -26,6 +26,17 @@
     font-size: 1.7rem;
     text-transform: uppercase;
     font-weight: lighter;
+    background-clip: text;
+    color: transparent;
+    background-color: #8bffe2;
+    background-image: linear-gradient(
+      257deg,
+      #8bffe2 0%,
+      #2bffbc 52%,
+      #2bff88 90%
+    );
+
+    font-weight: bold;
   }
   &-img {
     max-height: 20rem;
