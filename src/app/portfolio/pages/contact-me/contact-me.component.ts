@@ -7,7 +7,6 @@ import {
 } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { debounceTime } from 'rxjs';
-import { gsap } from 'gsap';
 
 @Component({
   selector: 'app-contact-me',
@@ -18,10 +17,17 @@ export class ContactMeComponent implements OnInit, AfterViewInit {
   constructor() {}
 
   formContact: FormGroup = new FormBuilder().group({
-    name: ['', Validators.required],
-    email: ['', [Validators.required, Validators.email]],
-    pais: ['', [Validators.required]],
-    area: ['', [Validators.required]],
+    name: ['Prueba1', Validators.required],
+    email: [
+      'jhonn28_4@hotmail.com',
+      [Validators.required, Validators.email, Validators.minLength(3)],
+    ],
+    pais: ['Perú', [Validators.required]],
+    asunto: ['Pagina Web', [Validators.required]],
+    area: [
+      'Hola necesito comunicar contigo para desarrollar una nueva web desde 0',
+      [],
+    ],
   });
 
   ngOnInit(): void {}
@@ -32,37 +38,26 @@ export class ContactMeComponent implements OnInit, AfterViewInit {
     this.getErrorsFormDebounce('pais', 'paisInput');
   }
 
-  /* controla el mensaje a mostrar, el getErrorsForm decide si se muestra el error o el checkGood */
-  get validateErrorName(): string {
-    const error = this.formContact.get('name')?.errors;
-    if (error?.['required']) {
-      return 'Este campo no puede estar vacio';
-    }
-    return '';
-  }
+  validateErrors(control: string): string {
+    const errors = this.formContact.get(control)?.errors;
+    /*    type tipos = 'required' | 'email' | 'minLength'; */
+    /* Record permite agregar objetos cuyas claves de propiedad son las keys (ejm: tipos) y los valores son un type (ejm una interface Gato{nombre:string, color:string}) */
+    const tableError: Record<string, string> = {
+      required: 'Este campo no puede estar vacío',
+      email: 'El formato de Email no es correcto',
+      minLength: 'Deben existir al menos 3 caracteres',
+    };
 
-  get validateEmailError(): string {
-    const error = this.formContact.get('email')?.errors;
-    if (error?.['email']) {
-      return 'El formato de email no es correcto';
-    } else if (error?.['required']) {
-      return 'Este campo no puede estar vacio';
+    if (errors) {
+      const value: string = Object.getOwnPropertyNames(errors)[0];
+      return tableError[value];
     } else {
       return '';
     }
   }
 
-  get validateErrorCountry(): string {
-    const error = this.formContact.get('pais')?.errors;
-    if (error?.['required']) {
-      return 'Este campo no puede estar vacio';
-    }
-    return '';
-  }
-
   enviarFormulario() {
     const resultado = this.formContact.value;
-    console.log(resultado);
     if (this.formContact.valid) {
       console.log('formulario valido');
     } else {
@@ -71,6 +66,7 @@ export class ContactMeComponent implements OnInit, AfterViewInit {
       this.getErrorsBeforeSend('name', 'nameInput');
       this.getErrorsBeforeSend('email', 'emailInput');
       this.getErrorsBeforeSend('pais', 'paisInput');
+      this.getErrorsBeforeSend('asunto', 'asuntoInput');
     }
   }
 

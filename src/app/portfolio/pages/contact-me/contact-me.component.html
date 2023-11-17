@@ -1,7 +1,7 @@
 <div class="Contactme p-5 mb-5 rounded shadow-lg">
   <h1 class="Contactme-h1 mb-5">Contactame:</h1>
   <p class="Contactme-p">
-    Escribeme cualquier consulta que tengas, estoy a tu disposición :)
+    Escribeme para cualquier consulta que tengas, estoy a tu disposición :)
   </p>
   <div class="Contactme-content rounded-3">
     <form
@@ -22,7 +22,7 @@
           />
 
           <div class="valid-feedback">Luce bien</div>
-          <div class="invalid-feedback">{{ validateErrorName }}</div>
+          <div class="invalid-feedback">{{ validateErrors("name") }}</div>
         </div>
 
         <div class="Contactme-group form-group">
@@ -36,7 +36,7 @@
           />
           <div class="valid-feedback">Luce bien</div>
           <div class="invalid-feedback">
-            {{ validateEmailError }}
+            {{ validateErrors("email") }}
           </div>
         </div>
 
@@ -50,14 +50,27 @@
             placeholder=""
           />
           <div class="valid-feedback">Luce bien</div>
-          <div class="invalid-feedback">{{ validateErrorCountry }}</div>
+          <div class="invalid-feedback">{{ validateErrors("pais") }}</div>
+        </div>
+
+        <div class="Contactme-group form-group">
+          <label class="Contactme-label" for="asuntoInput"> Asunto </label>
+          <input
+            type="text"
+            id="asuntoInput"
+            formControlName="asunto"
+            class="Contactme-input form-control"
+            placeholder=""
+          />
+          <div class="valid-feedback">Luce bien</div>
+          <div class="invalid-feedback">{{ validateErrors("asunto") }}</div>
         </div>
       </div>
 
       <div class="Contactme-col col-12">
         <div class="Contactme-group form-group">
           <label for="reasonInput" class="Contactme-label form-label"
-            >Escríbe el motivo</label
+            >Dime que necesitas.</label
           >
           <textarea
             class="Contactme-area form-control form-control"
