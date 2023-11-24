@@ -1,16 +1,6 @@
-import {
-  AfterViewInit,
-  Component,
-  ElementRef,
-  EventEmitter,
-  HostListener,
-  OnInit,
-  Output,
-  ViewChild,
-} from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { IsActiveMatchOptions, Router } from '@angular/router';
 import { CommunicateLinksService } from '../services/communicate-links.service';
-import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 interface Routes {
@@ -22,12 +12,10 @@ interface Routes {
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
-  styleUrls: ['./nav.component.scss'],
 })
-export class NavComponent implements AfterViewInit{
+export class NavComponent implements AfterViewInit {
   @ViewChild('nav') barraNavegacion!: ElementRef<HTMLElement>;
   @ViewChild('aHeaderLink') headerA!: ElementRef<HTMLElement>;
-
 
   ngAfterViewInit(): void {
     /* enviar links de referencia (small) */
