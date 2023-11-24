@@ -81,7 +81,7 @@ export class HardDataService {
         },
       ],
       repositorio: 'https://github.com/JuanTasayco/F1-LpmGuideFrontend ',
-      link: 'www.paginaSpotify.com',
+      link: 'https://lpmappv2.vercel.app/#/front',
       tecnologias: 'Angular 14, Bootstrap, NGPrime ',
     } /* , https://github.com/JuanTasayco/F1-LpmGuideBackend  */,
 
@@ -136,7 +136,7 @@ export class HardDataService {
         },
       ],
       repositorio: 'https://github.com/JuanTasayco/F1-LpmGuideFrontend ',
-      link: 'www.paginaSpotify.com',
+      link: 'https://lpmappv3.vercel.app/guide/principal',
       tecnologias: 'Angular 16+, Bootstrap, NGPrime ',
     } /* , https://github.com/JuanTasayco/F1-LpmGuideBackend  */,
 
@@ -168,7 +168,7 @@ export class HardDataService {
       ],
       tecnologias: 'Angular, Nest Js, SASS, Typescript, Bootstrap',
       repositorio: 'https://github.com/JuanTasayco/FM4-SpotyAPIOnlyFrontend',
-      link: 'www.paginaSpotify.com',
+      link: 'https://spotifyjt.vercel.app/#/spotify/principal',
     },
     {
       title: 'Point Maps',
@@ -246,33 +246,7 @@ export class HardDataService {
       repositorio: 'https://github.com/JuanTasayco/PF5-CountryAPI',
       link: 'https://country-app-angular.vercel.app/paises/fronteras',
     },
-    {
-      title: 'Lpm App V1',
-      description:
-        'Aplicación responsive con data propia que permite visualizar información de una guía de contabilidad para LPM, cuenta con características muy simples y fáciles de usar para el usuario, esta es la primera versión (solo front).',
-      imagenes: [
-        {
-          itemImageSrc: 'assets/imagenes/lpmOne1.png',
-          alt: 'lpmv1Img1',
-        },
-        {
-          itemImageSrc: 'assets/imagenes/lpmOne2.png',
-          alt: 'lpmv1Img2',
-        },
-        {
-          itemImageSrc: 'assets/imagenes/lpmOne3.png',
-          alt: 'lpmv1Img3',
-        },
-        {
-          itemImageSrc: 'assets/imagenes/lpmOne4.png',
-          alt: 'lpmv1Img4',
-        },
-      ],
-      repositorio:
-        'https://github.com/JuanTasayco/06-WebConta-Angular/tree/main/src',
-      link: 'https://lpmapp.vercel.app/',
-      tecnologias: 'Angular 14, Bootstrap, NGPrime ',
-    },
+
     {
       title: 'MoonApp',
       description:
