@@ -24,25 +24,12 @@ interface Routes {
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.scss'],
 })
-export class NavComponent implements AfterViewInit, OnInit {
-  @Output() emitElementNav: EventEmitter<any> = new EventEmitter();
+export class NavComponent implements AfterViewInit{
   @ViewChild('nav') barraNavegacion!: ElementRef<HTMLElement>;
   @ViewChild('aHeaderLink') headerA!: ElementRef<HTMLElement>;
 
-  ngOnInit(): void {
-    gsap.registerPlugin(ScrollTrigger);
-  }
-  ngAfterViewInit(): void {
-    /* provisional */
-    const containerLinks = document.querySelector('.Header-container');
-    gsap.to(containerLinks, {
-      xPercent: 0,
-      duration: 0.5,
-      ease: 'power2.easeOut',
-    });
-    /* provisional */
-    this.emitElementNav.emit(this.barraNavegacion.nativeElement);
 
+  ngAfterViewInit(): void {
     /* enviar links de referencia (small) */
     const navElement: NodeListOf<HTMLElement> =
       document.querySelectorAll('.Header-a');
@@ -60,30 +47,6 @@ export class NavComponent implements AfterViewInit, OnInit {
     });
 
     /* lógica para barra mobile (nav) */
-    this.calcSizeVwForNavBarMobile();
-  }
-
-  @HostListener('window:resize', [])
-  calcSizeVwForNavBarMobile() {
-    const containerLinks = document.querySelector('.Header-container');
-    if (window.innerWidth < 576) {
-      gsap.set(containerLinks, {
-        xPercent: '-100',
-      });
-    } else {
-      gsap.set(containerLinks, {
-        xPercent: '0',
-      });
-    }
-  }
-
-  openNavMobile() {
-    const containerLinks = document.querySelector('.Header-container');
-    gsap.to(containerLinks, {
-      xPercent: 0,
-      duration: 0.5,
-      ease: 'power2.easeOut',
-    });
   }
 
   isActive(path: string): boolean {
@@ -114,7 +77,7 @@ export class NavComponent implements AfterViewInit, OnInit {
     { name: 'Inicio', path: '/portfolio/myDescription', nameSection: 'inicio' },
 
     {
-      name: 'Mis proyectos',
+      name: 'Proyectos',
       path: '/portfolio/myProjects',
       nameSection: 'trabajos',
     },
