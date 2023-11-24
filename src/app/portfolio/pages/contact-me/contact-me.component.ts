@@ -1,10 +1,4 @@
-import {
-  AfterViewInit,
-  Component,
-  ElementRef,
-  OnInit,
-  ViewChild,
-} from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { debounceTime } from 'rxjs';
 
@@ -17,17 +11,14 @@ export class ContactMeComponent implements OnInit, AfterViewInit {
   constructor() {}
 
   formContact: FormGroup = new FormBuilder().group({
-    name: ['Prueba1', Validators.required],
+    name: ['', Validators.required],
     email: [
-      'jhonn28_4@hotmail.com',
+      '',
       [Validators.required, Validators.email, Validators.minLength(3)],
     ],
-    pais: ['Perú', [Validators.required]],
-    asunto: ['Pagina Web', [Validators.required]],
-    area: [
-      'Hola necesito comunicar contigo para desarrollar una nueva web desde 0',
-      [],
-    ],
+    pais: ['', [Validators.required]],
+    asunto: ['', [Validators.required]],
+    area: ['', []],
   });
 
   ngOnInit(): void {}
@@ -36,6 +27,7 @@ export class ContactMeComponent implements OnInit, AfterViewInit {
     this.getErrorsFormDebounce('name', 'nameInput');
     this.getErrorsFormDebounce('email', 'emailInput');
     this.getErrorsFormDebounce('pais', 'paisInput');
+    this.getErrorsFormDebounce('asunto', 'asuntoInput');
   }
 
   validateErrors(control: string): string {
@@ -59,7 +51,7 @@ export class ContactMeComponent implements OnInit, AfterViewInit {
   enviarFormulario() {
     const resultado = this.formContact.value;
     if (this.formContact.valid) {
-      console.log('formulario valido');
+      this.formContact.reset();
     } else {
       this.formContact.markAllAsTouched();
       /* para validar al dar click en send y el form es inválido */
